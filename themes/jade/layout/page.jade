@@ -1,7 +1,5 @@
 extends base
 
-append content
-  article
-    h2= page.title
-        
-    != page.content
+block content
+  h2= page.title
+  != page.content

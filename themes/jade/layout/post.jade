@@ -9,10 +9,15 @@ block content
     time(datetime= date_xml(page.date))= date(page.date)
     if page.tags
       h6 Tags: 
+      //- This is not working correctly... ideas?
       ul.tags
         each tag in page.tags
           li= tag
-  
+    if page.author
+      h6 Written by #{page.author}
   != page.content
 
+  //- Need to create this mixin... basically social share buttons if we say we want that in the config
+  //- if config.social_links
+  //-   +social-links(facebook, twitter, google, pinterest, reddit)
   include _partial/article_pagination
