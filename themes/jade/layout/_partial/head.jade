@@ -4,7 +4,7 @@ block head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   title
     block title
-      if is_home
+      if is_home(page.url)
         | #{config.title}: #{config.subtitle}
       else
         | #{page.title} | #{config.title}
@@ -15,19 +15,20 @@ block head
       meta(name='description', content=page.description)
     if config.author
       meta(name='author', content=config.author)
-    //- meta(property="og:image", content="/img/logo.jpg")
+    if is_home(page.url)
+      != open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus})
 
   block link
     link(rel='alternate', href=theme.rss ? theme.rss : config.root + 'atom.xml', title='config.title', type='application/atom.xml')
     link(rel="shortcut icon", href="ico/favicon.ico")
     each size in [144,114,72,57]
       link(rel="apple-touch-icon", sizes="#{size}x#{size}", href="/ico/apple-touch-icon-#{size}.png")  
+  //- HTML5 Shim
+  //if lt IE 9
+    script(async src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+  if theme.google_font
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=#{theme.google_font}')
   block headStyles
-    //- Shim: IE6-8 support of HTML5 elements
-    //if lt IE 9
-      script(async src="http://html5shim.googlecode.com/svn/trunk/html5.js")
-    if theme.google_font
-      link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=#{theme.google_font}')
     !=css(theme.css)
   block headScripts
     !=js(theme.headScripts)
