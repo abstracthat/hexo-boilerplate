@@ -6,11 +6,12 @@ block vars
 block content
   h2= page.title
   div.meta
-    include _partial/article_meta
-
-    +date(page.date)
-
-    +category(page.categories)
+    time(datetime= date_xml(page.date))= date(page.date)
+    if page.tags
+      h6 Tags: 
+      ul.tags
+        each tag in page.tags
+          li= tag
   
   != page.content
 
