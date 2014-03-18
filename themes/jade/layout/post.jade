@@ -1,0 +1,17 @@
+extends base
+
+block vars
+  - var bodyclass = page.layout;
+
+block content
+  h2= page.title
+  div.meta
+    include _partial/article_meta
+
+    +date(page.date)
+
+    +category(page.categories)
+  
+  != page.content
+
+  include _partial/article_pagination

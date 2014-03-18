@@ -1,0 +1,60 @@
+body
+  +linear-gradient(gray(82), gray(92))
+
+header div
+  +grid-row
+
+section
+  +grid-row
+
+[role="main"]
+  +grid-row
+  background: #fff
+
+article
+  +grid-column
+  padding-top: $column-gutter/2
+  padding-bottom: $column-gutter/2
+  +breakpoint(medium)
+    +grid-column(9, $center:true)
+  color: gray(25)
+  button
+    +button
+
+footer
+  +grid-row
+  +scut-padding(.5rem $column-gutter/2)
+  // background-color: darken($header-background-color, 20%)
+  // border-top: rem(5) solid shade($header-background-color, 20%)
+  nav
+    margin-top: 1rem
+  p
+    color: shade($header-background-color, 20%)
+    text-align: center
+    display: block
+    margin-bottom: 0
+    +breakpoint(medium)
+      margin-bottom: 1rem
+      text-align: left
+      display: inline-block
+      float: left
+  ul
+    text-align: center
+    list-style: none
+    display: block
+    margin-left: 0
+    li
+      +scut-padding(.5rem 1rem)
+      display: inline-block
+      line-height: 1
+      +breakpoint(medium)
+        border: none
+        padding: 0
+      a
+        color: shade($header-background-color, 20%)
+        +transition(all 250ms ease-in-out)
+    +breakpoint(medium)
+      +scut-list-divided("|", 1rem)
+      float: right
+      display: inline-block
+      text-align: left

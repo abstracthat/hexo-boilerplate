@@ -1,0 +1,23 @@
+include _partial/mixins
+
+doctype html
+block vars
+  - var bodyclass = null;
+html(lang='en')
+  head
+    include _partial/head
+  body(class=bodyclass)
+    +header('fixed')
+    div(role="main")
+      article
+        block content        
+    block footer
+      footer
+        nav
+          p &copy; #{config.yearStarted} &ndash; #{ new Date().getFullYear() } <strong>#{ config.title }</strong>
+          ul
+            each link, name in theme.footerMenu
+              li: a(href=link)=name
+
+    block scripts
+      !=js(theme.scripts)

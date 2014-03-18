@@ -1,0 +1,168 @@
+/* =============================================
+ *
+ *   FIXED RESPONSIVE NAV
+ *
+ *   (c) 2014 @adtileHQ
+ *   http://www.adtile.me
+ *   http://twitter.com/adtilehq
+ *
+ *   Free to use under the MIT License.
+ *
+ * ============================================= */
+
+.main-menu
+  width: 100%
+  ul
+    margin: 0
+    padding: 0
+    width: 100%
+    display: block
+    float: left
+    background: shade($header-background-color, 5%)
+  li
+    width: 100%
+    display: inline-block
+    float: left
+    &:last-child
+      border-bottom: 1px solid shade($header-background-color, 10%)
+    +breakpoint(medium)
+      width: auto
+      &:last-child
+        border-bottom: none
+        border-right: 2px solid shade($header-background-color, 12%)
+  a
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    border-top: 1px solid shade($header-background-color, 12%)
+    text-decoration: none
+    background: shade($header-background-color, 4%)
+    color: tint($header-background-color, 65%)
+    width: 100%
+    float: left
+    line-height: $small-header-height
+    padding: 0 $column-gutter/2
+    &.active, .active &
+      color: shade($header-background-color, 50%)
+      background: tint($header-background-color, 10%)
+    &:hover
+      +transition(all 250ms ease-in-out)
+      background: tint($header-background-color, 8%)
+      color: shade($header-background-color, 50%)
+    +breakpoint(medium)
+      line-height: $header-height
+      vertical-align: middle
+      border-left: 2px solid shade($header-background-color, 12%)
+      text-align: center
+      border-top: 0
+      float: left
+      margin: 0
+  &.opened
+    max-height: 9999px
+  .js &
+    clip: rect(0 0 0 0)
+    max-height: 0
+    position: absolute
+    display: block
+    overflow: hidden
+    zoom: 1
+    position: relative
+    &.closed
+      max-height: none
+  +breakpoint(medium)
+    float: right
+    width: auto
+
+.nav-toggle
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  -o-user-select: none
+  user-select: none
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-decoration: none
+  text-indent: rem(-300)
+  position: absolute
+  top: 0
+  right: rem(-15)
+  overflow: hidden
+  width: rem(60)
+  line-height: $small-header-height
+  float: right
+  font-size: rem(30)
+  +breakpoint(medium)
+    display: none
+  &:before
+    color: tint($header-background-color, 70%)
+    font-family: "responsivenav"
+    text-transform: none
+    text-align: center
+    content: "\2261" /* Hamburger icon */
+    text-indent: 0
+    speak: none
+    position: absolute
+    right: $column-gutter/2
+    top: 0
+  &.active:before
+    font-size: 24px
+    content: "\78" /* Close icon */
+
+.disable-pointer-events
+  pointer-events: none !important
+
+.mask
+  +transition(opacity 300ms ease-in-out)
+  background: rgba(0,0,0, .5)
+  visibility: hidden
+  position: fixed
+  opacity: 0
+  z-index: 2
+  bottom: 0
+  right: 0
+  left: 0
+  top: 0
+  .android &
+    -webkit-transition: none
+    transition: none
+  .js-nav-active &
+    visibility: visible
+    opacity: 1
+  +breakpoint(medium)
+    display: none !important
+    opacity: 0 !important
+
++fixed-header
+
+header
+  background-color: $header-background-color
+  height: $small-header-height
+  +breakpoint(medium)
+    height: $header-height
+
+h1.logo
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  text-decoration: none
+  line-height: $small-header-height
+  font-size: rem(22)
+  +breakpoint(medium)
+    line-height: $header-height
+    font-size: rem(26)
+  float: left
+  margin: 0
+  padding-left: rem(15)
+  +breakpoint(large)
+    padding-left: 0
+  a
+    color: tint($header-background-color, 80%)
+    font-weight: 400
+    &:hover
+      +transition(all 200ms ease-in-out)
+      color: tint($header-background-color, 20%)
+
+@font-face
+  font-family: "responsivenav"
+  src: url("../../fonts/responsivenav.eot")
+  src: url("../../fonts/responsivenav.eot?#iefix") format("embedded-opentype"), url("../../fonts/responsivenav.ttf") format("truetype"), url("../../fonts/responsivenav.woff") format("woff"), url("../../fonts/responsivenav.svg#responsivenav") format("svg")
+  font-weight: normal
+  font-style: normal

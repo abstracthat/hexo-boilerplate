@@ -1,0 +1,27 @@
+@import "blend-modes";
+
+// Defaults
+$cs-primary           : #f00 !default;
+$cs-scheme            : mono !default;   // mono, complement, triad, tetrad, analogic, accented-analogic
+$cs-hue-offset        : 30 !default;
+$cs-brightness-offset : false !default;
+$cs-color-model       : rgb !default;    // rgb, ryb
+$cs-colorblind        : normal !default;
+
+// Partials
+@import "../../vendor/color-schemer/stylesheets/color-schemer/interpolation";
+@import "../../vendor/color-schemer/stylesheets/color-schemer/cmyk";
+@import "../../vendor/color-schemer/stylesheets/color-schemer/ryb";
+@import "../../vendor/color-schemer/stylesheets/color-schemer/colorblind";
+@import "../../vendor/color-schemer/stylesheets/color-schemer/equalize";
+@import "../../vendor/color-schemer/stylesheets/color-schemer/mix";
+@import "../../vendor/color-schemer/stylesheets/color-schemer/tint-shade";
+@import "../../vendor/color-schemer/stylesheets/color-schemer/color-adjustments";
+@import "../../vendor/color-schemer/stylesheets/color-schemer/color-schemer";
+
+@import "../../vendor/color-schemer/stylesheets/color-schemer/comparison";
+
+@import "../../vendor/color-schemer/stylesheets/color-schemer/mixins";
+
+// Tell other files that this is loaded.
+$color-schemer-loaded : true;

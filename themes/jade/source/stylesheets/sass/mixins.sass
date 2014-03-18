@@ -1,0 +1,35 @@
+// Functions
+
+@function gray($percentage)
+  @return lighten(black, $percentage)
+
+@function em($px)
+  @return ($px / $base) * 1em
+
+@function rem($px)
+  @return ($px / $base) * 1rem
+
+// Mixins
+
+=fixed-header
+  header.fixed
+    position: fixed
+    z-index: 3
+    width: 100%
+    left: 0
+    top: 0
+  [role="main"]
+    margin-top: $small-header-height !important
+    @media #{$medium-up}
+      margin-top: $header-height !important
+
+=breakpoint($range: medium)
+  @if $range == medium
+    @media #{$medium-up}
+      @content
+  @if $range == large
+    @media #{$large-up}
+      @content
+  @if $range == xl
+    @media #{$xlarge-up}
+      @content

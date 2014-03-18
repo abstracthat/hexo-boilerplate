@@ -1,0 +1,51 @@
+menu:
+  Home: /
+  Blog: /blog
+  About: /about
+footerMenu:
+  Privacy Policy: /privacy
+  Terms of Use: /terms
+  Contact: /contact
+  # Google+: 
+
+excerpt_link: Read More
+
+addthis:
+  enable: false
+
+fancybox: false
+
+google_analytics:
+rss:
+google_font: Open+Sans:400,700,400italic,700italic
+
+css:
+  - 'stylesheets/normalize.css'
+  - 'stylesheets/app.css'
+
+headScripts:
+  - '/vendor/responsive-nav/responsive-nav.js'
+
+scripts:
+  - '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'
+  - '/vendor/jquery-placeholder/jquery.placeholder.js'
+  - '/vendor/fastclick/lib/fastclick.js'
+  - '/vendor/foundation/js/foundation/foundation.js'
+  - '/vendor/foundation/js/foundation/foundation.abide.js'
+  - '/vendor/foundation/js/foundation/foundation.accordion.js'
+  - '/vendor/foundation/js/foundation/foundation.alert.js'
+  - '/vendor/foundation/js/foundation/foundation.clearing.js'
+  - '/vendor/foundation/js/foundation/foundation.dropdown.js'
+  - '/vendor/foundation/js/foundation/foundation.equalizer.js'
+  - '/vendor/foundation/js/foundation/foundation.interchange.js'
+  # - '/vendor/foundation/js/foundation/foundation.joyride.js'
+  # - '//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js'
+  - '/vendor/foundation/js/foundation/foundation.magellan.js'
+  - '/vendor/foundation/js/foundation/foundation.offcanvas.js'
+  - '/vendor/foundation/js/foundation/foundation.orbit.js'
+  - '/vendor/foundation/js/foundation/foundation.reveal.js'
+  - '/vendor/foundation/js/foundation/foundation.tab.js'
+  - '/vendor/foundation/js/foundation/foundation.tooltip.js'
+  - '/vendor/foundation/js/foundation/foundation.topbar.js'
+  - '/scripts/app.js'
+  - '/scripts/fixed-responsive-nav.js'
