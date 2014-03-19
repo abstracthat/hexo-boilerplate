@@ -4,7 +4,8 @@ block head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   title
     block title
-      if is_home(page.url)
+      //- This is_home seems to not be working or I am doing it wrong
+      if is_home
         | #{config.title}: #{config.subtitle}
       else
         | #{page.title} | #{config.title}
