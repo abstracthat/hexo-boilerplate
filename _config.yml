@@ -15,7 +15,7 @@ yearStarted: 2013
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title/
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
