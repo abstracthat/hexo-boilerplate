@@ -9,7 +9,8 @@
   "devDependencies": {
     "scut": "*",
     "bourbon": "*",
-    "foundation": "*",
+    "jquery": "*",
+    "fastclick": "*",
     "responsive-nav": "*"
   }
 }

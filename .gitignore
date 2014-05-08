@@ -3,6 +3,7 @@ node_modules/
 db.json
 debug.log
 .sass-cache/
-themes/jade/source/vendor/
 public/
-themes/jade/source/stylesheets/app.css
+app.css
+app.css.map
+themes/jade/source/stylesheets/_vendor/

@@ -21,7 +21,8 @@ $golden-small: 38.2
 $golden-large: 61.8 
 
 // Columns with Gutters
-=column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $g)
+// Columns with Gutters
+=column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
   $side: -get_layout_direction()
   $column_widths: -get_column($ratios, $gutter)
   $margin_last: 0
@@ -36,7 +37,7 @@ $golden-large: 61.8
     @else
       $offset: nth(-get_column($offset, nth($column_widths, 2)), 1)
       $margin_l: $offset + nth($column_widths, 2)
-  +cf
+  +group
   float: $side
   display: inline
   clear: none
@@ -77,7 +78,7 @@ $golden-large: 61.8
       $margin_r: -get_span($offset)
     @else
       $margin_l: -get_span($offset)
-  +cf
+  +group
   float: $side
   display: inline
   clear: none
@@ -89,7 +90,7 @@ $golden-large: 61.8
   margin-#{opposite-direction($side)}: $margin_r * 1%
 
 // Source Ordering
-=shift($ratios: 0, $col_or_span: column, $gutter: $g)
+=shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
   $translate: ""
   $side: -get_layout_direction()
   @if $side == right
@@ -114,7 +115,7 @@ $golden-large: 61.8
 
 // Horizontal Centering Block Elements
 =center($max_width: 1410px, $pad: 0)
-  +cf
+  +group
   width: auto
   max-width: $max_width
   float: none
@@ -159,7 +160,7 @@ $golden-large: 61.8
     margin-#{$side}: 0
   &:last-child
     margin-#{opposite-direction($side)}: 0
-  @if $layout-direction == RTL
+  @if $jeet-layout-direction == RTL
     text-align: right
   @else
     text-align: left
@@ -167,20 +168,20 @@ $golden-large: 61.8
 // Horizontal/Vertical/Both Alignment - Parent container needs position relative. IE9+
 =align($direction: both)
   position: absolute
-  +prefixer(transform-style, preserve-3d)
+  +jeet-prefixer(transform-style, preserve-3d)
   @if $direction == horizontal or $direction == h
     left: 50%
-    +prefixer(transform, translateX(-50%))
+    +jeet-prefixer(transform, translateX(-50%))
   @else if $direction == vertical or $direction == v
     top: 50%
-    +prefixer(transform, translateY(-50%))
+    +jeet-prefixer(transform, translateY(-50%))
   @else
     top: 50%
     left: 50%
-    +prefixer(transform, translate(-50%, -50%))
+    +jeet-prefixer(transform, translate(-50%, -50%))
 
 // Clearfix
-=cf
+=group
   *zoom: 1
   &:before, &:after
     content: ''
@@ -189,7 +190,7 @@ $golden-large: 61.8
     clear: both
 
 // Define a rule with all vendor-specific prefixes
-=prefixer($name, $arguments)
+=jeet-prefixer($name, $arguments)
   -webkit-#{$name}: #{$arguments}
   -ms-#{$name}: #{$arguments}
   -moz-#{$name}: #{$arguments}
