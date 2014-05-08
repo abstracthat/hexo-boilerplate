@@ -1,3 +1,8 @@
+$header-height: rem(60)
+$small-header-height: $header-height/1.5
+$header-background-color: $color1
+
+
 /* =============================================
  *
  *   FIXED RESPONSIVE NAV
@@ -10,6 +15,7 @@
  *
  * ============================================= */
 
+// body > nav:first-child
 .main-menu
   width: 100%
   ul
@@ -39,12 +45,12 @@
     width: 100%
     float: left
     line-height: $small-header-height
-    padding: 0 $column-gutter/2
+    padding: 0 .5rem
     &.active, .active &
       color: shade($header-background-color, 50%)
       background: tint($header-background-color, 10%)
     &:hover
-      +transition(all 250ms ease-in-out)
+      // +transition(all 250ms ease-in-out)
       background: tint($header-background-color, 8%)
       color: shade($header-background-color, 50%)
     +breakpoint(medium)
@@ -102,7 +108,7 @@
     text-indent: 0
     speak: none
     position: absolute
-    right: $column-gutter/2
+    right: .5rem
     top: 0
   &.active:before
     font-size: 24px
@@ -112,7 +118,7 @@
   pointer-events: none !important
 
 .mask
-  +transition(opacity 300ms ease-in-out)
+  // +transition(opacity 300ms ease-in-out)
   background: rgba(0,0,0, .5)
   visibility: hidden
   position: fixed
@@ -157,7 +163,7 @@ h1.logo
     color: tint($header-background-color, 80%)
     font-weight: 400
     &:hover
-      +transition(all 200ms ease-in-out)
+      // +transition(all 200ms ease-in-out)
       color: tint($header-background-color, 20%)
 
 @font-face

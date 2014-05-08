@@ -1,13 +1,12 @@
 {
   "name": "hexo",
-  "version": "2.4.5",
+  "version": "2.5.2",
   "private": true,
   "dependencies": {
     "hexo-generator-feed": "*",
     "hexo-livereload": "*",
     "hexo-renderer-coffeescript": "*",
     "hexo-renderer-jade": "*",
-    "hexo-renderer-ruby-sass": "*",
     "hexo-generator-optimize": "*"
   }
 }

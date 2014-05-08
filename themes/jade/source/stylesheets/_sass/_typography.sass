@@ -1,0 +1,114 @@
+// Type
+$body-font-family: 'Helvetica Neue', Helvetica, sans-serif
+$body-font-color: gray(10)
+$header-font-family: $body-font-family
+$header-font-color: $body-font-color
+
+body
+  font-family: $body-font-family
+  font-weight: normal
+  font-style: normal
+  color: $body-font-color
+  line-height: 1.5rem
+  font-weight: 400
+
+
+h1,h2,h3,h4,h5,h6
+  font-family: $header-font-family
+  font-weight: bold
+  color: $header-font-color
+
+h1
+  font-size: 2rem
+  line-height: 2.5rem
+  +breakpoint(medium)
+    font-size: 4rem
+    line-height: 5rem
+  +breakpoint(large)
+    font-size: 6rem
+    line-height: 8rem
+  a
+    text-decoration: none
+
+h2
+  font-size: 1.5rem
+  line-height: 2rem
+  +breakpoint(medium)
+    font-size: 2rem
+    line-height: 2.5rem
+  +breakpoint(large)
+    font-size: 3rem
+    line-height: 3.5rem
+
+h3
+  font-size: 1.25rem
+  line-height: 1.5rem
+  +breakpoint(medium)
+    font-size: 1.5rem
+    line-height: 2rem
+
+p, h4, h5, h6, dl, ol, ul, blockquote, cite
+  font-size: 1.125rem
+  line-height: 1.5rem
+  +breakpoint(medium)
+    font-size: 1.25rem
+    line-height: 2rem
+
+small
+  font-size: .875rem
+  line-height: 1.5rem
+  +breakpoint(medium)
+    font-size: 1rem
+
+a
+  color: $color1
+  text-decoration: underline
+  line-height: inherit
+  &:hover, &:focus
+    color: tint($color1, 15)
+    cursor: pointer
+  img
+    border: none
+
+hr
+  border: solid gray(20)
+  border-width: 1 0 0
+  clear: both
+  margin: 1rem 0
+  height: 0
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td
+  margin: 0
+  padding: 0
+
+em, i
+  font-style: italic
+  line-height: inherit
+
+strong, b
+  font-weight: bold
+  line-height: inherit
+
+ul, ol
+  margin-bottom: 1rem
+  margin-left: .5rem
+
+abbr, acronym
+  text-transform: uppercase
+  font-size: 90%
+  color: $body-font-color
+  border-bottom: 1px dotted gray(50)
+  cursor: help
+
+blockquote
+  margin: 0 0 rem(20)
+  padding-left: 1rem 
+  border-left: 1px gray(50)
+  cite
+    display: block
+    color: $body-font-color
+    &:before
+      content: "\2014 \0020"
+    a,
+    a:visited
+      color: $color1

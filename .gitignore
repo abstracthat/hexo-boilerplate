@@ -5,3 +5,4 @@ debug.log
 .sass-cache/
 themes/jade/source/vendor/
 public/
+themes/jade/source/stylesheets/app.css

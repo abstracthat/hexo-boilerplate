@@ -7,17 +7,35 @@ html(lang='en')
   head
     include _partial/head
   body(class=bodyclass)
-    +header('fixed')
-    div(role="main")
-      article
-        block content        
-    block footer
-      footer
-        nav
-          p &copy; #{config.yearStarted} &ndash; #{ new Date().getFullYear() } <strong>#{ config.title }</strong>
-          ul
-            each link, name in theme.footerMenu
-              li: a(href=link)=name
+    section
+      header: h1 header
+      article: p This is a great article.
+        section
+          div: p div section
+          div: p div section
+          div: p div section
+          div: p div section
+          div: p div section
+          div: p div section
+          div: p div section
+          div: p div section
+        section
+          .feature: p feature
+          .feature: p feature
+      aside: p aside sidebar
+    footer: p footer
 
-    block scripts
-      !=js(theme.scripts)
+    //- +header('fixed')
+    //- div(role="main")
+    //-   article
+    //-     block content        
+    //- block footer
+    //-   footer
+    //-     nav
+    //-       p &copy; #{config.yearStarted} &ndash; #{ new Date().getFullYear() } <strong>#{ config.title }</strong>
+    //-       ul
+    //-         each link, name in theme.footerMenu
+    //-           li: a(href=link)=name
+
+    //- block scripts
+    //-   !=js(theme.scripts)

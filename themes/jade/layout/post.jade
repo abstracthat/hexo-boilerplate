@@ -4,14 +4,14 @@ block vars
   - var bodyclass = page.layout;
 
 block content
-  h2= page.title
+  h1= page.title
   div.meta
     time(datetime= date_xml(page.date))= date(page.date)
     if page.tags
       h6 Tags: 
       //- This is not working correctly... ideas?
       ul.tags
-        each tag in page.tags
+        each tag in page.tags.toArray()
           li= tag
     if page.author
       h6 Written by #{page.author}

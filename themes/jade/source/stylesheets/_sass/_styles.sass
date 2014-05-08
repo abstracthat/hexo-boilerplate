@@ -1,0 +1,25 @@
++edit()
+
+
+body
+  background: gray(80)
+  +center(800px, $pad: 1rem)
+header
+  background: $color1
+  text-align: center
+  color: white
+  padding: 1rem
+
+section
+  +cf
+
+article
+  +column(2/3)
+  div
+    +col(1/3, $cycle: 3)
+  .feature
+    +col(1/2)
+aside
+  +column(1/3)
+footer
+  +center(800px)

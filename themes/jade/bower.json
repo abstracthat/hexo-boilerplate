@@ -7,10 +7,9 @@
     "vendor"
   ],
   "devDependencies": {
-    "scut": "~0.9.1",
-    "bourbon": "~3.1.8",
-    "foundation": "~5.1.1",
-    "responsive-nav": "~1.0.31",
-    "color-schemer": "~0.2.8"
+    "scut": "*",
+    "bourbon": "*",
+    "foundation": "*",
+    "responsive-nav": "*"
   }
 }

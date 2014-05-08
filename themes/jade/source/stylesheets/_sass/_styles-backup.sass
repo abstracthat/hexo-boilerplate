@@ -2,28 +2,26 @@ body
   +linear-gradient(gray(82), gray(92))
 
 header div
-  +grid-row
+  +center($site-width)
 
-section
-  +grid-row
+// section
 
 [role="main"]
-  +grid-row
+  +center($site-width, $pad: 1rem)
   background: #fff
 
 article
-  +grid-column
-  padding-top: $column-gutter/2
-  padding-bottom: $column-gutter/2
+  // padding-top: $column-gutter/2
+  // padding-bottom: $column-gutter/2
   +breakpoint(medium)
-    +grid-column(9, $center:true)
+    +column(3/4)
   color: gray(25)
   button
     +button
 
 footer
-  +grid-row
-  +scut-padding(.5rem $column-gutter/2)
+  // +grid-row
+  +scut-padding(.5rem)
   // background-color: darken($header-background-color, 20%)
   // border-top: rem(5) solid shade($header-background-color, 20%)
   nav
@@ -52,7 +50,7 @@ footer
         padding: 0
       a
         color: shade($header-background-color, 20%)
-        +transition(all 250ms ease-in-out)
+        // +transition(all 250ms ease-in-out)
     +breakpoint(medium)
       +scut-list-divided("|", 1rem)
       float: right

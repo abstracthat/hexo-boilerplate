@@ -1,11 +1,12 @@
 extends base
 
 block content
+  
 
-  ul.article-list
-    each article in site.posts.toArray()
-      li: article
-          h2: a(href=config.root + article.path)= article.title
-          div.meta
+  //- ul.articles
+  //-   each article in site.posts.toArray()
+  //-     li: article
+  //-         h2: a(href=config.root + article.path)= article.title
+  //-         div.meta
 
-  include _partial/article_list_pagination
+  //- include _partial/article_list_pagination
