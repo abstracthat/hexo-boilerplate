@@ -3,7 +3,7 @@
 
 # Site
 url: http://yoursite.com
-type: single # single, mini, big
+type: mini # single, mini, big
 title: Boilerplate Site Title
 seo_meta_description:
 year_started: 2013

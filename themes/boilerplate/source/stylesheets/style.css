@@ -719,7 +719,10 @@ article {
       padding-right: 0;
       width: 79.4%;
       margin-left: 10.3%;
-      margin-right: 3%; }
+      margin-right: 3%;
+      -webkit-transition: all 300ms ease-in-out;
+      -moz-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out; }
       /* line 186, _sass/_grid.sass */
       article:before, article:after {
         content: "";
@@ -742,7 +745,10 @@ article {
       padding-right: 0;
       width: 65.66667%;
       margin-left: 17.16667%;
-      margin-right: 3%; }
+      margin-right: 3%;
+      -webkit-transition: all 300ms ease-in-out;
+      -moz-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out; }
       /* line 186, _sass/_grid.sass */
       article:before, article:after {
         content: "";
@@ -754,37 +760,50 @@ article {
       article:last-child {
         margin-right: 0%; } }
 
-/* line 29, _sass/_styles.sass */
-header.logo {
+/* line 31, _sass/_styles.sass */
+header.main {
   background-color: #008cba;
   -webkit-tap-highlight-color: transparent;
-  padding: 1rem;
-  text-align: center; }
-  /* line 34, _sass/_styles.sass */
-  header.logo a {
-    font-size: 70%;
+  margin-top: 0;
+  line-height: 150%;
+  padding: 0.5rem 1rem 1rem;
+  *zoom: 1; }
+  /* line 186, _sass/_grid.sass */
+  header.main:before, header.main:after {
+    content: "";
+    display: table; }
+  /* line 189, _sass/_grid.sass */
+  header.main:after {
+    clear: both; }
+  /* line 38, _sass/_styles.sass */
+  header.main h1 {
+    margin-top: 0;
+    font-size: 180%; }
+  /* line 41, _sass/_styles.sass */
+  header.main a {
+    float: left;
     color: #e5f3f8;
     font-weight: 700; }
-    /* line 38, _sass/_styles.sass */
-    header.logo a:hover {
+    /* line 46, _sass/_styles.sass */
+    header.main a:hover {
       -webkit-transition: all 200ms ease-in-out;
       -moz-transition: all 200ms ease-in-out;
       transition: all 200ms ease-in-out;
       color: #b2dcea; }
 
-/* line 47, _sass/_styles.sass */
+/* line 55, _sass/_styles.sass */
 h1.headline {
   margin-bottom: 0;
   text-align: center; }
 
-/* line 51, _sass/_styles.sass */
+/* line 59, _sass/_styles.sass */
 h3.subheading {
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
   font-weight: normal;
   text-align: center; }
 
-/* line 57, _sass/_styles.sass */
+/* line 65, _sass/_styles.sass */
 button {
   border: 1px solid #00259f;
   border-bottom: 1px solid #001576;
@@ -818,7 +837,7 @@ button {
     opacity: 0.5;
     cursor: not-allowed; }
 
-/* line 62, _sass/_styles.sass */
+/* line 70, _sass/_styles.sass */
 .video {
   position: relative;
   padding-top: 1.5625rem;
@@ -897,3 +916,169 @@ footer {
         float: right;
         display: inline-block;
         text-align: left; } }
+
+/* =============================================
+ *
+ *   FIXED RESPONSIVE NAV
+ *
+ *   (c) 2014 @adtileHQ
+ *   http://www.adtile.me
+ *   http://twitter.com/adtilehq
+ *
+ *   Free to use under the MIT License.
+ *
+ * ============================================= */
+/* line 19, _sass/_navigation.sass */
+nav.main-menu {
+  margin: 0;
+  width: 100%; }
+  /* line 22, _sass/_navigation.sass */
+  nav.main-menu ul {
+    margin: 0.3rem 0 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    float: left; }
+  /* line 30, _sass/_navigation.sass */
+  nav.main-menu li {
+    width: 100%;
+    display: inline-block; }
+    /* line 34, _sass/_navigation.sass */
+    nav.main-menu li:last-child {
+      border-bottom: 1px solid #007ea7; }
+    @media only screen and (min-width: 43.8125rem) {
+      /* line 30, _sass/_navigation.sass */
+      nav.main-menu li {
+        width: auto; }
+        /* line 38, _sass/_navigation.sass */
+        nav.main-menu li:last-child {
+          border-bottom: none; } }
+  /* line 40, _sass/_navigation.sass */
+  nav.main-menu a {
+    -webkit-tap-highlight-color: transparent;
+    border-top: 1px solid #007ba3;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #cce8f1;
+    width: 100%;
+    float: left; }
+    /* line 48, _sass/_navigation.sass */
+    nav.main-menu a.active, .active nav.main-menu a {
+      color: #00465d; }
+    /* line 50, _sass/_navigation.sass */
+    nav.main-menu a:hover {
+      color: #00465d;
+      -webkit-transition: all 250ms ease-in-out;
+      -moz-transition: all 250ms ease-in-out;
+      transition: all 250ms ease-in-out; }
+    @media only screen and (min-width: 43.8125rem) {
+      /* line 40, _sass/_navigation.sass */
+      nav.main-menu a {
+        padding: 0 1rem;
+        vertical-align: middle;
+        border-bottom: 4px solid #7fc5dc;
+        border-top: 0;
+        padding: 0;
+        float: left;
+        margin: 0; }
+        /* line 61, _sass/_navigation.sass */
+        nav.main-menu a:hover {
+          border-bottom: 4px solid #00465d; } }
+  /* line 63, _sass/_navigation.sass */
+  nav.main-menu.opened {
+    max-height: 9999px; }
+  /* line 65, _sass/_navigation.sass */
+  .js nav.main-menu {
+    clip: rect(0 0 0 0);
+    max-height: 0;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+    position: relative; }
+    /* line 73, _sass/_navigation.sass */
+    .js nav.main-menu.closed {
+      max-height: none; }
+  @media only screen and (min-width: 43.8125rem) {
+    /* line 19, _sass/_navigation.sass */
+    nav.main-menu {
+      float: right;
+      width: auto; } }
+
+/* line 79, _sass/_navigation.sass */
+.nav-toggle {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-decoration: none;
+  text-indent: -18.75rem;
+  position: absolute;
+  top: 0.3rem;
+  right: 0.5rem;
+  overflow: hidden;
+  width: 3.75rem;
+  float: right;
+  font-size: 1.875rem; }
+  @media only screen and (min-width: 43.8125rem) {
+    /* line 79, _sass/_navigation.sass */
+    .nav-toggle {
+      display: none; } }
+  /* line 100, _sass/_navigation.sass */
+  .nav-toggle:before {
+    color: #b2dcea;
+    font-family: "responsivenav";
+    text-transform: none;
+    text-align: center;
+    content: "\2261";
+    text-indent: 0;
+    speak: none;
+    position: absolute;
+    right: 0.5rem;
+    top: 0; }
+  /* line 111, _sass/_navigation.sass */
+  .nav-toggle.active:before {
+    font-size: 24px;
+    content: "\78"; }
+
+/* line 115, _sass/_navigation.sass */
+.disable-pointer-events {
+  pointer-events: none !important; }
+
+/* line 118, _sass/_navigation.sass */
+.mask {
+  background: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  position: fixed;
+  opacity: 0;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0; }
+  /* line 129, _sass/_navigation.sass */
+  .android .mask {
+    -webkit-transition: none;
+    transition: none; }
+  /* line 132, _sass/_navigation.sass */
+  .js-nav-active .mask {
+    visibility: visible;
+    opacity: 1; }
+  @media only screen and (min-width: 43.8125rem) {
+    /* line 118, _sass/_navigation.sass */
+    .mask {
+      display: none !important;
+      opacity: 0 !important; } }
+
+@font-face {
+  font-family: "responsivenav";
+  src: url("../../fonts/responsivenav.eot");
+  src: url("../../fonts/responsivenav.eot?#iefix") format("embedded-opentype"), url("../../fonts/responsivenav.ttf") format("truetype"), url("../../fonts/responsivenav.woff") format("woff"), url("../../fonts/responsivenav.svg#responsivenav") format("svg");
+  font-weight: normal;
+  font-style: normal; }

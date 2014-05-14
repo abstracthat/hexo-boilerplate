@@ -1,5 +1,5 @@
-$header-height: rem(60)
-$small-header-height: $header-height/1.5
+// $header-height: rem(60)
+// $small-header-height: $header-height/1.5
 $header-background-color: $color1
 
 
@@ -16,51 +16,50 @@ $header-background-color: $color1
  * ============================================= */
 
 // body > nav:first-child
-.main-menu
+nav.main-menu
+  margin: 0
   width: 100%
   ul
-    margin: 0
+    margin: .3rem 0 0
     padding: 0
     width: 100%
-    display: block
+    height: 100%
+    display: inline-block
     float: left
-    background: shade($header-background-color, 5%)
+    // background: shade($header-background-color, 5%)
   li
     width: 100%
     display: inline-block
-    float: left
+    // float: left
     &:last-child
       border-bottom: 1px solid shade($header-background-color, 10%)
     +breakpoint(medium)
       width: auto
       &:last-child
         border-bottom: none
-        border-right: 2px solid shade($header-background-color, 12%)
   a
     -webkit-tap-highlight-color: rgba(0,0,0,0)
     border-top: 1px solid shade($header-background-color, 12%)
     text-decoration: none
-    background: shade($header-background-color, 4%)
-    color: tint($header-background-color, 65%)
+    font-size: 1rem
+    color: tint($header-background-color, 80%)
     width: 100%
     float: left
-    line-height: $small-header-height
-    padding: 0 .5rem
     &.active, .active &
       color: shade($header-background-color, 50%)
-      background: tint($header-background-color, 10%)
     &:hover
-      // +transition(all 250ms ease-in-out)
-      background: tint($header-background-color, 8%)
       color: shade($header-background-color, 50%)
+      +transition(all 250ms ease-in-out)
     +breakpoint(medium)
-      line-height: $header-height
+      padding: 0 1rem
       vertical-align: middle
-      border-left: 2px solid shade($header-background-color, 12%)
-      text-align: center
+      border-bottom: 4px solid tint($header-background-color, 50%)
       border-top: 0
+      padding: 0
       float: left
       margin: 0
+      &:hover
+        border-bottom: 4px solid shade($header-background-color, 50%)
   &.opened
     max-height: 9999px
   .js &
@@ -90,11 +89,10 @@ $header-background-color: $color1
   text-decoration: none
   text-indent: rem(-300)
   position: absolute
-  top: 0
-  right: 0
+  top: .3rem
+  right: .5rem
   overflow: hidden
   width: rem(60)
-  line-height: $small-header-height
   float: right
   font-size: rem(30)
   +breakpoint(medium)

@@ -9,7 +9,14 @@ include _partial/head
   body(class=bodyclass)
     block header
       if config.type != 'single'
-        +header
+        header.main
+          h1: a(href=config.root)= config.title
+          nav.main-menu
+            ul
+              each link, name in config.menu
+                //- This is not working to set .active for the page. It should also check is_post for /blog/*
+                //- - var current = is_current(link) ? 'active' : null;
+                li: a(href=link, class= current)= name
     block main-container
       div(role="main")
         block content
