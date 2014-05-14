@@ -6,8 +6,8 @@
 
 It's optimized to deploy:
 - a **single** page site
-- a **mini** five page site
-- or a **big** site with one or more category structures (could be a blog, news, articles, etc) and optionally tags
+- a **mini** five page site (to-do)
+- or a **big** site with one or more category structures (could be a blog, news, articles, etc) and optionally tags (to-do)
 
 > Modular, organized code structure. Style without too much.
 
