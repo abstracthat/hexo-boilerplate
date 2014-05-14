@@ -1,27 +1,18 @@
 # Hexo Configuration
-## Docs: http://zespia.tw/hexo/docs/configuration.html
-## Source: https://github.com/tommy351/hexo/
+## Docs: http://hexo.io/docs/configuration.html
 
 # Site
-title: Boilerplate Site Title
-subtitle: 
-description:
-author:
-email:
-language:
-year_started: 2013
-
-# URL
-## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
-root: /
-permalink: :title/
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
+type: # single, mini, big
+title: Boilerplate Site Title
+seo_meta_description:
+year_started: 2013
+email: # optional, used on terms, and privacy pages
+author: # not currently used in template
+root: / # If subdirectory, url: http://yoursite.com/child and root: /child/
+google_analytics:
 
-# Theme hooks
+# Menu
 menu:
   Page Name: /page/
   Blog: /blog/
@@ -30,45 +21,45 @@ footerMenu:
   Terms of Use: /terms/
   # Google+: 
 
+# Blog
+permalink: :title/
+tag_dir: tags
+category_dir: categories
+disqus_shortname:
+rss:
 excerpt_link: Read More
 
-google_analytics:
-rss:
-google_font: Open+Sans:400,700,400italic,700italic
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: MMMM D YYYY
+time_format: H:mm:ss
 
+# Pagination
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 0
+category: 0
+tag: 2
+per_page: 10 # Set per_page to 0 to disable pagination
+pagination_dir: page
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Design
+google_font: Open+Sans:400,700,400italic,700italic
 css:
   - 'stylesheets/style.css'
-
 headScripts:
   - 'scripts/responsive-nav.js'
-
 scripts:
   - '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'
-  # - '/vendor/jquery-placeholder/jquery.placeholder.js'
   - 'scripts/fastclick.js'
-  # - '/vendor/foundation/js/foundation/foundation.js'
-  # - '/vendor/foundation/js/foundation/foundation.abide.js'
-  # - '/vendor/foundation/js/foundation/foundation.accordion.js'
-  # - '/vendor/foundation/js/foundation/foundation.alert.js'
-  # - '/vendor/foundation/js/foundation/foundation.clearing.js'
-  # - '/vendor/foundation/js/foundation/foundation.dropdown.js'
-  # - '/vendor/foundation/js/foundation/foundation.equalizer.js'
-  # - '/vendor/foundation/js/foundation/foundation.interchange.js'
-  # - '/vendor/foundation/js/foundation/foundation.joyride.js'
-  # - '//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js'
-  # - '/vendor/foundation/js/foundation/foundation.magellan.js'
-  # - '/vendor/foundation/js/foundation/foundation.offcanvas.js'
-  # - '/vendor/foundation/js/foundation/foundation.orbit.js'
-  # - '/vendor/foundation/js/foundation/foundation.reveal.js'
-  # - '/vendor/foundation/js/foundation/foundation.tab.js'
-  # - '/vendor/foundation/js/foundation/foundation.tooltip.js'
-  # - '/vendor/foundation/js/foundation/foundation.topbar.js'
   - 'scripts/app.js'
   - 'scripts/fixed-responsive-nav.js'
-
-# Directory
-source_dir: source
-public_dir: public
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -86,51 +77,11 @@ highlight:
   line_number: true
   tab_replace:
 
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
-
-# Archives
-## 2: Enable pagination
-## 1: Disable pagination
-## 0: Fully Disable
-archive: 0
-category: 0
-tag: 2
-
-# Server
-## Hexo uses Connect as a server
-## You can customize the logger format as defined in
-## http://www.senchalabs.org/connect/logger.html
-port: 4000
-logger: false
-logger_format:
-
-# Date / Time format
-## Hexo uses Moment.js to parse and display date
-## You can customize the date format as defined in
-## http://momentjs.com/docs/#/displaying/format/
-date_format: MMMM D YYYY
-time_format: H:mm:ss
-
-# Pagination
-## Set per_page to 0 to disable pagination
-per_page: 10
-pagination_dir: page
-
-# Disqus
-disqus_shortname:
-
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
-theme: jade
+theme: boilerplate
 exclude_generator:
-
-# Ruby Sass Renderer Options
-ruby_sass:
-  arguments: [--compass]
 
 # Markdown
 ## https://github.com/chjj/marked
@@ -142,6 +93,18 @@ markdown:
   breaks: true
   smartLists: true
   smartypants: true
+
+# Hexo input and output folders
+source_dir: source
+public_dir: public
+
+# Server
+## Hexo uses Connect as a server
+## You can customize the logger format as defined in
+## http://www.senchalabs.org/connect/logger.html
+port: 4000
+logger: false
+logger_format:
 
 # Deployment
 ## Docs: http://zespia.tw/hexo/docs/deployment.html

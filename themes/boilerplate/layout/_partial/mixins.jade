@@ -1,0 +1,13 @@
+mixin main-menu
+  nav.main-menu
+    ul
+      each link, name in config.menu
+        //- This is not working to set .active for the page. It should also check is_post for /blog/*
+        //- - var current = is_current(link) ? 'active' : null;
+        li: a(href=link, class= current)= name
+
+mixin header(header)
+  header(class=header)
+    div
+      h1.logo: a(href=config.root)= config.title
+      +main-menu
