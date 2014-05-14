@@ -91,7 +91,7 @@ $header-background-color: $color1
   text-indent: rem(-300)
   position: absolute
   top: 0
-  right: rem(-15)
+  right: 0
   overflow: hidden
   width: rem(60)
   line-height: $small-header-height
@@ -137,34 +137,6 @@ $header-background-color: $color1
   +breakpoint(medium)
     display: none !important
     opacity: 0 !important
-
-+fixed-header
-
-header
-  background-color: $header-background-color
-  height: $small-header-height
-  +breakpoint(medium)
-    height: $header-height
-
-h1.logo
-  -webkit-tap-highlight-color: rgba(0,0,0,0)
-  text-decoration: none
-  line-height: $small-header-height
-  font-size: rem(22)
-  +breakpoint(medium)
-    line-height: $header-height
-    font-size: rem(26)
-  float: left
-  margin: 0
-  padding-left: rem(15)
-  +breakpoint(large)
-    padding-left: 0
-  a
-    color: tint($header-background-color, 80%)
-    font-weight: 400
-    &:hover
-      // +transition(all 200ms ease-in-out)
-      color: tint($header-background-color, 20%)
 
 @font-face
   font-family: "responsivenav"

@@ -1,8 +1,8 @@
 // Type
 $body-font-family: 'Helvetica Neue', Helvetica, sans-serif
-$body-font-color: gray(10)
+$body-font-color: gray(35)
 $header-font-family: $body-font-family
-$header-font-color: $body-font-color
+$header-font-color: gray(15)
 
 body
   font-family: $body-font-family
@@ -12,21 +12,26 @@ body
   line-height: 1.5rem
   font-weight: 400
 
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td
+  margin: 0
+  padding: 0
 
 h1,h2,h3,h4,h5,h6
   font-family: $header-font-family
   font-weight: bold
   color: $header-font-color
+  margin-top: 1.35rem
 
 h1
   font-size: 2rem
-  line-height: 2.5rem
+  line-height: 2.25rem
+  margin-bottom: 1rem
   +breakpoint(medium)
-    font-size: 4rem
-    line-height: 5rem
+    font-size: 3rem
+    line-height: 3.375rem
   +breakpoint(large)
-    font-size: 6rem
-    line-height: 8rem
+    font-size: 4rem
+    line-height: 4.5rem
   a
     text-decoration: none
 
@@ -48,11 +53,25 @@ h3
     line-height: 2rem
 
 p, h4, h5, h6, dl, ol, ul, blockquote, cite
+  margin-top: 1.125rem
   font-size: 1.125rem
-  line-height: 1.5rem
+  line-height: 2rem
   +breakpoint(medium)
-    font-size: 1.25rem
+    font-size: 1.125rem
     line-height: 2rem
+
+p
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  -ms-hyphens: auto
+  hyphens: auto
+
+h1, h2, h3 
+  & + p
+    margin-top: .3rem
+
+article p:first-of-type
+  margin-top: 0
 
 small
   font-size: .875rem
@@ -77,10 +96,6 @@ hr
   margin: 1rem 0
   height: 0
 
-div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, th, td
-  margin: 0
-  padding: 0
-
 em, i
   font-style: italic
   line-height: inherit
@@ -90,8 +105,12 @@ strong, b
   line-height: inherit
 
 ul, ol
+  margin-top: 0
   margin-bottom: 1rem
   margin-left: .5rem
+
+li
+  margin-left: .7rem
 
 abbr, acronym
   text-transform: uppercase

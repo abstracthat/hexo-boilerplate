@@ -1,5 +1,17 @@
 extends base
 
+block header
+
 block content
-  h1= page.title
-  != page.content
+  if page.title
+    h1.headline=page.title
+  if page.subheading
+    h3.subheading=page.subheading
+  article
+    if page.video
+      .video
+        iframe(width="640" height="390" src="//www.youtube.com/embed/#{page.video}" frameborder="0" allowfullscreen)
+    if page.button
+      a(href="#{page.button_link}" rel="nofollow"): button=page.button
+
+    != page.content

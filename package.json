@@ -8,6 +8,7 @@
     "hexo-renderer-coffeescript": "*",
     "hexo-renderer-jade": "*",
     "hexo-generator-optimize": "*",
-    "jeet": "~5.2.8"
+    "jeet": "~5.2.8",
+    "marked": "~0.3.2"
   }
 }

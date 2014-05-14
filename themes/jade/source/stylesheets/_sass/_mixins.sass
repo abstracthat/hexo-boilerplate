@@ -18,5 +18,23 @@
     top: 0
   [role="main"]
     margin-top: $small-header-height !important
-    @media #{$medium-up}
+    +breakpoint(medium)
       margin-top: $header-height !important
+
+=flex-video-container
+  position: relative
+  padding-top: rem(25)
+  padding-bottom: 56.34%
+  height: 0
+  margin-top: 1rem
+  margin-bottom: 1.5rem
+  overflow: hidden
+  iframe,
+  object,
+  embed,
+  video
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%

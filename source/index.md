@@ -1,10 +1,13 @@
-title: Another Example Post
-date: 2014-03-17 11:58:30
-tags: Markdown
+title: Headline for Page Here
+subheading: The Even More Enticing Subheading Goes Here
+video: tntOCGkgt98
+button: Click Here to Do This Now
+button_link: http://secured-link.com/
+layout: page
 ---
 This note demonstrates some of what [Markdown][1] is capable of doing.
 
-*Note: Feel free to play with this page. Unlike regular notes, this doesn't automatically save itself.*
+*Note: Feel free to play with this page.*
 
 <!-- more -->
 
@@ -74,7 +77,8 @@ It's sometimes handy for breaking things up.
 
 ## Images
 
-Markdown can also contain images. I'll need to add something here sometime.
+Markdown can also contain images.
+![Barn](/assets/barn.jpg "It is a barn")
 
 ## Finally
 

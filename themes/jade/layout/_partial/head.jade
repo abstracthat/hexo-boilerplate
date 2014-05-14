@@ -17,19 +17,19 @@ block head
     if config.author
       meta(name='author', content=config.author)
     if is_home(page.url)
-      != open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus})
+      != open_graph({twitter_id: config.twitter, google_plus: config.google_plus})
 
   block link
-    link(rel='alternate', href=theme.rss ? theme.rss : config.root + 'atom.xml', title='config.title', type='application/atom.xml')
+    link(rel='alternate', href=config.rss ? config.rss : config.root + 'atom.xml', title='config.title', type='application/atom.xml')
     link(rel="shortcut icon", href="ico/favicon.ico")
     each size in [144,114,72,57]
       link(rel="apple-touch-icon", sizes="#{size}x#{size}", href="/ico/apple-touch-icon-#{size}.png")  
   //- HTML5 Shim
   //if lt IE 9
     script(async src="http://html5shim.googlecode.com/svn/trunk/html5.js")
-  if theme.google_font
-    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=#{theme.google_font}')
+  if config.google_font
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=#{config.google_font}')
   block headStyles
-    !=css(theme.css)
+    !=css(config.css)
   block headScripts
-    !=js(theme.headScripts)
+    !=js(config.headScripts)

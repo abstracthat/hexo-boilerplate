@@ -9,6 +9,7 @@
   "devDependencies": {
     "scut": "*",
     "bourbon": "*",
+    "modularized-normalize-scss": "~3.0.1",
     "jquery": "*",
     "fastclick": "*",
     "responsive-nav": "*"

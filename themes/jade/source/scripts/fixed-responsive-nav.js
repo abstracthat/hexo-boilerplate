@@ -25,7 +25,7 @@
 
       // Close the navigation when it's tapped
       closeOnNavClick: true,
-      navClass: ".main-menu"
+      navClass: "main-menu"
     });
 
     // Create a Mask
