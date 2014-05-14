@@ -7,7 +7,5 @@ mixin main-menu
         li: a(href=link, class= current)= name
 
 mixin header(header)
-  header(class=header)
-    div
-      h1.logo: a(href=config.root)= config.title
-      +main-menu
+  header.logo(class=header)
+    h1: a(href=config.root)= config.title

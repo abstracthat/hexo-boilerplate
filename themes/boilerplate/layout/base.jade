@@ -8,7 +8,8 @@ html(lang='en')
 include _partial/head
   body(class=bodyclass)
     block header
-      header.logo: h1: a(href=config.root)= config.title
+      if config.type != 'single'
+        +header
     block main-container
       div(role="main")
         block content
@@ -20,7 +21,8 @@ include _partial/head
             | &copy; &nbsp;
             if config.year_started
               | #{config.year_started} &ndash; 
-            | #{ new Date().getFullYear() } #{ config.title }
+            | #{ new Date().getFullYear() } &nbsp;
+            | <a href="#{config.url}">#{ config.title }</a>
           ul
             each link, name in config.footerMenu
               li: a(href=link)=name

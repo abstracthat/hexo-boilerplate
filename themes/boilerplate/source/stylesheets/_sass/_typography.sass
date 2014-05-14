@@ -1,5 +1,5 @@
 // Type
-$body-font-family: 'Helvetica Neue', Helvetica, sans-serif
+$body-font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif
 $body-font-color: gray(35)
 $header-font-family: $body-font-family
 $header-font-color: gray(15)
@@ -42,8 +42,8 @@ h2
     font-size: 2rem
     line-height: 2.5rem
   +breakpoint(large)
-    font-size: 3rem
-    line-height: 3.5rem
+    font-size: 2.5rem
+    line-height: 3.1rem
 
 h3
   font-size: 1.25rem
@@ -69,6 +69,9 @@ p
 h1, h2, h3 
   & + p
     margin-top: .3rem
+  & + hr
+    margin-top: .3rem
+    border-color: $header-font-color
 
 article p:first-of-type
   margin-top: 0
@@ -90,10 +93,9 @@ a
     border: none
 
 hr
-  border: solid gray(20)
-  border-width: 1 0 0
+  border: 1px solid gray(70)
   clear: both
-  margin: 1rem 0
+  margin: 1.25rem 0
   height: 0
 
 em, i
@@ -104,10 +106,15 @@ strong, b
   font-weight: bold
   line-height: inherit
 
-ul, ol
+ul
   margin-top: 0
   margin-bottom: 1rem
   margin-left: .5rem
+
+ol
+  margin-top: 0
+  margin-bottom: 1rem
+  margin-left: 1rem
 
 li
   margin-left: .7rem
@@ -120,9 +127,13 @@ abbr, acronym
   cursor: help
 
 blockquote
-  margin: 0 0 rem(20)
-  padding-left: 1rem 
-  border-left: 1px gray(50)
+  margin: 1.25rem 0
+  padding: 1rem 1.5rem 
+  border-left: 5px $color2 solid
+  font-style: italic
+  font-size: 130%
+  color: tint($body-font-color, 10)
+  background-color: gray(90)
   cite
     display: block
     color: $body-font-color

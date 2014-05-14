@@ -32,11 +32,12 @@ header.logo
   padding: 1rem
   text-align: center
   a
-    color: tint($header-background-color, 80%)
-    font-weight: 400
+    font-size: 70%
+    color: tint($header-background-color, 90%)
+    font-weight: 700
     &:hover
       +transition(all 200ms ease-in-out)
-      color: tint($header-background-color, 20%)
+      color: tint($header-background-color, 70%)
 
 // .feature
 //   background-color: $color6
@@ -48,14 +49,15 @@ h1.headline
   text-align: center
 
 h3.subheading
-  margin-top: 0
+  margin-top: .75rem
+  margin-bottom: .5rem
   font-weight: normal  
   text-align: center
 
 button
   +button(shiny)
   margin-bottom: 1.5rem
-  font-weight: normal
-
+  font-weight: 700
+  padding: 1rem
 .video
   +flex-video-container

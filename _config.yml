@@ -3,13 +3,14 @@
 
 # Site
 url: http://yoursite.com
-type: # single, mini, big
+type: single # single, mini, big
 title: Boilerplate Site Title
 seo_meta_description:
 year_started: 2013
 email: # optional, used on terms, and privacy pages
 author: # not currently used in template
 root: / # If subdirectory, url: http://yoursite.com/child and root: /child/
+disqus_shortname:
 google_analytics:
 
 # Menu
@@ -21,13 +22,19 @@ footerMenu:
   Terms of Use: /terms/
   # Google+: 
 
-# Blog
-permalink: :title/
+# Big
+permalink: :category/:title
 tag_dir: tags
-category_dir: categories
-disqus_shortname:
+category_dir: categories # for uncategorized only
 rss:
-excerpt_link: Read More
+archive: 0 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
+category: 2 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
+tag: 2 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
+per_page: 10 # Set per_page to 0 to disable pagination
+pagination_dir: page
+default_category: uncategorized
+category_map: # category slug
+tag_map: # tag slug
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -35,19 +42,6 @@ excerpt_link: Read More
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: MMMM D YYYY
 time_format: H:mm:ss
-
-# Pagination
-## 2: Enable pagination
-## 1: Disable pagination
-## 0: Fully Disable
-archive: 0
-category: 0
-tag: 2
-per_page: 10 # Set per_page to 0 to disable pagination
-pagination_dir: page
-default_category: uncategorized
-category_map:
-tag_map:
 
 # Design
 google_font: Open+Sans:400,700,400italic,700italic
@@ -62,11 +56,13 @@ scripts:
   - 'scripts/fixed-responsive-nav.js'
 
 # Writing
+excerpt_link: Read More
 new_post_name: :title.md # File name of new posts
 default_layout: post
 auto_spacing: false # Add spaces between asian characters and western characters
 titlecase: false # Transform title into titlecase
 external_link: false # Open external links in new tab
+
 max_open_file: 100
 multi_thread: true
 filename_case: 0

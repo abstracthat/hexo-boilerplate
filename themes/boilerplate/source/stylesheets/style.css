@@ -481,7 +481,7 @@ select {
  * +cf() */
 /* line 7, _sass/_typography.sass */
 body {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #595959;
@@ -495,7 +495,7 @@ div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, t
 
 /* line 19, _sass/_typography.sass */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: bold;
   color: #262626;
   margin-top: 1.35rem; }
@@ -531,8 +531,8 @@ h2 {
   @media only screen and (min-width: 60.0625rem) {
     /* line 38, _sass/_typography.sass */
     h2 {
-      font-size: 3rem;
-      line-height: 3.5rem; } }
+      font-size: 2.5rem;
+      line-height: 3.1rem; } }
 
 /* line 48, _sass/_typography.sass */
 h3 {
@@ -565,62 +565,71 @@ p {
 /* line 70, _sass/_typography.sass */
 h1 + p, h2 + p, h3 + p {
   margin-top: 0.3rem; }
+/* line 72, _sass/_typography.sass */
+h1 + hr, h2 + hr, h3 + hr {
+  margin-top: 0.3rem;
+  border-color: #262626; }
 
-/* line 73, _sass/_typography.sass */
+/* line 76, _sass/_typography.sass */
 article p:first-of-type {
   margin-top: 0; }
 
-/* line 76, _sass/_typography.sass */
+/* line 79, _sass/_typography.sass */
 small {
   font-size: 0.875rem;
   line-height: 1.5rem; }
   @media only screen and (min-width: 43.8125rem) {
-    /* line 76, _sass/_typography.sass */
+    /* line 79, _sass/_typography.sass */
     small {
       font-size: 1rem; } }
 
-/* line 82, _sass/_typography.sass */
+/* line 85, _sass/_typography.sass */
 a {
   color: #008cba;
   text-decoration: underline;
   line-height: inherit; }
-  /* line 86, _sass/_typography.sass */
+  /* line 89, _sass/_typography.sass */
   a:hover, a:focus {
     color: #269dc4;
     cursor: pointer; }
-  /* line 89, _sass/_typography.sass */
+  /* line 92, _sass/_typography.sass */
   a img {
     border: none; }
 
-/* line 92, _sass/_typography.sass */
+/* line 95, _sass/_typography.sass */
 hr {
-  border: solid #333333;
-  border-width: 1 0 0;
+  border: 1px solid #b3b3b3;
   clear: both;
-  margin: 1rem 0;
+  margin: 1.25rem 0;
   height: 0; }
 
-/* line 99, _sass/_typography.sass */
+/* line 101, _sass/_typography.sass */
 em, i {
   font-style: italic;
   line-height: inherit; }
 
-/* line 103, _sass/_typography.sass */
+/* line 105, _sass/_typography.sass */
 strong, b {
   font-weight: bold;
   line-height: inherit; }
 
-/* line 107, _sass/_typography.sass */
-ul, ol {
+/* line 109, _sass/_typography.sass */
+ul {
   margin-top: 0;
   margin-bottom: 1rem;
   margin-left: 0.5rem; }
 
-/* line 112, _sass/_typography.sass */
+/* line 114, _sass/_typography.sass */
+ol {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 1rem; }
+
+/* line 119, _sass/_typography.sass */
 li {
   margin-left: 0.7rem; }
 
-/* line 115, _sass/_typography.sass */
+/* line 122, _sass/_typography.sass */
 abbr, acronym {
   text-transform: uppercase;
   font-size: 90%;
@@ -628,19 +637,23 @@ abbr, acronym {
   border-bottom: 1px dotted gray;
   cursor: help; }
 
-/* line 122, _sass/_typography.sass */
+/* line 129, _sass/_typography.sass */
 blockquote {
-  margin: 0 0 1.25rem;
-  padding-left: 1rem;
-  border-left: 1px gray; }
-  /* line 126, _sass/_typography.sass */
+  margin: 1.25rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 5px #b3b3b3 solid;
+  font-style: italic;
+  font-size: 130%;
+  color: dimgray;
+  background-color: #e6e6e6; }
+  /* line 137, _sass/_typography.sass */
   blockquote cite {
     display: block;
     color: #595959; }
-    /* line 129, _sass/_typography.sass */
+    /* line 140, _sass/_typography.sass */
     blockquote cite:before {
       content: "\2014 \0020"; }
-    /* line 131, _sass/_typography.sass */
+    /* line 142, _sass/_typography.sass */
     blockquote cite a,
     blockquote cite a:visited {
       color: #008cba; }
@@ -749,27 +762,29 @@ header.logo {
   text-align: center; }
   /* line 34, _sass/_styles.sass */
   header.logo a {
-    color: #cce8f1;
-    font-weight: 400; }
-    /* line 37, _sass/_styles.sass */
+    font-size: 70%;
+    color: #e5f3f8;
+    font-weight: 700; }
+    /* line 38, _sass/_styles.sass */
     header.logo a:hover {
       -webkit-transition: all 200ms ease-in-out;
       -moz-transition: all 200ms ease-in-out;
       transition: all 200ms ease-in-out;
-      color: #33a3c7; }
+      color: #b2dcea; }
 
-/* line 46, _sass/_styles.sass */
+/* line 47, _sass/_styles.sass */
 h1.headline {
   margin-bottom: 0;
   text-align: center; }
 
-/* line 50, _sass/_styles.sass */
+/* line 51, _sass/_styles.sass */
 h3.subheading {
-  margin-top: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
   font-weight: normal;
   text-align: center; }
 
-/* line 55, _sass/_styles.sass */
+/* line 57, _sass/_styles.sass */
 button {
   border: 1px solid #00259f;
   border-bottom: 1px solid #001576;
@@ -787,7 +802,8 @@ button {
   text-decoration: none;
   text-shadow: 0 -1px 1px #00077e;
   margin-bottom: 1.5rem;
-  font-weight: normal; }
+  font-weight: 700;
+  padding: 1rem; }
   /* line 204, _vendor/bourbon/dist/addons/_button.scss */
   button:hover:not(:disabled) {
     cursor: pointer;
@@ -802,7 +818,7 @@ button {
     opacity: 0.5;
     cursor: not-allowed; }
 
-/* line 60, _sass/_styles.sass */
+/* line 62, _sass/_styles.sass */
 .video {
   position: relative;
   padding-top: 1.5625rem;
