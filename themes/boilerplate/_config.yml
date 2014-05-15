@@ -46,5 +46,5 @@ scripts:
   # - '/vendor/foundation/js/foundation/foundation.tab.js'
   # - '/vendor/foundation/js/foundation/foundation.tooltip.js'
   # - '/vendor/foundation/js/foundation/foundation.topbar.js'
-  - 'scripts/app.js'
+  # - 'scripts/app.js'
   - 'scripts/fixed-responsive-nav.js'
