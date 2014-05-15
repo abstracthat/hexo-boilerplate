@@ -663,10 +663,7 @@ header.main {
   -webkit-tap-highlight-color: transparent;
   line-height: 150%;
   padding: 0.5rem 1rem;
-  *zoom: 1;
-  position: fixed;
-  width: 100%;
-  z-index: 999; }
+  *zoom: 1; }
   header.main:before, header.main:after {
     content: "";
     display: table; }
@@ -699,11 +696,10 @@ header.main {
       -moz-transition: all 200ms ease-in-out;
       transition: all 200ms ease-in-out;
       color: #b2dcea; }
-  @media only screen and (min-width: 43.8125rem) {
-    header.main {
-      position: static;
-      width: auto;
-      z-index: auto; } }
+  .js-nav-active header.main {
+    position: fixed;
+    width: 100%;
+    z-index: 3; }
 
 h1.headline {
   margin-bottom: 0;
@@ -940,6 +936,9 @@ nav.main-menu {
   pointer-events: none !important; }
 
 .mask {
+  -webkit-transition: opacity 300ms ease-in-out;
+  -moz-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
   background: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   position: fixed;

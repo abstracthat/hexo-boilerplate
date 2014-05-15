@@ -48,13 +48,10 @@ header.main
     &:hover
       +transition(all 200ms ease-in-out)
       color: tint($header-background-color, 70%)
-  position: fixed
-  width: 100%
-  z-index: 999
-  +breakpoint(medium)
-    position: static
-    width: auto
-    z-index: auto
+  .js-nav-active &
+    position: fixed
+    width: 100%
+    z-index: 3
 
 // .feature
 //   background-color: $color6
