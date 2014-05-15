@@ -40,18 +40,6 @@
       document.documentElement.className += " android";
     }
 
-    // Find navigation links and save a reference to them
-    var nav = document.querySelector(".main-menu ul"),
-      links = nav.querySelectorAll("a");
-
-    // Highlight active link on the navigation
-    var selectActiveMenuItem = function (i) {
-      [].forEach.call(links, function (el, i) {
-        links[i].parentNode.className = "";
-      });
-      links[i].parentNode.className = "active";
-    };
-
     // Close navigation when tapping the mask under it
     mask.addEventListener("click", function (e) {
       e.preventDefault();
