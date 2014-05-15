@@ -1,4 +1,4 @@
-// +edit
+// +edit //uncomment to add semi-transparent bg to all elements
 
 $header-height: rem(60)
 $small-header-height: $header-height/1.5
@@ -39,7 +39,10 @@ header.main
     +center($site-width)
   h1
     margin-top: 0
-    font-size: 1.8rem
+    font-size: 1.2rem
+    +breakpoint(medium)
+      font-size: 1.8rem
+
   a
     float: left
     color: tint($header-background-color, 90%)
