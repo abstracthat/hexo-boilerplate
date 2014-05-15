@@ -3,11 +3,12 @@
 $header-height: rem(60)
 $small-header-height: $header-height/1.5
 $header-background-color: $color1
+$content-bg-color: gray(94)
 
 // layout
 
 html
-  +linear-gradient(gray(92), gray(82))
+  +linear-gradient(gray(89), gray(83))
   background-attachment: fixed
 
 body
@@ -15,7 +16,7 @@ body
 
 [role="main"]
   +center($site-width, $pad: 1rem)
-  background: #fff
+  background: $content-bg-color
 
 article
   padding-bottom: 2rem
@@ -31,13 +32,14 @@ article
 header.main
   background-color: $header-background-color
   -webkit-tap-highlight-color: rgba(0,0,0,0)
-  margin-top: 0
   line-height: 150%
-  padding: .5rem 1rem 1rem
+  padding: .5rem 1rem
   +group
+  div
+    +center($site-width)
   h1
     margin-top: 0
-    font-size: 180%
+    font-size: 1.8rem
   a
     float: left
     color: tint($header-background-color, 90%)

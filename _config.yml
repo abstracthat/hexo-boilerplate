@@ -15,8 +15,8 @@ google_analytics:
 
 # Menu
 menu:
-  Page Name: /page/
-  Blog: /blog/
+  Privacy Policy: /privacy/
+  Terms of Use: /terms/
 footerMenu:
   Privacy Policy: /privacy/
   Terms of Use: /terms/

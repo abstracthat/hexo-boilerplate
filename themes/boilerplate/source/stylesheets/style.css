@@ -658,14 +658,14 @@ blockquote {
     blockquote cite a:visited {
       color: #008cba; }
 
-/* line 9, _sass/_styles.sass */
+/* line 10, _sass/_styles.sass */
 html {
-  background-color: #ebebeb;
-  background-image: -webkit-linear-gradient(#ebebeb, #d1d1d1);
-  background-image: linear-gradient(#ebebeb, #d1d1d1);
+  background-color: #e3e3e3;
+  background-image: -webkit-linear-gradient(#e3e3e3, #d4d4d4);
+  background-image: linear-gradient(#e3e3e3, #d4d4d4);
   background-attachment: fixed; }
 
-/* line 13, _sass/_styles.sass */
+/* line 14, _sass/_styles.sass */
 body {
   *zoom: 1;
   width: auto;
@@ -684,7 +684,7 @@ body {
   body:after {
     clear: both; }
 
-/* line 16, _sass/_styles.sass */
+/* line 17, _sass/_styles.sass */
 [role="main"] {
   *zoom: 1;
   width: auto;
@@ -695,7 +695,7 @@ body {
   margin-left: auto;
   padding-left: 1rem;
   padding-right: 1rem;
-  background: white; }
+  background: #f0f0f0; }
   /* line 186, _sass/_grid.sass */
   [role="main"]:before, [role="main"]:after {
     content: "";
@@ -704,11 +704,11 @@ body {
   [role="main"]:after {
     clear: both; }
 
-/* line 20, _sass/_styles.sass */
+/* line 21, _sass/_styles.sass */
 article {
   padding-bottom: 2rem; }
   @media only screen and (min-width: 43.8125rem) {
-    /* line 20, _sass/_styles.sass */
+    /* line 21, _sass/_styles.sass */
     article {
       *zoom: 1;
       float: left;
@@ -734,7 +734,7 @@ article {
       article:last-child {
         margin-right: 0%; } }
   @media only screen and (min-width: 60.0625rem) {
-    /* line 20, _sass/_styles.sass */
+    /* line 21, _sass/_styles.sass */
     article {
       *zoom: 1;
       float: left;
@@ -760,13 +760,12 @@ article {
       article:last-child {
         margin-right: 0%; } }
 
-/* line 31, _sass/_styles.sass */
+/* line 32, _sass/_styles.sass */
 header.main {
   background-color: #008cba;
   -webkit-tap-highlight-color: transparent;
-  margin-top: 0;
   line-height: 150%;
-  padding: 0.5rem 1rem 1rem;
+  padding: 0.5rem 1rem;
   *zoom: 1; }
   /* line 186, _sass/_grid.sass */
   header.main:before, header.main:after {
@@ -776,34 +775,52 @@ header.main {
   header.main:after {
     clear: both; }
   /* line 38, _sass/_styles.sass */
+  header.main div {
+    *zoom: 1;
+    width: auto;
+    max-width: 60rem;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0; }
+    /* line 186, _sass/_grid.sass */
+    header.main div:before, header.main div:after {
+      content: "";
+      display: table; }
+    /* line 189, _sass/_grid.sass */
+    header.main div:after {
+      clear: both; }
+  /* line 40, _sass/_styles.sass */
   header.main h1 {
     margin-top: 0;
-    font-size: 180%; }
-  /* line 41, _sass/_styles.sass */
+    font-size: 1.8rem; }
+  /* line 43, _sass/_styles.sass */
   header.main a {
     float: left;
     color: #e5f3f8;
     font-weight: 700; }
-    /* line 46, _sass/_styles.sass */
+    /* line 48, _sass/_styles.sass */
     header.main a:hover {
       -webkit-transition: all 200ms ease-in-out;
       -moz-transition: all 200ms ease-in-out;
       transition: all 200ms ease-in-out;
       color: #b2dcea; }
 
-/* line 55, _sass/_styles.sass */
+/* line 57, _sass/_styles.sass */
 h1.headline {
   margin-bottom: 0;
   text-align: center; }
 
-/* line 59, _sass/_styles.sass */
+/* line 61, _sass/_styles.sass */
 h3.subheading {
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
   font-weight: normal;
   text-align: center; }
 
-/* line 65, _sass/_styles.sass */
+/* line 67, _sass/_styles.sass */
 button {
   border: 1px solid #00259f;
   border-bottom: 1px solid #001576;
@@ -837,7 +854,7 @@ button {
     opacity: 0.5;
     cursor: not-allowed; }
 
-/* line 70, _sass/_styles.sass */
+/* line 72, _sass/_styles.sass */
 .video {
   position: relative;
   padding-top: 1.5625rem;
@@ -867,8 +884,17 @@ footer {
       padding: 0.5rem 2rem; } }
   /* line 6, _sass/_footer.sass */
   footer nav {
-    margin-top: 1rem;
-    *zoom: 1; }
+    *zoom: 1;
+    width: auto;
+    max-width: 60rem;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    *zoom: 1;
+    margin-top: 1rem; }
     /* line 186, _sass/_grid.sass */
     footer nav:before, footer nav:after {
       content: "";
@@ -876,42 +902,49 @@ footer {
     /* line 189, _sass/_grid.sass */
     footer nav:after {
       clear: both; }
-  /* line 9, _sass/_footer.sass */
+    /* line 186, _sass/_grid.sass */
+    footer nav:before, footer nav:after {
+      content: "";
+      display: table; }
+    /* line 189, _sass/_grid.sass */
+    footer nav:after {
+      clear: both; }
+  /* line 10, _sass/_footer.sass */
   footer p {
     color: #b3b3b3;
     text-align: center;
     display: block;
     margin: 0; }
     @media only screen and (min-width: 43.8125rem) {
-      /* line 9, _sass/_footer.sass */
+      /* line 10, _sass/_footer.sass */
       footer p {
         margin-bottom: 1rem;
         text-align: left;
         display: inline-block;
         float: left; } }
-  /* line 19, _sass/_footer.sass */
+  /* line 20, _sass/_footer.sass */
   footer ul {
     text-align: center;
     list-style: none;
     margin: 0; }
-    /* line 23, _sass/_footer.sass */
+    /* line 24, _sass/_footer.sass */
     footer ul li {
       margin: 0 0.5rem;
       display: inline-block; }
       @media only screen and (min-width: 43.8125rem) {
-        /* line 23, _sass/_footer.sass */
+        /* line 24, _sass/_footer.sass */
         footer ul li {
           margin: 0 1rem;
           border: none;
           padding: 0; } }
-      /* line 30, _sass/_footer.sass */
+      /* line 31, _sass/_footer.sass */
       footer ul li a {
         color: #b3b3b3;
         -webkit-transition: all 250ms ease-in-out;
         -moz-transition: all 250ms ease-in-out;
         transition: all 250ms ease-in-out; }
     @media only screen and (min-width: 43.8125rem) {
-      /* line 19, _sass/_footer.sass */
+      /* line 20, _sass/_footer.sass */
       footer ul {
         float: right;
         display: inline-block;
@@ -938,7 +971,7 @@ nav.main-menu {
     padding: 0;
     width: 100%;
     height: 100%;
-    display: inline-block;
+    display: inline;
     float: left; }
   /* line 30, _sass/_navigation.sass */
   nav.main-menu li {
