@@ -30,9 +30,6 @@ article
 // misc styles
 
 header.main
-  position: fixed
-  width: 100%
-  z-index: 999
   background-color: $header-background-color
   -webkit-tap-highlight-color: rgba(0,0,0,0)
   line-height: 150%
@@ -51,6 +48,13 @@ header.main
     &:hover
       +transition(all 200ms ease-in-out)
       color: tint($header-background-color, 70%)
+  position: fixed
+  width: 100%
+  z-index: 999
+  +breakpoint(medium)
+    position: static
+    width: auto
+    z-index: auto
 
 // .feature
 //   background-color: $color6
