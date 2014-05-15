@@ -762,6 +762,11 @@ article {
 
 /* line 32, _sass/_styles.sass */
 header.main {
+
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+
   background-color: #008cba;
   -webkit-tap-highlight-color: transparent;
   line-height: 150%;
