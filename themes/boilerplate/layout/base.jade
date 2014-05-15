@@ -18,7 +18,6 @@ html(lang='en')
                   //- This is not working to set .active for the page. It should also check is_post for /blog/*
                   - var current = is_current(link + 'index.html') ? 'active' : null;
                   li: a(href=link, class= current)= name
-                  li=page.link
     block main-container
       div(role="main")
         block content
