@@ -1,4 +1,3 @@
-//- 
 //- Category
 //- List pages for one category
 //- Should work with any category mentioned in a pages front-matter.
@@ -12,8 +11,13 @@ block vars
 block content
   header: h1=page.category
   !=page.content
+  ul.tag-list
+    //- each article tag from site for MixItUp filtering
   ul.article-list
     //- query for get posts in category? http://hexo.io/docs/helpers.html#get_posts
+    //- there should be three styles, with frontmatter `feature: primary #or secondary`
+    //- I want to render all of the posts on the page and style them across feature:primary, feature:secondary
+    rest of the posts ordered by time which will be just the title)
     each page in get_posts([query])
       li: article
         h2: a(href=config.root + page.path)= page.title
