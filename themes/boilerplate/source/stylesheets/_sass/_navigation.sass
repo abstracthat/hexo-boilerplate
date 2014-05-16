@@ -17,36 +17,39 @@ $header-background-color: $color1
 
 // body > nav:first-child
 nav.main-menu
-  +transition(opacity 300ms ease-in-out)
-  margin: 0
   width: 100%
+  margin: .6rem 0
+  +transition(all 300ms ease-in-out)
   ul
-    margin: .75rem 0 0
-    padding: 0
+    line-height: 2rem    
     width: 100%
-    height: 100%
     display: inline
     float: left
-  li
-    background: shade($header-background-color, 5%)
-    width: 100%
-    display: inline-block
-    margin-left: 0 !important
-    // float: left
-    +breakpoint(medium)
-      width: auto
+    margin-left: 0
+    border-top: 1px solid shade($header-background-color, 30%)
+    li
+      margin-left: 0
+      background: shade($header-background-color, 5%)
+      width: 100%
+      display: block
+      margin-top: 0
+      +breakpoint(medium)
+        width: auto
   a
+    background: shade($header-background-color, 10%)
+    padding: .75rem
     -webkit-tap-highlight-color: rgba(0,0,0,0)
     text-decoration: none
+    font-weight: 400
     font-size: 1rem
-    color: tint($header-background-color, 80%)
+    color: tint($header-background-color, 60%)
+    border-bottom: 1px solid shade($header-background-color, 30%)
     width: 100%
     float: left
     text-align: center
-    &.active, .active &
+    &.active, .active &, &:hover
       color: shade($header-background-color, 50%)
-    &:hover
-      color: shade($header-background-color, 50%)
+      background: tint($header-background-color, 8%)
       +transition(all 250ms ease-in-out)
     +breakpoint(medium)
       padding: 0 1rem
