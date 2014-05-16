@@ -6,4 +6,4 @@ debug.log
 public/
 style.css
 style.css.map
-themes/jade/source/stylesheets/_vendor/
+themes/boilerplate/source/stylesheets/_vendor/
