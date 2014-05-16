@@ -4,6 +4,6 @@ db.json
 debug.log
 .sass-cache/
 public/
-app.css
-app.css.map
+style.css
+style.css.map
 themes/jade/source/stylesheets/_vendor/

@@ -18,22 +18,28 @@ $header-background-color: $color1
 // body > nav:first-child
 nav.main-menu
   width: 100%
-  margin: .6rem 0
-  +transition(all 300ms ease-in-out)
+  margin: .6rem 0 0
+  +breakpoint(medium)
+    margin: .7rem 1.25rem 0
+  +breakpoint(large)
+    margin-top: 1.25rem
   ul
     line-height: 2rem    
     width: 100%
     display: inline
     float: left
     margin-left: 0
+    margin-bottom: 0
     border-top: 1px solid shade($header-background-color, 30%)
+    +breakpoint(medium)
+      border-top: none
     li
       margin-left: 0
-      background: shade($header-background-color, 5%)
+      margin-top: 0
       width: 100%
       display: block
-      margin-top: 0
       +breakpoint(medium)
+        display: inline-block
         width: auto
   a
     background: shade($header-background-color, 10%)
@@ -41,25 +47,26 @@ nav.main-menu
     -webkit-tap-highlight-color: rgba(0,0,0,0)
     text-decoration: none
     font-weight: 400
-    font-size: 1rem
-    color: tint($header-background-color, 60%)
+    font-size: 1.125rem
+    color: shade($header-background-color, 50%)
     border-bottom: 1px solid shade($header-background-color, 30%)
     width: 100%
     float: left
     text-align: center
     &.active, .active &, &:hover
-      color: shade($header-background-color, 50%)
+      color: tint($header-background-color, 50%)
       background: tint($header-background-color, 8%)
       +transition(all 250ms ease-in-out)
     +breakpoint(medium)
-      padding: 0 1rem
+      padding: 0 0 0 1.5rem
       vertical-align: middle
-      border-bottom: 4px solid tint($header-background-color, 50%)
-      padding: 0
+      background: none
+      border-bottom: none
       float: left
       margin: 0
-      &:hover
-        border-bottom: 4px solid shade($header-background-color, 50%)
+      &.active, .active &, &:hover
+        border-bottom: none
+        background: none
   &.opened
     max-height: 9999px
   .js &
