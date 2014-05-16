@@ -10,3 +10,22 @@ mixin header(header)
   header.logo(class=header)
     h1: a(href=config.root)= config.title
     block
+
+//- Add social sharing buttons by passing an array
+//- +social-buttons([twitter,facebook,googleplus,linkedin,pinterest,tumblr])
+//- Buttons will automatically flow to the size of the ul
+mixin social-buttons(social-sites)
+  ul.rrssb-buttons.clearfix
+    each social-site in social-sites
+      if social-site === 'twitter'
+        li(class=social-site): a(target='_blank', href='https://twitter.com/intent/tweet?text=#{page.title}&url=#{page.permalink}&via=#{config.twitter}') Tweet
+      if social-site === 'facebook'
+        li(class=social-site): a(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=YOUR-URL') Share on Facebook
+      if social-site === 'googleplus'
+        li(class=social-site): a(target='_blank', href='https://plus.google.com/share?url=YOUR-URL') Plus on Google+
+      if social-site === 'linkedin'
+        li(class=social-site): a(target='_blank', href='https://www.linkedin.com/shareArticle?mini=true&url=YOUR-URL&title=YOUR-TITLE&summary=YOUR-SUMMARY&source=YOUR-URL') Share on LinkedIn
+      if social-site === 'pinterest'
+        li(class=social-site): a(target='_blank', href='https://pinterest.com/pin/create/button/?url=YOUR-URL&description=YOUR-DESCRIPTION&media=YOUR-IMAGE-SRC') Pin on Pinterest
+      if social-site === 'tumblr'
+        li(class=social-site): a(target='_blank', href='http://www.tumblr.com/share') Share on Tumblr
