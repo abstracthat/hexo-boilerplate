@@ -18,7 +18,7 @@ html(lang='en')
                   - var current = path == link.substring(1)  + 'index.html' ? 'active' : '';
                   li: a(href=link, class=current)= name
     block main-container
-      div(role="main")
+      div(role='main')
         block content
           !=page.content
     block footer

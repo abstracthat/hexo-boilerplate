@@ -14,4 +14,6 @@ block content
     if page.button
       a(href="#{page.button_link}" rel="nofollow"): button=page.button
 
+    +socialbuttons([twitter,facebook,pinterest,linkedin,googleplus,tumblr])
+
     != page.content

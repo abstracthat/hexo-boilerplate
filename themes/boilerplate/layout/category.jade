@@ -1,26 +1,22 @@
+//- 
+//- Category
+//- List pages for one category
+//- Should work with any category mentioned in a pages front-matter.
+
+
 extends base
 
-prepend window_title
-  
-  = page.category
-  | &mdash;
+block vars
+  - var bodyclass = 'category'
 
 block content
-  header
-    h2= page.category
-
+  header: h1=page.category
+  !=page.content
   ul.article-list
-    - page.posts.each(function(article){
-
-      li
-        article
-          h3
-            a(href=config.root + article.path)= article.title
-          div.meta
-            include _partial/article_meta
-
-            +date(article.date)
-
-            +category(article.categories)
-
-    - })
+    //- query for get posts in category? http://hexo.io/docs/helpers.html#get_posts
+    each page in get_posts([query])
+      li: article
+        h2: a(href=config.root + page.path)= page.title
+        !=list_tags
+        p=page.excerpt
+        button Read More...
