@@ -4,9 +4,11 @@ mixin main-menu
   nav.main-menu
     ul
       each link, name in config.menu
-        //- This is not working to set .active for the page. It should also check is_post for /blog/*
-        //- - var current = is_current(link) ? 'active' : null;
-        li: a(href=link, class= current)= name
+        - var current = path == link.substring(1)  + 'index.html' ? 'active' : '';
+        li: a(href=link, class=current)= name
+      each cat in site.categories.toArray()
+        - var current = (is_category() && page.category == cat.name) ? 'active' : '';
+        li: a(href=cat.path, class=current): = cat.name
 
 mixin header(header)
   header.logo(class=header)

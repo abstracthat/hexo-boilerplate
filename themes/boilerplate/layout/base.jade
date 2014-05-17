@@ -12,11 +12,7 @@ html(lang='en')
         header.main
           div
             h1: a(href=config.root)= config.title
-            nav.main-menu
-              ul
-                each link, name in config.menu
-                  - var current = path == link.substring(1)  + 'index.html' ? 'active' : '';
-                  li: a(href=link, class=current)= name
+            +main-menu()
     block main-container
       div(role='main')
         block content
