@@ -1,12 +1,10 @@
-title: Hello World
-date: 2014-03-06 13:53:31
+title: Lectus Interdum
+date: 2014-02-04 13:53:31
 category: Blog
 tags: 
-  - example
   - topic
   - this tag is longer
   - yes
-  - no
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum dapibus augue, at dictum lacus dapibus non. Donec eleifend nibh nec erat imperdiet tincidunt. Maecenas at felis porta, luctus libero et, vestibulum tortor. Pellentesque scelerisque sem sit amet lectus interdum, a faucibus neque imperdiet. Vestibulum urna ipsum, accumsan non iaculis at, tincidunt sed orci.

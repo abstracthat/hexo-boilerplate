@@ -1,11 +1,8 @@
-title: Hello World
-date: 2014-03-06 13:53:31
+title: Dolor Sit Amet
+date: 2014-03-07 13:53:31
 category: Blog
 tags: 
   - example
-  - topic
-  - this tag is longer
-  - yes
   - no
 ---
 
