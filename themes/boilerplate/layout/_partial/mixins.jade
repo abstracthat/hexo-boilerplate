@@ -1,3 +1,5 @@
+include icons
+
 mixin main-menu
   nav.main-menu
     ul
@@ -12,37 +14,39 @@ mixin header(header)
     block
 
 //- Add social sharing buttons by passing an array
-//- +social-buttons([twitter,facebook,googleplus,linkedin,pinterest,tumblr])
+//- +social-buttons(['twitter','facebook','googleplus','linkedin','pinterest','tumblr'])
 //- Buttons will automatically flow to the size of the ul
 mixin socialbuttons(socialsites)
   ul.rrssb-buttons.clearfix
     each socialsite in socialsites
-      if socialsite === twitter
-        li(class=socialsite) Tweet
-      if socialsite === facebook
-        li(class=socialsite) Facebook
-      if socialsite === googleplus
-        li(class=socialsite) google
-      if socialsite === linkedin
-        li(class=socialsite) linkedin
-      if socialsite === pinterest
-        li(class=socialsite) pinterest
-      if socialsite === tumblr
-        li(class=socialsite) tumblr
-
-  //-   each socialsite in socialsites
-  //-     if socialsite === twitter
-  //-       li(class=socialsite): a(target='_blank', href='https://twitter.com/intent/tweet?text=#{page.title}&url=#{page.permalink}&via=#{config.twitter}') Tweet
-  //-     if socialsite === facebook
-  //-       li(class=socialsite): a(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=#{page.permalink}') Share on Facebook
-  //-     if socialsite === googleplus
-  //-       li(class=socialsite): a(target='_blank', href='https://plus.google.com/share?url=#{page.permalink}') Plus on Google+
-  //-     if socialsite === linkedin
-  //-       li(class=socialsite): a(target='_blank', href='https://www.linkedin.com/shareArticle?mini=true&url=#{page.permalink}&title=#{page.title}&summary=#{page.excerpt}&source=#{page.permalink}') Share on LinkedIn
-  //-     if socialsite === pinterest
-  //-       li(class=socialsite): a(target='_blank', href='https://pinterest.com/pin/create/button/?url=#{page.permalink}&description=#{page.title}&media=#{page.photos[0]}') Pin on Pinterest
-  //-     if socialsite === tumblr
-  //-       li(class=socialsite): a(target='_blank', href='http://www.tumblr.com/share') Share on Tumblr
-  //-     else
-  //-       p hello?
-  //- 
+      case socialsite
+        when 'twitter'
+          li(class=socialsite)
+            a(target='_blank', href='#')
+              +icon-twitter()
+              span.text Twitter
+        when 'facebook'
+          li(class=socialsite)
+            a(target='_blank', href='#')
+              +icon-facebook()
+              span.text Facebook
+        when 'googleplus'
+          li(class=socialsite)
+            a(target='_blank', href='#')
+              +icon-google-plus()
+              span.text Google+
+        when 'linkedin'
+          li(class=socialsite)
+            a(target='_blank', href='#')
+              +icon-linkedin()
+              span.text LinkedIn
+        when 'pinterest'
+          li(class=socialsite)
+            a(target='_blank', href='#')
+              +icon-pinterest()
+              span.text Pinterest
+        when 'tumblr'
+          li(class=socialsite)
+            a(target='_blank', href='#')
+              +icon-tumblr()
+              span.text Tumblr

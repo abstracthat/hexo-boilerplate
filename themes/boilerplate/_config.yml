@@ -48,3 +48,4 @@ scripts:
   # - '/vendor/foundation/js/foundation/foundation.topbar.js'
   # - 'scripts/app.js'
   - 'scripts/fixed-responsive-nav.js'
+  - 'scripts/rrssb.min.js'
