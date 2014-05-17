@@ -23,9 +23,9 @@ footerMenu:
   # Google+: 
 
 # Big
-permalink: :category/:title
+permalink: :category/:title.html
 tag_dir: tags
-category_dir: categories # for uncategorized only
+category_dir: '' # for uncategorized only
 rss:
 archive: 0 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
 category: 2 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
