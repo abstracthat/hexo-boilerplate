@@ -4,26 +4,27 @@ block head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   title
     block title
-      //- This is_home seems to not be working or I am doing it wrong
       if is_home()
-        | #{config.title}: #{config.subtitle}
+        | #{config.title}
       else
         | #{page.title} | #{config.title}
   block meta
-    if is_home
+    if is_home()
       meta(name='description', content=config.description)
     else
       meta(name='description', content=page.description)
     if config.author
       meta(name='author', content=config.author)
-    if is_home(page.url)
-      != open_graph({twitter_id: config.twitter, google_plus: config.google_plus})
+    if is_home()
+      if config.twitter
+        if config.google_plus
+          != open_graph({twitter_id: config.twitter, google_plus: config.google_plus})
 
   block link
-    link(rel='alternate', href=config.rss ? config.rss : config.root + 'atom.xml', title='config.title', type='application/atom.xml')
-    link(rel="shortcut icon", href="ico/favicon.ico")
-    each size in [144,114,72,57]
-      link(rel="apple-touch-icon", sizes="#{size}x#{size}", href="/ico/apple-touch-icon-#{size}.png")  
+    link(rel='alternate', href=config.rss ? config.rss : config.root + 'atom.xml', title=config.title, type='application/atom.xml')
+    //- link(rel="shortcut icon", href="ico/favicon.ico")
+    //- each size in [144,114,72,57]
+    //-   link(rel="apple-touch-icon", sizes="#{size}x#{size}", href="/ico/apple-touch-icon-#{size}.png")  
   //- HTML5 Shim
   //if lt IE 9
     script(async src="http://html5shim.googlecode.com/svn/trunk/html5.js")
