@@ -20,33 +20,34 @@ mixin socialbuttons(socialsites)
   ul.rrssb-buttons.clearfix
     each socialsite in socialsites
       case socialsite
+
         when 'twitter'
           li(class=socialsite)
-            a(target='_blank', href='#')
+            a(target='_blank', href='https://twitter.com/intent/tweet?text=#{page.title}&url=#{page.permalink}&via=#{config.twitter}')
               +icon-twitter()
               span.text Twitter
         when 'facebook'
           li(class=socialsite)
-            a(target='_blank', href='#')
+            a(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=#{page.permalink}')
               +icon-facebook()
               span.text Facebook
         when 'googleplus'
           li(class=socialsite)
-            a(target='_blank', href='#')
+            a(target='_blank', href='https://plus.google.com/share?url=#{page.permalink}')
               +icon-google-plus()
               span.text Google+
         when 'linkedin'
           li(class=socialsite)
-            a(target='_blank', href='#')
+            a(target='_blank', href='https://www.linkedin.com/shareArticle?mini=true&url=#{page.permalink}&title=#{page.title}&summary=#{page.excerpt}&source=#{page.permalink}')
               +icon-linkedin()
               span.text LinkedIn
         when 'pinterest'
           li(class=socialsite)
-            a(target='_blank', href='#')
+            a(target='_blank', href='https://pinterest.com/pin/create/button/?url=#{page.permalink}&description=#{page.title}&media=#{page.photos[0]}')
               +icon-pinterest()
               span.text Pinterest
         when 'tumblr'
           li(class=socialsite)
-            a(target='_blank', href='#')
+            a(target='_blank', href='http://www.tumblr.com/share')
               +icon-tumblr()
               span.text Tumblr
