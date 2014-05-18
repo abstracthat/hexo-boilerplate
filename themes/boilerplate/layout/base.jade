@@ -5,7 +5,7 @@ block vars
   - var bodyclass = null;
 html(lang='en')
   head
-  include _partial/head
+    include _partial/head
   body(class=bodyclass)
     block header
       if config.type != 'single'
@@ -31,4 +31,5 @@ html(lang='en')
               li: a(href=link)=name
 
     block scripts
-      !=js(theme.scripts)
+      each script in theme.scripts
+        !=js(script)

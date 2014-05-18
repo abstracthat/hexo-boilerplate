@@ -9,6 +9,7 @@
     "hexo-renderer-jade": "*",
     "hexo-generator-optimize": "*",
     "jeet": "~5.2.8",
-    "marked": "~0.3.2"
+    "marked": "~0.3.2",
+    "mixitup": "~2.1.4"
   }
 }

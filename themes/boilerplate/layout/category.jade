@@ -14,8 +14,9 @@ block content
   ul.tag-list
     //- each article tag from site for MixItUp filtering
     each tag in site.tags.toArray()
-      li(data-filter=tag_to_class(tag.name))
-        = tag.name
+      li
+        a(href="#", class='filter', data-filter='.' + tag_to_class(tag.name))
+          = tag.name
   div.mix-container.article-list
     //- query for get posts in category? http://hexo.io/docs/helpers.html#get_posts
     //- there should be three styles, with frontmatter `feature: primary #or secondary`
@@ -30,3 +31,7 @@ block content
         p=post.excerpt
         a(href=config.root + post.path) Read More...
     div.gap
+
+block append scripts
+  !=js('/scripts/jquery.mixitup.min.js')
+  !=js('/scripts/category.js')

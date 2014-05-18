@@ -45,15 +45,15 @@ time_format: H:mm:ss
 
 # Design
 google_font: Open+Sans:400,700,400italic,700italic
+
 css:
-  - 'stylesheets/style.css'
+  - '/stylesheets/style.css'
 headScripts:
-  - 'scripts/responsive-nav.js'
+  - '/scripts/responsive-nav.js'
 scripts:
   - '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'
-  - 'scripts/fastclick.js'
-  - 'scripts/app.js'
-  - 'scripts/fixed-responsive-nav.js'
+  - '/scripts/fastclick.js'
+  - '/scripts/fixed-responsive-nav.js'
 
 # Writing
 excerpt_link: Read More
