@@ -13,16 +13,17 @@ block content
   !=page.content
   ul.tag-list
     //- each article tag from site for MixItUp filtering
-  ul.article-list
+  div.mix-container.article-list
     //- query for get posts in category? http://hexo.io/docs/helpers.html#get_posts
     //- there should be three styles, with frontmatter `feature: primary #or secondary`
     //- I want to render all of the posts on the page and style them across feature:primary, feature:secondary
     // rest of the posts ordered by time which will be just the title)
     each post in get_posts({query: {categories: page.category}, count: 1000}).toArray()
-      li: article(class=post.feature)
+      div.mix: article(class=post.feature)
         h2: a(href=config.root + post.path)= post.title
         ul.tags
-        each tag in post.tags.toArray()
-          li: a(href=config.root + tag.path): = tag.name
+          each tag in post.tags.toArray()
+            li: a(href=config.root + tag.path): = tag.name
         p=post.excerpt
         a(href=config.root + post.path) Read More...
+    div.gap
