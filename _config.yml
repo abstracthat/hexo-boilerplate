@@ -3,9 +3,9 @@
 
 # Site
 url: http://yoursite.com
-type: mini # single, mini, big
+site_type: mini # single, mini, big
 title: Boilerplate Site Title
-seo_meta_description:
+description:
 year_started: 2013
 email: # optional, used on terms, and privacy pages
 author: # not currently used in template

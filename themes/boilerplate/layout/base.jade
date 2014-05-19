@@ -8,7 +8,7 @@ html(lang='en')
     include _partial/head
   body(class=bodyclass)
     block header
-      if config.type != 'single'
+      if config.site_type != 'single'
         header.main
           div
             h1: a(href=config.root)= config.title
