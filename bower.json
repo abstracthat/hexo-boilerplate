@@ -12,7 +12,8 @@
     "modularized-normalize-scss": "~3.0.1",
     "jquery": "*",
     "fastclick": "*",
-    "responsive-nav": "*"
+    "responsive-nav": "*",
+    "mixitup": "*"
   },
   "dependencies": {
     "RRSSB": "~1.6.0"
