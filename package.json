@@ -1,14 +1,17 @@
 {
-  "name": "hexo",
-  "version": "2.5.2",
+  "name": "hexo-boilerplate",
+  "version": "2.6.0",
   "private": true,
   "dependencies": {
+    "hexo-renderer-ejs": "*",
+    "hexo-renderer-stylus": "*",
+    "hexo-renderer-marked": "*",
     "hexo-generator-feed": "*",
     "hexo-livereload": "*",
     "hexo-renderer-coffeescript": "*",
     "hexo-renderer-jade": "*",
     "hexo-generator-optimize": "*",
     "jeet": "~5.2.8",
-    "marked": "~0.3.2"
+    "lodash": "*"
   }
 }
