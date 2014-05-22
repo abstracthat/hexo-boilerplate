@@ -13,10 +13,11 @@ block content
   !=page.content
   ul.tag-list
     //- each article tag from site for MixItUp filtering
-    each tag in site.tags.toArray()
+    each tag in category_tags(page.category)
       li
         a(href="#", class='filter', data-filter='.' + tag_to_class(tag.name))
           = tag.name
+    li: a.filter(data-filter='all') All
   div.mix-container.article-list
     //- query for get posts in category? http://hexo.io/docs/helpers.html#get_posts
     //- there should be three styles, with frontmatter `feature: primary #or secondary`
