@@ -18,7 +18,7 @@ hexo.extend.helper.register('tags_to_class', function(tags){
 
 hexo.extend.helper.register('category_tags', function(category) {
     var tags = [];
-    var cat = Category.first({name: category}).populate('posts');
+    var cat = Category.findOne({name: category}).populate('posts');
     cat.posts.each(function(post) {
         tags = _.union(tags, post.tags);
     });
