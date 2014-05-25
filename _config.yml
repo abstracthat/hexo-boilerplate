@@ -23,7 +23,7 @@ footerMenu:
   # Google+: 
 
 # Big
-permalink: :category/:title.html
+permalink: :category/:title/
 tag_dir: tags
 category_dir: '' # for uncategorized only
 rss:
