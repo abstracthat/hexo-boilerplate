@@ -49,10 +49,11 @@ google_font: Open+Sans:400,700,400italic,700italic
 css:
   - '/stylesheets/style.css'
 headScripts:
-  - '/scripts/responsive-nav.js'
+  - '//cdnjs.cloudflare.com/ajax/libs/responsive-nav.js/1.0.32/responsive-nav.min.js'
 scripts:
   - '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'
-  - '/scripts/fastclick.js'
+  - '//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.0/fastclick.min.js'
+  - '//cdnjs.cloudflare.com/ajax/libs/mixitup/1.5.6/jquery.mixitup.min.js'
   - '/scripts/fixed-responsive-nav.js'
 
 # Writing

@@ -9,11 +9,7 @@
   "devDependencies": {
     "scut": "*",
     "bourbon": "*",
-    "modularized-normalize-scss": "~3.0.1",
-    "jquery": "*",
-    "fastclick": "*",
-    "responsive-nav": "*",
-    "mixitup": "*"
+    "modularized-normalize-scss": "~3.0.1"
   },
   "dependencies": {
     "RRSSB": "~1.6.0"
