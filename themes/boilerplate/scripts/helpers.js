@@ -2,6 +2,11 @@
 
 var _ = require('lodash');
 
+function escape_regex(str) {
+    // http://stackoverflow.com/a/6969486
+    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+};
+
 function tag_to_class(tag_name) {
     return 'tag-' + tag_name.replace(/\s/g, '-');
 }
@@ -39,4 +44,20 @@ hexo.extend.helper.register('is_active_category', function(category_name) {
         return match;
     }
     return false;
+});
+
+
+hexo.extend.helper.register('is_index', function() {
+
+    // the same as is_home but also consider index.html
+
+    var config = this.config || hexo.config,
+        path = this.path,
+        r = new RegExp('^' + escape_regex(config.pagination_dir) + '\\/\\d+\\/');
+
+    if (path.indexOf('index.html', path.length - 'index.html'.length) !== -1) {
+        path = path.slice(0, path.length - 'index.html'.length);
+    }
+
+    return path === '' || r.test(path);
 });

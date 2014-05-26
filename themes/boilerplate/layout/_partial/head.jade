@@ -4,7 +4,7 @@ block head
   meta(name='viewport', content='width=device-width, initial-scale=1.0')
   title
     block title
-      if is_home()
+      if is_index()
         | #{config.title}
       else
         | #{page.title} | #{config.title}
