@@ -54,7 +54,7 @@ scripts:
   - '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'
   - '//cdn.jsdelivr.net/fastclick/1.0.1/fastclick.min.js'
   - '//cdn.jsdelivr.net/jquery.mixitup/2.1.5/jquery.mixitup.min.js'
-  - '/scripts/fixed-responsive-nav.js'
+  - '/scripts/navigation.js'
 
 # Writing
 excerpt_link: Read More
