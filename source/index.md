@@ -5,6 +5,7 @@ button: Click Here to Do This Now
 button_link: http://secured-link.com/
 layout: page
 ---
+
 This note demonstrates some of what [Markdown][1] is capable of doing.
 
 > *Note: Feel free to play with this page.*
@@ -68,7 +69,7 @@ URLs can be made in a handful of ways:
 ## Horizontal rule
 A horizontal rule is a line that goes across the middle of the page.
 
----
+***
 
 It's sometimes handy for breaking things up.
 
@@ -78,7 +79,7 @@ Markdown can also contain images.
 ![Barn](/assets/barn.jpg "It is a barn")
 
 ## Finally
----
+***
 There's actually a lot more to Markdown than this. See the official [introduction][4] and [syntax][5] for more information. However, be aware that this is not using the official implementation, and this might work subtly differently in some of the little things.
 
 
