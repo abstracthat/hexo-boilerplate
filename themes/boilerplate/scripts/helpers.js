@@ -25,3 +25,18 @@ hexo.extend.helper.register('category_tags', function(category) {
     tags = Tag.find({_id: {$in: tags}}).toArray();
     return tags;
 });
+
+hexo.extend.helper.register('is_active_category', function(category_name) {
+    if (this.page.category !== undefined)
+        return this.page.category === category_name;
+    if (this.page.categories) {
+        var match = false;
+        this.page.categories.each(function (category) {
+            if (category.name === category_name) {
+                match = true;
+            }
+        });
+        return match;
+    }
+    return false;
+});
