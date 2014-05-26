@@ -29,7 +29,7 @@ block content
         ul.tags
           each tag in post.tags.toArray()
             li: a(href=config.root + tag.path): = tag.name
-        p=post.excerpt
+        p!=post.excerpt
         a(href=config.root + post.path) Read More...
     div.gap
 
