@@ -31,5 +31,4 @@ html(lang='en')
               li: a(href=link)=name
 
     block scripts
-      each script in theme.scripts
-        !=js(script)
+      !=js(config.scripts)
