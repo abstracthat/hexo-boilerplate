@@ -10,8 +10,5 @@
     "scut": "*",
     "bourbon": "*",
     "modularized-normalize-scss": "~3.0.1"
-  },
-  "dependencies": {
-    "RRSSB": "~1.6.0"
   }
 }

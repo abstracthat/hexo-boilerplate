@@ -33,5 +33,4 @@ block head
   block headStyles
     !=css(config.css)
   block headScripts
-    each script in config.headScripts
-      !=js(script)
+    !=js(config.headScripts)
