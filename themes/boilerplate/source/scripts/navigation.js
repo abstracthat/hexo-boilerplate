@@ -24,6 +24,7 @@
     var navigation = responsiveNav(".main-menu", {
 
       // Close the navigation when it's tapped
+      animate: false,
       closeOnNavClick: true,
       navClass: "main-menu"
     });
