@@ -1,6 +1,6 @@
 {
-  "name": "hexo-boilerplate",
-  "version": "2.6.0",
+  "name": "Boilerplate",
+  "version": "0.9.0",
   "private": true,
   "dependencies": {
     "hexo-renderer-ejs": "*",
@@ -11,7 +11,8 @@
     "hexo-renderer-coffeescript": "*",
     "hexo-renderer-jade": "*",
     "hexo-generator-optimize": "*",
-    "jeet": "~5.2.8",
-    "lodash": "*"
+    "jeet": "*",
+    "lodash": "*",
+    "marked": "*"
   }
 }
