@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "hexo-renderer-ejs": "*",
-    "hexo-renderer-stylus": "*",
+    "hexo-renderer-axis": "*",
     "hexo-renderer-marked": "*",
     "hexo-generator-feed": "*",
     "hexo-livereload": "*",
