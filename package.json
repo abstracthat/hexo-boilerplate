@@ -3,16 +3,20 @@
   "version": "2.6.0",
   "private": true,
   "dependencies": {
-    "hexo-renderer-ejs": "*",
-    "hexo-renderer-axis": "*",
-    "hexo-renderer-marked": "*",
+    "autoprefixer-stylus": "^0.1.0",
+    "axis-css": "^0.1.8",
     "hexo-generator-feed": "*",
+    "hexo-generator-optimize": "*",
     "hexo-livereload": "*",
     "hexo-renderer-coffeescript": "*",
+    "hexo-renderer-ejs": "*",
     "hexo-renderer-jade": "*",
-    "hexo-generator-optimize": "*",
-    "jeet": "*",
+    "hexo-renderer-marked": "*",
+    "jeet": "^5.2.10",
     "lodash": "*",
-    "marked": "*"
+    "marked": "*",
+    "nib": "^1.0.2",
+    "rupture": "^0.1.0",
+    "stylus": "^0.45.1"
   }
 }
