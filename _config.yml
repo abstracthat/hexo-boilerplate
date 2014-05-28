@@ -15,8 +15,8 @@ google_analytics:
 
 # Menu
 menu:
-  Privacy Policy: /privacy/
-  Terms of Use: /terms/
+  Page Name: /page-name/
+  An Important Page: /an-important-page/
 footerMenu:
   Privacy Policy: /privacy/
   Terms of Use: /terms/
@@ -86,7 +86,7 @@ markdown:
   gfm: true
   pedantic: false
   sanitize: false
-  tables: true
+  tables: false
   breaks: true
   smartLists: true
   smartypants: true

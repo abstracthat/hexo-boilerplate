@@ -36,15 +36,26 @@ Paragraphs must be separated by a blank line. Basic formatting of *italics* and 
 * Yet another item
 * And there's more...
 
-## Paragraph modifiers
+## Code Blocks & Inline Code
 
-### Code block
+Fenced code blocks are very useful for developers. As you can see, it uses a fixed-width font.
 
-    Code blocks are very useful for developers and other people who look at code or other things that are written in plain text. As you can see, it uses a fixed-width font.
+```
+git init --bare site
+cd site
+npm install
+
+# If you have a longer line in a code block it will wrap but not hyphenate. It could happen in the middle of a word.
+```
 
 You can also make `inline code` to add code into other things.
 
-> Here is a quote. What this is should be self explanatory. Quotes are automatically indented when they are used.
+## Quotes
+
+Want to quote someone? Try a blockquote. Unfortunately you have to add the semantically correct `<cite>` as html. Don't forget to close the tag `</cite>`.
+
+> Every interaction is both precious and an opportunity to delight.
+> -- <cite>[Seth Godin](http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html)</cite>
 
 ## Headings
 
@@ -52,11 +63,7 @@ There are six levels of headings. They correspond with the six levels of HTML he
 
 ### Headings *can* also contain **formatting**
 
-### They can even contain `inline code`
-
-Of course, demonstrating what headings look like messes up the structure of the page.
-
-I don't recommend using more than three or four levels of headings here, because, when you're smallest heading isn't too small, and you're largest heading isn't too big, and you want each size up to look noticeably larger and more important, there there are only so many sizes that you can use.
+Of course, demonstrating what headings look like messes up the structure of the page. Mostly you can stick with h1, h2, or h3.
 
 ## URLs
 

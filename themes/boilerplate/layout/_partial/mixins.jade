@@ -2,6 +2,7 @@ include icons
 
 mixin main-menu
   nav.main-menu
+    h1: a(href=config.root)= config.title
     ul
       each link, name in config.menu
         - var current = path == link.substring(1)  + 'index.html' ? 'active' : '';

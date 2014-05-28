@@ -11,14 +11,13 @@ html(lang='en')
       if config.site_type != 'single'
         header.main
           div
-            h1: a(href=config.root)= config.title
             +main-menu()
     block main-container
       div(role='main')
         block content
           !=page.content
     block footer
-      footer
+      footer.footer
         nav
           p
             | &copy; &nbsp;
