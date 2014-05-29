@@ -10,7 +10,7 @@ block vars
 
 block content
   header: h1=page.category
-  !=page.content
+  !=category_content(page.category)
   ul.tag-list
     //- each article tag from site for MixItUp filtering
     each tag in category_tags(page.category)

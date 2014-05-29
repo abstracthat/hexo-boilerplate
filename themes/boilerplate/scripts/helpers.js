@@ -1,6 +1,9 @@
 /*global hexo */
 
-var _ = require('lodash');
+var _ = require('lodash'),
+    fs = require('fs'),
+    marked = require('marked'),
+    path = require('path');
 
 function escape_regex(str) {
     // http://stackoverflow.com/a/6969486
@@ -46,6 +49,34 @@ hexo.extend.helper.register('is_active_category', function(category_name) {
     return false;
 });
 
+hexo.extend.helper.register('category_content', function(category) {
+    var content = "";
+    var cat = Category.findOne({name: category});
+    if (cat){
+        var category_path = path.join(hexo.source_dir, '_categories', cat.slug + '.md');
+        if (fs.existsSync(category_path)) {
+            var r = new marked.Renderer();
+            marked.setOptions({
+                renderer: r,
+                langPrefix: '',
+                highlight: function(code, lang){
+                    return hexo.util.highlight(code, {lang: lang, gutter: false, wrap: false});
+                }
+            });
+            var text = fs.readFileSync(category_path, {encoding: 'utf8'});
+            content =  marked(text, _.extend({
+                gfm: true,
+                pedantic: false,
+                sanitize: false,
+                tables: true,
+                breaks: true,
+                smartLists: true,
+                smartypants: true
+            }, hexo.config.marked));
+        }
+    }
+    return content;
+});
 
 hexo.extend.helper.register('is_index', function() {
 
