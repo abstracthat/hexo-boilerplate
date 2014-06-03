@@ -92,7 +92,7 @@ markdown:
   smartypants: true
 
 highlight:
-  enable: true
+  enable: false
   line_number: false
   tab_replace:
 
