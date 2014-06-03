@@ -91,6 +91,11 @@ markdown:
   smartLists: true
   smartypants: true
 
+highlight:
+  enable: true
+  line_number: false
+  tab_replace:
+
 # Hexo input and output folders
 source_dir: source
 public_dir: public
