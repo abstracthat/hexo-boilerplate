@@ -6,18 +6,11 @@ base()
 typography()
 forms()
 buttons()
-code-blocks()
 // tables()
 
 // edit()
 // debug()
 // debug-vertical-alignment()
-
-header
-  nav
-    span: 1
-    inline-list()
-    inline-block()
 
 header-height = 5rem
 small-header-height = header-height/1.5
@@ -31,15 +24,16 @@ html
   background-attachment: fixed
 
 body
-  center: desktop-cutoff
+  +from(3)
+    center: desktop-cutoff
 
 [role="main"]
-  center(desktop-cutoff, pad: 1rem)
   background: content-bg-color
+  center(desktop-cutoff, pad: 1rem)
 
 article
   padding-bottom: 2rem
-  +from(mobile-cutoff)
+  +from(3)
     column(4/5, offset: 1/10)
   +desktop()
     column(2/3, offset: 1/6)
@@ -55,17 +49,22 @@ header.main
     center: desktop-cutoff    
   h1
     margin: 0
-    font-size: 1.2em
     display: inline
     +from(mobile-cutoff)
       font-size: 1.8em
     a
       float: left
-      color: shade(header-background-color, 80%)
+      color: tint(header-background-color, 80%)
       font-weight: 700
+      font-size: 2rem
       padding: .5rem 0 .5rem 1.25rem
       +from(mobile-cutoff)
-        padding: 0 0 0 1rem
+        padding: 0
+        text-align: center
+        margin-top: 1rem
+        margin-bottom: .5rem
+      +desktop()
+        text-align: left
       &:hover
         transition: all 200ms ease-in-out
         color: shade(header-background-color, 50%)
@@ -75,24 +74,40 @@ header.main
     z-index: 3
 
 nav.main-menu
-  width: 100%
-  margin: .6rem 0 0
+  &.opened
+    max-height: 9999px
+  .js &
+    clip: rect(0 0 0 0)
+    max-height: 0
+    position: absolute
+    display: block
+    overflow: hidden
+    zoom: 1
+    position: relative
+    width: 100%
+    margin: .6rem 0 0
   +from(mobile-cutoff)
-    margin: .7rem 1.25rem 0
-  +desktop()
     margin-top: 1.25rem
+    float: none
+    width: auto
+    &.closed
+      max-height: none
+  // +desktop()
+  //   group()
   ul
     line-height: 2rem
     width: 100%
-    display: inline
-    float: left
+    text-align: center
     margin-left: 0
     margin-bottom: 0
     border-top: 1px solid shade(header-background-color, 30%)
     +from(mobile-cutoff)
       border-top: none
+      inline-list()
+    +desktop()
+      text-align: right
     li
-      margin-left: 0
+      float: none
       margin-top: 0
       width: 100%
       display: block
@@ -122,24 +137,11 @@ nav.main-menu
       border-bottom: none
       float: left
       margin: 0
+      padding-left: 0 !important
+      margin-left: 0 !important
       &.active, .active &, &:hover
         border-bottom: none
         background: none
-  &.opened
-    max-height: 9999px
-  .js &
-    clip: rect(0 0 0 0)
-    max-height: 0
-    position: absolute
-    display: block
-    overflow: hidden
-    zoom: 1
-    position: relative
-    &.closed
-      max-height: none
-  +from(mobile-cutoff)
-    float: right
-    width: auto
 
 .nav-toggle
   -webkit-tap-highlight-color: rgba(0,0,0,0)
@@ -354,6 +356,20 @@ h6
 blockquote p
   margin-bottom 0
 
+pre > code
+  color: white - 15%
+  display: block
+  padding: .7rem
+  background-color: black + 15%
+  border: 1px solid black + 65%
+  border-radius: 3px
+  white-space: pre-wrap
+  word-break: break-all
+  font-family: Menlo, Monaco, monospace
+  line-height: 160%
+
+code
+  code()
 
 //
 // Layout
@@ -368,5 +384,5 @@ img
 
 // Miscellaneous useful HTML classes
 .hide
-  display: none
+  display: none !important
 
