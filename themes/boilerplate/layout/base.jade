@@ -13,9 +13,9 @@ html(lang='en')
           div
             +main-menu()
     block main-container
-      div(role='main')
         block content
-          !=page.content
+          div(role='main')
+            !=page.content
     block footer
       footer.footer
         nav
