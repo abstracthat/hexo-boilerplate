@@ -1,14 +1,12 @@
-title: Headline for Page Here
-subheading: The Even More Enticing Subheading Goes Here
+title: A/B Test A Headline For The Page Here
+subheading: The Subheading Goes Here — A Good Place to Split Test Some Copy
 video: tntOCGkgt98
-button: Click Here to Do This Now
+button: Call To Action
 button_link: http://secured-link.com/
 layout: page
 ---
 
 This note demonstrates some of what [Markdown][1] is capable of doing.
-
-> *Note: Feel free to play with this page.*
 
 <!-- more -->
 
