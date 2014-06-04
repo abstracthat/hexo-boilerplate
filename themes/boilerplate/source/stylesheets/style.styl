@@ -10,7 +10,6 @@ buttons()
 
 // edit()
 // debug()
-// debug-vertical-alignment()
 
 header-height = 5rem
 small-header-height = header-height/1.5
@@ -45,26 +44,28 @@ header.main
   -webkit-tap-highlight-color: rgba(0,0,0,0)
   line-height: 150%
   padding: 0
+  min-height: 3rem
   div
-    center: desktop-cutoff    
+    center: desktop-cutoff
   h1
     margin: 0
     display: inline
     +from(mobile-cutoff)
-      font-size: 1.8em
+      display block
+      text-align center
     a
-      float: left
       color: tint(header-background-color, 80%)
       font-weight: 700
-      font-size: 2rem
-      padding: .5rem 0 .5rem 1.25rem
+      font-size: 1.4rem
+      background: none !important
       +from(mobile-cutoff)
         padding: 0
-        text-align: center
         margin-top: 1rem
-        margin-bottom: .5rem
+        font-size: 1.8rem
       +desktop()
-        text-align: left
+        padding: .5rem 0
+        font-size: 2rem
+        text-align: center
       &:hover
         transition: all 200ms ease-in-out
         color: shade(header-background-color, 50%)
@@ -85,60 +86,56 @@ nav.main-menu
     zoom: 1
     position: relative
     width: 100%
-    margin: .6rem 0 0
+    margin 0
   +from(mobile-cutoff)
     margin-top: 1.25rem
     float: none
     width: auto
     &.closed
       max-height: none
-  // +desktop()
-  //   group()
   ul
     line-height: 2rem
     width: 100%
     text-align: center
+    inline-list()
     margin-left: 0
     margin-bottom: 0
-    border-top: 1px solid shade(header-background-color, 30%)
     +from(mobile-cutoff)
       border-top: none
-      inline-list()
-    +desktop()
-      text-align: right
     li
       float: none
-      margin-top: 0
       width: 100%
       display: block
+      padding: .75rem 0
+      background: shade(header-background-color, 10%)
+      border-bottom: 1px solid shade(header-background-color, 30%)
+      &:hover
+        color: tint(header-background-color, 50%)
+        background: tint(header-background-color, 8%)
+        transition: all 250ms ease-in-out
       +from(mobile-cutoff)
         display: inline-block
         width: auto
+        background: none
+        border-bottom: none
+        &:hover
+          border-bottom: none
+          background: none
   a
-    background: shade(header-background-color, 10%)
-    padding: .75rem
+    // padding: .75rem
     -webkit-tap-highlight-color: rgba(0,0,0,0)
     text-decoration: none
     font-weight: 400
     font-size: 1.125rem
     color: shade(header-background-color, 50%)
-    border-bottom: 1px solid shade(header-background-color, 30%)
-    width: 100%
-    float: left
+    min-width: 100%
     text-align: center
-    &.active, .active &, &:hover
+    &.active, .active &
       color: tint(header-background-color, 50%)
       background: tint(header-background-color, 8%)
       transition: all 250ms ease-in-out
     +from(mobile-cutoff)
-      padding: 0 0 0 1.5rem
       vertical-align: middle
-      background: none
-      border-bottom: none
-      float: left
-      margin: 0
-      padding-left: 0 !important
-      margin-left: 0 !important
       &.active, .active &, &:hover
         border-bottom: none
         background: none
@@ -156,12 +153,16 @@ nav.main-menu
   text-decoration: none
   text-indent: -20rem
   position: absolute
-  top: .9rem
+  top: .7rem
   right: .5rem
   overflow: hidden
   width: 3.7rem
   float: right
+  border-bottom: none
   font-size: 1.9rem
+  &:hover
+    border-bottom: none
+    opacity: .8
   +from(mobile-cutoff)
     display: none
   &:before
@@ -209,6 +210,168 @@ nav.main-menu
   src: url("../../fonts/responsivenav.eot?#iefix") format("embedded-opentype"), url("../../fonts/responsivenav.ttf") format("truetype"), url("../../fonts/responsivenav.woff") format("woff"), url("../../fonts/responsivenav.svg#responsivenav") format("svg")
   font-weight: normal
   font-style: normal
+
+// header.main
+//   background-color: header-background-color
+//   -webkit-tap-highlight-color: rgba(0,0,0,0)
+//   line-height: 150%
+//   padding: 0
+//   div
+//     center: desktop-cutoff    
+//   h1
+//     margin: 0
+//     font-size: 1.2em
+//     display: inline
+//     +from(mobile-cutoff)
+//       font-size: 1.8em
+//     a
+//       float: left
+//       color: tint(header-background-color, 80%)
+//       font-weight: 700
+//       padding: .5rem 0 .5rem 1.25rem
+//       +from(mobile-cutoff)
+//         padding: 0 0 0 1rem
+//       &:hover
+//         transition: all 200ms ease-in-out
+//         color: shade(header-background-color, 50%)
+//   .js-nav-active &
+//     position: fixed
+//     width: 100%
+//     z-index: 3
+
+// nav.main-menu
+//   width: 100%
+//   margin: .6rem 0 0
+//   +from(mobile-cutoff)
+//     margin: .7rem 1.25rem 0
+//   +desktop()
+//     margin-top: 1.25rem
+//   ul
+//     line-height: 2rem    
+//     width: 100%
+//     display: inline
+//     float: left
+//     margin-left: 0
+//     margin-bottom: 0
+//     border-top: 1px solid shade(header-background-color, 30%)
+//     +from(mobile-cutoff)
+//       border-top: none
+//     li
+//       margin-left: 0
+//       margin-top: 0
+//       width: 100%
+//       display: block
+//       +from(mobile-cutoff)
+//         display: inline-block
+//         width: auto
+//   a
+//     background: shade(header-background-color, 10%)
+//     padding: .75rem
+//     -webkit-tap-highlight-color: rgba(0,0,0,0)
+//     text-decoration: none
+//     font-weight: 400
+//     font-size: 1.125rem
+//     color: shade(header-background-color, 50%)
+//     border-bottom: 1px solid shade(header-background-color, 30%)
+//     width: 100%
+//     float: left
+//     text-align: center
+//     &.active, .active &, &:hover
+//       color: tint(header-background-color, 50%)
+//       background: tint(header-background-color, 8%)
+//       transition: all 250ms ease-in-out
+//     +from(mobile-cutoff)
+//       padding: 0 0 0 1.5rem
+//       vertical-align: middle
+//       background: none
+//       border-bottom: none
+//       float: left
+//       margin: 0
+//       &.active, .active &, &:hover
+//         border-bottom: none
+//         background: none
+//   &.opened
+//     max-height: 9999px
+//   .js &
+//     clip: rect(0 0 0 0)
+//     max-height: 0
+//     position: absolute
+//     display: block
+//     overflow: hidden
+//     zoom: 1
+//     position: relative
+//     &.closed
+//       max-height: none
+//   +from(mobile-cutoff)
+//     float: right
+//     width: auto
+
+// .nav-toggle
+//   -webkit-tap-highlight-color: rgba(0,0,0,0)
+//   -webkit-touch-callout: none
+//   -webkit-user-select: none
+//   -moz-user-select: none
+//   -ms-user-select: none
+//   -o-user-select: none
+//   user-select: none
+//   -webkit-font-smoothing: antialiased
+//   -moz-osx-font-smoothing: grayscale
+//   text-decoration: none
+//   text-indent: rem(-300)
+//   position: absolute
+//   top: .9rem
+//   right: .5rem
+//   overflow: hidden
+//   width: rem(60)
+//   float: right
+//   font-size: rem(30)
+//   +from(mobile-cutoff)
+//     display: none
+//   &:before
+//     color: tint(header-background-color, 70%)
+//     font-family: "responsivenav"
+//     text-transform: none
+//     text-align: center
+//     content: "\2261" /* Hamburger icon */
+//     text-indent: 0
+//     speak: none
+//     position: absolute
+//     right: .5rem
+//     top: 0
+//   &.active:before
+//     font-size: 24px
+//     content: "\78" /* Close icon */
+
+// .disable-pointer-events
+//   pointer-events: none !important
+
+// .mask
+//   transition: all 300ms ease-in-out
+//   background: rgba(0,0,0, .5)
+//   visibility: hidden
+//   position: fixed
+//   opacity: 0
+//   z-index: 2
+//   bottom: 0
+//   right: 0
+//   left: 0
+//   top: 0
+//   .android &
+//     -webkit-transition: none
+//     transition: none
+//   .js-nav-active &
+//     visibility: visible
+//     opacity: 1
+//   +from(mobile-cutoff)
+//     display: none !important
+//     opacity: 0 !important
+
+// @font-face
+//   font-family: "responsivenav"
+//   src: url("../../fonts/responsivenav.eot")
+//   src: url("../../fonts/responsivenav.eot?#iefix") format("embedded-opentype"), url("../../fonts/responsivenav.ttf") format("truetype"), url("../../fonts/responsivenav.woff") format("woff"), url("../../fonts/responsivenav.svg#responsivenav") format("svg")
+//   font-weight: normal
+//   font-style: normal
 
 
 // .feature
