@@ -62,12 +62,13 @@ header.main
   +desktop()
     padding: 1rem 0 1.2rem
   div
-    center: desktop-cutoff
+    center(desktop-cutoff, padding: false)
   h1
-    margin 0
+    margin 0 0 0 1rem
     display inline-block
     +from(mobile-cutoff)
       display block
+      margin 0
       text-align center
     a
       color: tint(header-background-color, 80%)
@@ -128,7 +129,7 @@ nav.main-menu
       margin-top: 0
       background: shade(header-background-color, 10%)
       border-bottom: 1px solid shade(header-background-color, 30%)
-      &:hover
+      &:hover, &.active, .active &
         color: tint(header-background-color, 50%)
         background: tint(header-background-color, 8%)
         transition: all 250ms ease-in-out
@@ -151,8 +152,7 @@ nav.main-menu
     text-align: center
     border-bottom: none
     &.active, .active &
-      color: tint(header-background-color, 70%)
-      background: tint(header-background-color, 8%)
+      color: shade(header-background-color, 50%)
       transition: all 250ms ease-in-out
     +from(mobile-cutoff)
       color: shade(header-background-color, 50%)
