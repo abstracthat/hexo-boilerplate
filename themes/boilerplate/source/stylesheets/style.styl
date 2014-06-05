@@ -5,7 +5,7 @@
 // establish-baseline('normalize')
 normalize()
 base()
-typography()
+// typography()
 forms()
 buttons()
 // tables()
@@ -123,6 +123,7 @@ nav.main-menu
       width: 100%
       display: block
       padding: .75rem 0
+      margin-top: 0
       background: shade(header-background-color, 10%)
       border-bottom: 1px solid shade(header-background-color, 30%)
       &:hover
@@ -156,6 +157,8 @@ nav.main-menu
       vertical-align: middle
       &.active, .active &, &:hover
         border-bottom: none
+        color: tint(header-background-color, 70%)
+        transition()
         background: none
 
 // **TODO** replace with icon and fade out opacity on open
@@ -238,7 +241,7 @@ h2.subheading
     font-size 1.5rem
 
 button.action
-  button(olive, 24)
+  button(olive, 21)
   transition()
   center: desktop-cutoff
   margin-bottom: 1.5rem
@@ -267,11 +270,7 @@ flex-video-container()
   li
     margin: .2rem
   a
-    background-color: color2
-    padding: 1rem
-    text-decoration: none
-    color: black
-
+    button(silver)
 
 //
 // Footer
@@ -336,27 +335,32 @@ h2
   h2: 1.7
   line-height: 1.1
   margin-bottom: 0
-  margin-top: .6rem
+  margin-top: .8rem
   +tablet()
     h2: 2.2
     line-height: 1.1
     margin-bottom: 0
-    margin-top: .8rem
+    margin-top: .9rem
   +desktop()
-    h2: 2.8
+    h2: 2.5
     line-height: 1.1
     margin-bottom: 0
     margin-top: 1rem
 h3
-  h3: 1.3
-  font-weight:
-  margin: 0
+  h3: 1.6
+  line-height: 1.1
+  font-weight: normal
+  margin: 1rem 0 0
   +tablet()
     h3: 1.8
-    margin: 0
+    line-height: 1.1
+    font-weight: normal
+    margin: .9rem 0 0
   +desktop()
     h3: 2
-    margin: 0
+    line-height: 1.1
+    font-weight: normal
+    margin: 1rem 0 0
 h4
   h4: 1.3
   margin: 0
@@ -385,31 +389,67 @@ h6
   h6: 0.9
   margin: 0
 
-ol,ul
-  margin: 0.32rem 0 .5rem 0.5rem
+bold-italic()
+hyphenation()
+text-selection()
+
+p
+  paragraph()
+  line-height 1.8
+
+small
+  small-text()
+
+a
+  link()
+
+blockquote
+  blockquo(olive)
+  a
+    link(olive)
 
 ul
-  padding-left: .55rem
+  margin: 0.5rem 0.94rem
+  padding-left: .25rem
   li
-    margin-top: .5rem
+    list-style-type: disc
+    padding: 0.125rem
+    line-height 1.6
 
-blockquote p
-  margin-bottom 0
+ol
+  margin: 0.32rem 0 .5rem 0.5rem
+  padding-left: 1rem
+  li
+    list-style-type: decimal
+    padding: 0.125rem
+    line-height 1.6
+
+blockquote
+  background-color: content-bg-color - 4%
+  p
+    margin-bottom 0
+    padding: 1rem .75rem 1rem 0
 
 pre > code
-  color: white - 15%
+  color: black + 25%
   display: block
-  padding: .7rem
-  background-color: black + 15%
-  border: 1px solid black + 65%
+  padding: .75rem
+  background-color: content-bg-color - 5%
+  border: 1px solid black + 75%
   border-radius: 3px
   white-space: pre-wrap
   word-break: break-all
   font-family: Menlo, Monaco, monospace
+  font-size: .95rem
   line-height: 160%
-
+  +from(mobile-cutoff)
+    font-size: 1rem
+    padding: 1rem
 code
   code()
+
+html
+  word-wrap: break-word
 
 //
 // Layout
@@ -421,9 +461,12 @@ img
   -ms-interpolation-mode: bicubic
   display: inline-block
   vertical-align: middle
+  margin-top: .5rem
 
 // Miscellaneous useful HTML classes
 .hide
   display: none !important
 .note
   area(yellow+80%)
+  p
+    margin 0

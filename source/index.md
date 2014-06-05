@@ -12,13 +12,11 @@ social:
   - tumblr
 ---
 
-<div class="note">**Note**: this boilerplate is currently under active development and may contain incomplete templates.</div>
+<div class="note"><p>**Note**: this boilerplate is currently under active development and may contain incomplete templates.</p></div>
 
-Using the Node static site generator, [Hexo](https://github.com/tommy351/hexo) this boilerplate gets your site off the ground and onto the web fast!.
+Using the Node static site generator, [Hexo](https://github.com/tommy351/hexo), this boilerplate gets your site off the ground and onto the web fast!.
 
 Terse syntax using [Jade](jade-lang.com/reference/) templates and [Stylus](http://learnboost.github.io/stylus/) with support for [Coffeescript](http://coffeescript.org/) (or plain JS). Content from flat files, markdown or html and configuration as YAML. One command to generate, optimize files, and deploy.
-
-> Modular, organized code structure. Style without too much.
 
 ## Site Types
 - a **single** page site with terms of use and privacy pages
@@ -61,10 +59,9 @@ article
 ### Dependencies
 You need [node.js](http://nodejs.org/download/), [hexo](https://github.com/tommy351/hexo), and the [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions).
 
-```
-# install node on mac with brew
-brew install node
-```
+1. Install Node http://nodejs.org/download/ On a mac you can just run `brew install node`.
+1. Install Hexo with NPM `npm install -g hexo`
+1. Install LiveReload browser extension: http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions
 
 ### Let's Get You Up and Running
 The following will grab the project, install local dependencies and start the server so you can develop and preview changes with LiveReload.
@@ -89,7 +86,7 @@ hexo generate
 hexo g
 ```
 
-### Even Better: Generate, Optimize, Deploy with 6 letters
+### Generate, Optimize, & Deploy With 6 Letters
 To generate static files, optimize, and [deploy](http://hexo.io/docs/deployment.html) (rsync/ssh, github pages, heroku, etc.) based on project config settings.
 
 ```
@@ -105,15 +102,6 @@ Pull requests are welcome.
 - Hexo helpers: http://zespia.tw/hexo/docs/helpers.html
 - Hexo variables: http://hexo.io/docs/variables.html
 
-## Here's Some Markdown
-
-### Ordered list
-
-1. Item 1
-2. A second item
-3. Number 3
-4. Ⅳ
-
 ## Quotes
 
 Want to quote someone? Try a blockquote. Unfortunately you have to add the semantically correct `<cite>` as html. Don't forget to close the tag `</cite>`.
@@ -121,16 +109,13 @@ Want to quote someone? Try a blockquote. Unfortunately you have to add the seman
 > It is spectacular. From about five minutes in, when we knew for sure that we were going to have the weather to go, the smile on my face just got bigger and bigger, and I was just beaming through the whole launch. I mean, it is just an amazing ride.
 > -- <cite>[Chris Hadfield](http://www.brainyquote.com/quotes/keywords/launch.html#mbkKeBWCGfDhH1Zd.99)</cite>
 
-## Horizontal rule
-A horizontal rule is a line that goes across the middle of the page.
-
 ***
 
-It's sometimes handy for breaking things up.
+Horizontal rules are easy in markdown and sometimes handy for breaking things up.
 
 ## Images
 
-Markdown can also contain images.
+Markdown can also contain images. Here's a big pretty one.
 ![Launch](/assets/launch.jpg "Launch it!")
 
 And that's about all there is to it. Read the [Documentation](/documentation) to learn more.
