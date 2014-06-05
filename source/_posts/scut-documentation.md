@@ -5,7 +5,10 @@ tags:
   - SASS
 ---
 
-The following is a guest post by [David Clark][1]. I think David's new Sass library "Scut" is pretty interesting. It's like a design utility library, which is distinct from a design pattern library in that it enforces no particular structure or particular visual design. I've always found this kind of thing fascinating, largely because I've never been able to pull it off in a way that feels good to me. I always end up leaning too far into visual design, or too abstract to the point of it not being all that useful. I think David just might be on the right track here. I'll let him explain in detail.
+I think David's new Sass library "Scut" is pretty interesting. It's like a design utility library, which is distinct from a design pattern library in that it enforces no particular structure or visual design. 
+<!--more-->
+
+I've always found this kind of thing fascinating, largely because I've never been able to pull it off in a way that feels good to me. I always end up leaning too far into visual design, or too abstract to the point of it not being all that useful. I think David just might be on the right track here. I'll let him explain in detail.
 
 I've started an open-source Sass utility library with a straightforward mission: to ease and improve our implementations of common style-code patterns. I'm calling it Scut.
 

@@ -5,9 +5,8 @@ tags:
   - Jade
 ---
 
-## Language Reference
-
-On this page:
+Welcome to the Jade templating engine. Jade is designed primarily for server side templating in node.js, however it can be used in many other environments.
+<!--more-->
 
 ### doctype
 

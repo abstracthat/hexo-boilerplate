@@ -4,9 +4,9 @@ $(function(){
 
 	// Instantiate MixItUp:
 
-	$('.article-list').mixItUp({
+	$('#articles').mixItUp({
     selectors: {
-      target: 'article'
+      target: '#article'
     }
   });
 

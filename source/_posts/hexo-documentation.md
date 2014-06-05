@@ -1,10 +1,13 @@
-title: Hexo Variables Documentation
+title: Hexo Variables
 date: 2014-05-06 13:53:31
 category: Documentation
-tags: 
+image: /assets/hexo.png
+tags:
   - Hexo
   - Jade
 ---
+Hexo is an open-source Node.js based static site generator. It is a mature platform with an easily extendable infrastructure. Our boilerplate uses some custom JS helpers to render the structure the way we want it.
+<!--more-->
 
 ### Global Variables
 

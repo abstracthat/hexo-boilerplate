@@ -1,59 +1,96 @@
 // edit()
 
 body.category
+  
+  [role="main"]
+    padding-bottom 2.5rem
+
   .featured
-    background-color: shade(blue, 90%)
+    background-color shade(blue, 90%)
     color white - 20%
     padding 2rem 1rem
     group()
+
   h1.title
     margin 0
-    text-align center
-    color white - 20%
+    color white - 4%
+    +from(mobile-cutoff)
+      text-align center
+
   .summary
     p
       font-size 1.2rem
     +from(3)
       margin 0 10%
+
   .tag-list
-    text-align center
     center: desktop-cutoff
+    padding 0
+    +from(3)
+      text-align center
     h6
       color white - 30%
     ul.tags
-      inline-list(.5rem)
-      text-align center
+      inline-list(.8rem)
       display inline-block
-      margin 0 auto
+      +from(3)
+        reset-list()
+        inline-list(.5rem)
       li
-        margin-top .5rem
-        button(olive, textColor: tint(olive,70%))
-        a
-          reset-link()
+        margin-top 0
+        +from(3)
+          margin-top .5rem
+          a
+            button(olive, textColor: tint(olive,90%))
+
   .article-list
-    group()
-    center(desktop-cutoff, margin: 1rem)
-    margin-top 1rem
+    margin: unit(g,'%')
+    
     article
-      span(1/2, cycle: 2)
-      background-color silver
-      margin .25rem 0
-      // border 1px solid gray
-      // padding .75rem
+      margin-top: unit(g,'%')
+      transition()
+      +at(3)
+        column(4/5, offset: 1/10)
+      +from(4)
+        column(1/2, cycle: 2, gutter: 1)
+        box-shadow(inset 0 0 6px rgba(#000,.05))
+        padding 1rem
+        background-color white + 4%
+        height 14rem
+        overflow hidden
+      
       h2
         h4()
-        line-height 1.1
+        line-height 1.4
         font-weight normal
         margin 0
-      span
-        h6()
-        margin 0
-        padding 0
-        display inline-block
-      ul.tags
-        display inline-block
-        inline-list(5px)
         a
-          button(silver + 10%, size: small)
-          upcase()
+          color black
+          border-bottom 1px solid silver
+          padding-bottom .1rem
+          &:hover, &:active
+            color blue
+            transition()
 
+      a.more
+        display inline-block
+        margin-top .4rem
+
+      &.featured
+        uncycle()
+        column()
+        height auto
+        background-color tint(yellow, 85%)
+        margin 0 -unit(g,'%')
+        padding-left 2rem
+        padding-right 2rem
+        color black + 10%
+        p
+          font-size 1.2rem
+        h2 a
+          font-weight bold
+          font-size 1.8rem
+        // img
+        //   display: inline-block
+        //   column(1/3)
+    

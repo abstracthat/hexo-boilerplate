@@ -4,31 +4,41 @@ block vars
   - var bodyclass = 'category'
 
 block content
-  div(role="main")
-    section.featured
-      header: h1.title=page.category
+  div(role='main')
+    header.featured
+      h1.title=page.category
       //- inserts category content from /source/_categories/category.md
-      .summary
-        !=category_content(page.category)
+      if category_content(page.category)
+        .summary
+          !=category_content(page.category)
+    .article-list
       .tag-list
-        h6 Filter Articles By Tag
+        h6 Browse Articles By Topic
         ul.tags
           //- each article tag from all articles in this category for MixItUp filtering
+          li: a.filter(data-filter='all') Show All
           each tag in category_tags(page.category)
             li
               a(href="#", class='filter', data-filter='.' + tag_to_class(tag.name))
                 = tag.name
-          li: a.filter(data-filter='all') All
-    .article-list
-      each post in get_posts({query: {categories: page.category}, count: 1000}).toArray()
-        article(class=post.feature)(class=tags_to_class(post.tags))
-          h2: a(href=config.root + post.path)= post.title
-          span Tags:
-          ul.tags
-            each tag in post.tags.toArray()
-              li: a(href=config.root + tag.path): = tag.name
-          p!=post.excerpt
-          a(href=config.root + post.path) Read More...
+      //- query is not working...
+      //- if get_posts({query: {page.feature: featured})
+      //-   each post in get_posts({query: {page.feature: featured}, count: 1}).toArray()
+      //-     article.featured
+      //-       h2: a(href=config.root + post.path)= post.title
+      //-       img(src=post.image)
+      //-       !=post.excerpt
+      //-       a(href=config.root + post.path) Read More...
+      #articles
+        each post in get_posts({query: {categories: page.category}, count: 1000}).toArray()
+          article#article(class=post.feature,class=tags_to_class(post.tags))
+            h2: a(href=config.root + post.path)= post.title
+            //- span Tags:
+            //- ul.tags
+            //-   each tag in post.tags.toArray()
+            //-     li: a(href=config.root + tag.path): = tag.name
+            !=post.excerpt
+            a.more(href=config.root + post.path) Read More...
 
 block append scripts
   !=js('/scripts/category.js')
