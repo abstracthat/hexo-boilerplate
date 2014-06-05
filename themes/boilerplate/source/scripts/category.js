@@ -6,7 +6,7 @@ $(function(){
 
 	$('#articles').mixItUp({
     selectors: {
-      target: '#article'
+      target: '.article'
     }
   });
 

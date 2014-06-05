@@ -19,7 +19,7 @@ block content
           li: a.filter(data-filter='all') Show All
           each tag in category_tags(page.category)
             li
-              a(href="#", class='filter', data-filter='.' + tag_to_class(tag.name))
+              a(href="javascript:void(0)", class='filter', data-filter='.' + tag_to_class(tag.name))
                 = tag.name
       //- query is not working...
       //- if get_posts({query: {page.feature: featured})
@@ -31,7 +31,7 @@ block content
       //-       a(href=config.root + post.path) Read More...
       #articles
         each post in get_posts({query: {categories: page.category}, count: 1000}).toArray()
-          article#article(class=post.feature,class=tags_to_class(post.tags))
+          article.article(class=post.feature,class=tags_to_class(post.tags))
             h2: a(href=config.root + post.path)= post.title
             //- span Tags:
             //- ul.tags

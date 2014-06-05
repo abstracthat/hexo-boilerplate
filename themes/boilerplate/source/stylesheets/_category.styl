@@ -1,7 +1,7 @@
 // edit()
 
 body.category
-  
+
   [role="main"]
     padding-bottom 2.5rem
 
@@ -45,52 +45,63 @@ body.category
 
   .article-list
     margin: unit(g,'%')
-    
-    article
-      margin-top: unit(g,'%')
-      transition()
-      +at(3)
-        column(4/5, offset: 1/10)
-      +from(4)
-        column(1/2, cycle: 2, gutter: 1)
-        box-shadow(inset 0 0 6px rgba(#000,.05))
-        padding 1rem
-        background-color white + 4%
-        height 14rem
-        overflow hidden
-      
-      h2
-        h4()
-        line-height 1.4
-        font-weight normal
-        margin 0
-        a
-          color black
-          border-bottom 1px solid silver
-          padding-bottom .1rem
-          &:hover, &:active
-            color blue
-            transition()
 
-      a.more
-        display inline-block
-        margin-top .4rem
+    #articles
 
-      &.featured
-        uncycle()
-        column()
-        height auto
-        background-color tint(yellow, 85%)
-        margin 0 -unit(g,'%')
-        padding-left 2rem
-        padding-right 2rem
-        color black + 10%
-        p
-          font-size 1.2rem
-        h2 a
-          font-weight bold
-          font-size 1.8rem
-        // img
-        //   display: inline-block
-        //   column(1/3)
+      &:after
+        content: ''
+        display: inline-block
+        width: 100%
+
+      article
+
+        vertical-align: top
+        display: none               /* controlled by MixItUp */
+
+        margin-top: unit(g,'%')
+        transition()
+        +at(3)
+          column(4/5, offset: 1/10)
+        +from(4)
+          column(1/2, cycle: 2, gutter: 1)
+          box-shadow(inset 0 0 6px rgba(#000,.05))
+          padding 1rem
+          background-color white + 4%
+          height 14rem
+          overflow hidden
+        
+        h2
+          h4()
+          line-height 1.4
+          font-weight normal
+          margin 0
+          a
+            color black
+            border-bottom 1px solid silver
+            padding-bottom .1rem
+            &:hover, &:active
+              color blue
+              transition()
+
+        a.more
+          display inline-block
+          margin-top .4rem
+
+        &.featured
+          uncycle()
+          column()
+          height auto
+          background-color tint(yellow, 85%)
+          margin 0 -unit(g,'%')
+          padding-left 2rem
+          padding-right 2rem
+          color black + 10%
+          p
+            font-size 1.2rem
+          h2 a
+            font-weight bold
+            font-size 1.8rem
+          // img
+          //   display: inline-block
+          //   column(1/3)
     
