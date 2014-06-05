@@ -16,7 +16,7 @@ block content
       if page.button
         a(href="#{page.button_link}" rel="nofollow")
           button(class="action")= page.button
-    article
+    article.content
       !=page.content
       if page.social
         +socialbuttons(page.social)

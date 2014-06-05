@@ -1,37 +1,34 @@
-//- Category
-//- List pages for one category
-//- Should work with any category mentioned in a pages front-matter.
-
-
 extends base
 
 block vars
   - var bodyclass = 'category'
 
 block content
-  header: h1=page.category
-  !=category_content(page.category)
-  ul.tag-list
-    //- each article tag from site for MixItUp filtering
-    each tag in category_tags(page.category)
-      li
-        a(href="#", class='filter', data-filter='.' + tag_to_class(tag.name))
-          = tag.name
-    li: a.filter(data-filter='all') All
-  div.mix-container.article-list
-    //- query for get posts in category? http://hexo.io/docs/helpers.html#get_posts
-    //- there should be three styles, with frontmatter `feature: primary #or secondary`
-    //- I want to render all of the posts on the page and style them across feature:primary, feature:secondary
-    // rest of the posts ordered by time which will be just the title)
-    each post in get_posts({query: {categories: page.category}, count: 1000}).toArray()
-      div.mix(class=tags_to_class(post.tags)): article(class=post.feature)
-        h2: a(href=config.root + post.path)= post.title
+  div(role="main")
+    section.featured
+      header: h1.title=page.category
+      //- inserts category content from /source/_categories/category.md
+      .summary
+        !=category_content(page.category)
+      .tag-list
+        h6 Filter Articles By Tag
         ul.tags
-          each tag in post.tags.toArray()
-            li: a(href=config.root + tag.path): = tag.name
-        p!=post.excerpt
-        a(href=config.root + post.path) Read More...
-    div.gap
+          //- each article tag from all articles in this category for MixItUp filtering
+          each tag in category_tags(page.category)
+            li
+              a(href="#", class='filter', data-filter='.' + tag_to_class(tag.name))
+                = tag.name
+          li: a.filter(data-filter='all') All
+    .article-list
+      each post in get_posts({query: {categories: page.category}, count: 1000}).toArray()
+        article(class=post.feature)(class=tags_to_class(post.tags))
+          h2: a(href=config.root + post.path)= post.title
+          span Tags:
+          ul.tags
+            each tag in post.tags.toArray()
+              li: a(href=config.root + tag.path): = tag.name
+          p!=post.excerpt
+          a(href=config.root + post.path) Read More...
 
 block append scripts
   !=js('/scripts/category.js')

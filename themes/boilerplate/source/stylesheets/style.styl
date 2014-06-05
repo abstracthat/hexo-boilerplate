@@ -1,6 +1,7 @@
 // edit()
 
 @import '_settings'
+@import '_category'
 
 // establish-baseline('normalize')
 normalize()
@@ -40,7 +41,7 @@ body
     background-color: white
     padding: 0 1rem
 
-  article
+  article.content
     padding: 0 1rem 2rem
     +from(3)
       column(4/5, offset: 1/10)
@@ -325,12 +326,15 @@ footer.footer
 h1
   h1: 2.2
   line-height: 1.1
+  margin-bottom: .75rem
   +tablet()
     h1: 3.1
     line-height: 1.1
+    margin-bottom: .85rem
   +desktop()
     h1: 4
     line-height: 1.1
+    margin-bottom: 1rem
 h2
   h2: 1.7
   line-height: 1.1

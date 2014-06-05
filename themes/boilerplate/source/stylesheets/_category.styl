@@ -1,0 +1,59 @@
+// edit()
+
+body.category
+  .featured
+    background-color: shade(blue, 90%)
+    color white - 20%
+    padding 2rem 1rem
+    group()
+  h1.title
+    margin 0
+    text-align center
+    color white - 20%
+  .summary
+    p
+      font-size 1.2rem
+    +from(3)
+      margin 0 10%
+  .tag-list
+    text-align center
+    center: desktop-cutoff
+    h6
+      color white - 30%
+    ul.tags
+      inline-list(.5rem)
+      text-align center
+      display inline-block
+      margin 0 auto
+      li
+        margin-top .5rem
+        button(olive, textColor: tint(olive,70%))
+        a
+          reset-link()
+  .article-list
+    group()
+    center(desktop-cutoff, margin: 1rem)
+    margin-top 1rem
+    article
+      span(1/2, cycle: 2)
+      background-color silver
+      margin .25rem 0
+      // border 1px solid gray
+      // padding .75rem
+      h2
+        h4()
+        line-height 1.1
+        font-weight normal
+        margin 0
+      span
+        h6()
+        margin 0
+        padding 0
+        display inline-block
+      ul.tags
+        display inline-block
+        inline-list(5px)
+        a
+          button(silver + 10%, size: small)
+          upcase()
+
