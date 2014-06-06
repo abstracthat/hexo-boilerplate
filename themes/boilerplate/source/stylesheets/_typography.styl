@@ -1,0 +1,134 @@
+// edit()
+
+h1
+  h1: 2.2
+  line-height: 1.1
+  margin-bottom: .75rem
+  +tablet()
+    h1: 3.1
+    line-height: 1.1
+    margin-bottom: .85rem
+  +desktop()
+    h1: 4
+    line-height: 1.1
+    margin-bottom: 1rem
+h2
+  h2: 1.7
+  line-height: 1.3
+  margin-bottom: 0
+  margin-top: .8rem
+  +tablet()
+    h2: 2.2
+    line-height: 1.2
+    margin-bottom: 0
+    margin-top: .9rem
+  +desktop()
+    h2: 2.5
+    line-height: 1.2
+    margin-bottom: 0
+    margin-top: 1rem
+h3
+  h3: 1.6
+  line-height: 1.1
+  font-weight: normal
+  margin: 1rem 0 0
+  +tablet()
+    h3: 1.8
+    line-height: 1.1
+    font-weight: normal
+    margin: .9rem 0 0
+  +desktop()
+    h3: 2
+    line-height: 1.1
+    font-weight: normal
+    margin: 1rem 0 0
+h4
+  h4: 1.3
+  margin: 0
+  font-weight: normal
+  +tablet()
+    h4: 1.8
+    margin: 0
+    font-weight: normal
+  +desktop()
+    h4: 2
+    margin: 0
+    font-weight: normal
+h5
+  h5: 1
+  margin: 0
+  font-weight: normal
+  +tablet()
+    h5: 1.1
+    margin: 0
+    font-weight: normal
+  +desktop()
+    h5: 1.3
+    margin: 0
+    font-weight: normal
+h6
+  h6: 0.9
+  margin: 0
+
+bold-italic()
+hyphenation()
+text-selection()
+
+p
+  paragraph()
+  line-height 1.8
+
+small
+  small-text()
+
+a
+  link()
+
+blockquote
+  blockquo(olive)
+  a
+    link(olive)
+
+ul
+  margin: 0.5rem 0.94rem
+  padding-left: .25rem
+  li
+    list-style-type: disc
+    padding: 0.125rem
+    line-height 1.6
+
+ol
+  margin: 0.32rem 0 .5rem 0.5rem
+  padding-left: 1rem
+  li
+    list-style-type: decimal
+    padding: 0.125rem
+    line-height 1.6
+
+blockquote
+  background-color: content-bg-color - 4%
+  p
+    margin-bottom 0
+    padding: 1rem .75rem 1rem 0
+
+pre > code
+  color: black + 25%
+  display: block
+  padding: .75rem
+  background-color: content-bg-color - 5%
+  border: 1px solid black + 75%
+  border-radius: 3px
+  white-space: pre-wrap
+  word-break: break-all
+  font-family: Menlo, Monaco, monospace
+  font-size: .95rem
+  line-height: 160%
+  +from(mobile-cutoff)
+    font-size: 1rem
+    padding: 1rem
+code
+  code()
+
+// Break long urls
+html
+  word-wrap: break-word

@@ -13,7 +13,7 @@ block content
           !=category_content(page.category)
     .article-list
       .tag-list
-        h6 Browse Articles By Topic
+        h6 Browse #{page.category} Articles By Topic
         ul.tags
           //- each article tag from all articles in this category for MixItUp filtering
           li: a.filter(data-filter='all') Show All

@@ -7,18 +7,16 @@ georgia = Georgia, Cambria, "Times New Roman", Times, serif
 lucidia-grande = "Lucida Grande", Tahoma, Verdana, Arial, sans-serif
 monospace = unquote("'Bitstream Vera Sans Mono', Consolas, Courier, monospace")
 verdana = Verdana, Geneva, sans-serif
+open-sans = "Open Sans", "Helvetica Neue", Helvetica, sans-serif
 
 // default font stack
 font-stack = helvetica-neue
 font-size = 16
 font-color = #555
 
+content-bg-color = white - 6%
+
 color1 = #008CBA
-color2 = #fff - 30%
-color3 = #f04124
-color4 = #43AC6A
-color5 = #f08a24
-color6 = #a0d3e8
 
 // colors (via http://clrs.cc - slightly modded)
 navy = #001F3F
@@ -66,6 +64,10 @@ base-font-size = 16px
 scale = 0 mobile-cutoff 700px 900px desktop-cutoff
 
 // Grid Settings (http://jeet.gs/)
+
+*, *:after, *:before
+  box-sizing border-box
+
 jeet = {
   gutter: 3,
   parent-first: false,
