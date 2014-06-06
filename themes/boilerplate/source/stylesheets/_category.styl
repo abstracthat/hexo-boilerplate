@@ -46,15 +46,15 @@ body.category
 
   .article-list
     margin: 0 unit(g,'%')
-    
+
     article
+      display none
       margin-top 1rem
-      transition()
       +at(3)
         column(4/5, offset: 1/10)
       +from(4)
         margin-top: unit(g,'%')
-        column(1/2, cycle: 2, gutter: 1)
+        column(1/2, cycle: 2)
         box-shadow(inset 0 0 6px rgba(#000,.05))
         padding 1rem
         background-color white + 4%
