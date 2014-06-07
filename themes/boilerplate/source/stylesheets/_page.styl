@@ -17,6 +17,8 @@ body
     background-color white
     padding 1rem
     margin-bottom 1rem
+    +from(4)
+      padding 1rem 2rem
 
   article.content
     padding 0 1rem 2rem
@@ -64,17 +66,9 @@ flex-video-container()
 .video
   flex-video-container()
 
-.social
-  inline-list()
-  li
-    margin: .2rem
-  a
-    button(silver)
-
 img
   max-width: 100%
   height: auto
   -ms-interpolation-mode: bicubic
   display: inline-block
   vertical-align: middle
-  margin-top: .5rem

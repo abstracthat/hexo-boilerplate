@@ -1,0 +1,38 @@
+// colors
+twitter-color = #41b7d8
+facebook-color = #3b5997
+google-color = #d64937
+pinterest-color = #cb2027
+tumblr-color = #35465c
+
+.social
+  // area(silver)
+  ul
+    inline-list(.4rem)
+    li
+      margin-top .3rem
+      &.twitter
+        a
+          button(twitter-color, size: 16, textColor: white)
+          &:hover, &:active
+            background-color twitter-color + 25%
+      &.facebook
+        a
+          button(facebook-color, size: 16, textColor: white)
+          &:hover, &:active
+            background-color facebook-color + 25%
+      &.googleplus
+        a
+          button(google-color, size: 16, textColor: white)
+          &:hover, &:active
+            background-color google-color + 25%
+      &.tumblr
+        a
+          button(tumblr-color, size: 16, textColor: white)
+          &:hover, &:active
+            background-color tumblr-color + 25%
+      &.pinterest
+        a
+          button(pinterest-color, size: 16, textColor: white)
+          &:hover, &:active
+            background-color pinterest-color + 25%

@@ -39,9 +39,8 @@ Path of current page
 `url`
 Full URL of current page
 
-&gt; Custom Variables
-&gt;
-&gt; You can also use front-matter in layouts just like writing posts!
+> **Custom Variables**
+> You can also use front-matter in layouts just like writing posts!
 
 ### Site Variables
 
@@ -121,9 +120,8 @@ The photos of the article (Used in gallery posts)
 `page.link`
 The external link of the article (Used in link posts)
 
-&gt; Custom front-matter
-&gt;
-&gt; The front-matter in posts will be available in `page`.
+> **Custom front-matter**
+> The front-matter in posts will be available in `page`.
 
 Home (index)
 

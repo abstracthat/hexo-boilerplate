@@ -5,11 +5,9 @@ video: s39mNwFuQDQ
 button: Check It Out on GitHub
 button_link: http://github.com/abstracthat/hexo-boilerplate/
 social:
-  # use all lowercase
-  - twitter
+  # use all lowercase, options are: twitter, facebook, pinterest, tumblr, googleplus
   - facebook
-  - googleplus
-  - tumblr
+  - twitter
 ---
 
 <div class="note"><p>**Note**: this boilerplate is currently under active development and may contain incomplete templates.</p></div>
@@ -116,6 +114,7 @@ Horizontal rules are easy in markdown and sometimes handy for breaking things up
 ## Images
 
 Markdown can also contain images. Here's a big pretty one.
+
 ![Launch](/assets/launch.jpg "Launch it!")
 
 And that's about all there is to it. Read the [Documentation](/documentation) to learn more.

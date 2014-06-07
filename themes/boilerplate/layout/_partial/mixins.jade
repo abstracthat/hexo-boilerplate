@@ -19,37 +19,39 @@ mixin header(header)
 //- Add social sharing buttons by passing an array
 //- +social-buttons(['twitter','facebook','googleplus','linkedin','pinterest','tumblr'])
 mixin socialbuttons(socialsites)
-  ul.social
-    each socialsite in socialsites
-      case socialsite
-        when 'twitter'
-          li(class=socialsite)
-            if config.twitter
-              a(target='_blank', href='https://twitter.com/intent/tweet?text=#{page.title}&url=#{url}&via=#{config.twitter}')
-                +icon-twitter()
-                span.text Twitter
-            else
-              a(target='_blank', href='https://twitter.com/intent/tweet?text=#{page.title}&url=#{url}')
-                +icon-twitter()
-                span.text Twitter
-        when 'facebook'
-          li(class=socialsite)
-            a(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=#{url}')
-              +icon-facebook()
-              span.text Facebook
-        when 'googleplus'
-          li(class=socialsite)
-            a(target='_blank', href='https://plus.google.com/share?url=#{url}')
-              +icon-google-plus()
-              span.text Google+
-        when 'pinterest'
-          li(class=socialsite)
-            //- Can we choose the first image from a post for the media parameter?
-            a(target='_blank', href='https://pinterest.com/pin/create/button/?url=#{url}&description=#{page.title}&media=')
-              +icon-pinterest()
-              span.text Pinterest
-        when 'tumblr'
-          li(class=socialsite)
-            a(target='_blank', href='http://www.tumblr.com/share')
-              +icon-tumblr()
-              span.text Tumblr
+  .social
+    h6 Share This
+    ul
+      each socialsite in socialsites
+        case socialsite
+          when 'twitter'
+            li(class=socialsite)
+              if config.twitter
+                a(target='_blank', href='https://twitter.com/intent/tweet?text=#{page.title}&url=#{url}&via=#{config.twitter}')
+                  i.twitter-icon
+                  | Tweet
+              else
+                a(target='_blank', href='https://twitter.com/intent/tweet?text=#{page.title}&url=#{url}')
+                  i.twitter-icon
+                  | Tweet
+          when 'facebook'
+            li(class=socialsite)
+              a(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=#{url}')
+                i.facebook-icon
+                | Share on Facebook
+          when 'googleplus'
+            li(class=socialsite)
+              a(target='_blank', href='https://plus.google.com/share?url=#{url}')
+                i.google-icon
+                | Google+
+          when 'pinterest'
+            li(class=socialsite)
+              //- Can we choose the first image from a post for the media parameter?
+              a(target='_blank', href='https://pinterest.com/pin/create/button/?url=#{url}&description=#{page.title}&media=')
+                i.pinterest-icon
+                | Pinterest
+          when 'tumblr'
+            li(class=socialsite)
+              a(target='_blank', href='http://www.tumblr.com/share')
+                i.tumblr-icon
+                | Tumblr
