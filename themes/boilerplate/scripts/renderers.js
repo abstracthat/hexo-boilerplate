@@ -1,6 +1,6 @@
 var stylus = require('stylus'),
   nib = require('nib'),
-  axis = require('axis-css'),
+  axis = require('axis'),
   jeet = require('jeet'),
   rupture = require('rupture'),
   autoprefixer = require('autoprefixer-stylus');
