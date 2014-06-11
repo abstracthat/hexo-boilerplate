@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "autoprefixer-stylus": "^0.1.0",
-    "axis-css": "^0.1.8",
+    "axis": "^0.2.0",
     "hexo-generator-feed": "*",
     "hexo-generator-optimize": "*",
     "hexo-livereload": "*",
