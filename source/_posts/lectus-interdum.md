@@ -13,7 +13,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum dap
 
 <!-- more -->
 
-![Barn](/assets/barn.jpg "It is a barn")
+![Launch](/assets/launch.jpg "Launch it!")
 
 ## Morbi In Massa Non Enim
 Volutpat vestibulum quis condimentum urna. Suspendisse pulvinar, dui in semper dictum, mi diam venenatis mauris, eget commodo tortor tellus eu est. Nullam felis libero, venenatis id porta eu, viverra non enim. Nulla vulputate sit amet nisi ac facilisis. Sed commodo cursus suscipit. Quisque cursus condimentum cursus. In eu enim vitae ante rutrum viverra vitae posuere massa.
