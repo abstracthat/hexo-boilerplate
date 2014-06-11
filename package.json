@@ -12,6 +12,7 @@
     "hexo-renderer-ejs": "*",
     "hexo-renderer-jade": "*",
     "hexo-renderer-marked": "*",
+    "html-truncate": "^1.0.3",
     "jeet": "^5.2.10",
     "lodash": "*",
     "marked": "*",

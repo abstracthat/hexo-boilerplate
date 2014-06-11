@@ -1,9 +1,10 @@
-/*global hexo */
+/*global hexo, require */
 
 var _ = require('lodash'),
     fs = require('fs'),
     marked = require('marked'),
-    path = require('path');
+    path = require('path'),
+    html_truncate = require('html-truncate');
 
 function escape_regex(str) {
     // http://stackoverflow.com/a/6969486
