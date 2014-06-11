@@ -22,17 +22,17 @@ block content
             li
               a.filter(href="#", data-filter='.' + tag_to_class(tag.name))
                 = tag.name
-      //- query is not working...
-      //- if get_posts({query: {page.feature: featured})
-      //-   each post in get_posts({query: {page.feature: featured}, count: 1}).toArray()
-      //-     article.featured
-      //-       h2: a(href=config.root + post.path)= post.title
-      //-       img(src=post.image)
-      //-       !=post.excerpt
-      //-       a(href=config.root + post.path) Read More...
       #articles
-        each post in get_posts({query: {categories: page.category}, count: 1000}).toArray()
-          article.article(class=post.feature,class=tags_to_class(post.tags))
+        - var featured_posts = get_posts({query: {categories: page.category, feature: {$exist: true}}}).toArray()
+        if featured_posts.length
+          each post in featured_posts
+            article.article.featured(class=tags_to_class(post.tags))
+              h2: a(href=config.root + post.path)= post.title
+              img(src=post.image)
+              !=post.excerpt
+              a(href=config.root + post.path) Read More...
+        each post in get_posts({query: {categories: page.category, feature: {$exist: false}}, count: 1000}).toArray()
+          article.article(class=tags_to_class(post.tags))
             h2: a(href=config.root + post.path)= post.title
             //- span Tags:
             //- ul.tags
