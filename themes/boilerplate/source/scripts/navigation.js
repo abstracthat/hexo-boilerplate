@@ -24,9 +24,10 @@
     var navigation = responsiveNav(".main-menu", {
 
       // Close the navigation when it's tapped
-      animate: false,
+      animate: true,
       closeOnNavClick: true,
-      navClass: ".main-menu"
+      navClass: "main-menu",
+      openPos: "static"
     });
 
     // Create a Mask
