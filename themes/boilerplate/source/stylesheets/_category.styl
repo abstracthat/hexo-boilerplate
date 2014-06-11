@@ -71,7 +71,7 @@ body.category
         height 14rem
 
       h2
-        $h4()
+        font-size 1.25rem
         line-height 1.4
         font-weight normal
         margin 0
@@ -84,26 +84,34 @@ body.category
             color blue
             transition()
 
-      a.more
-        display inline-block
-        margin-top .4rem
 
       &.featured
-        width 100%
+        width auto
         height auto
         background-color tint(yellow, 85%)
-        margin 0 -unit(g,'%')
-        padding-left 2rem
-        padding-right 2rem
         color black + 10%
-
+        margin 0 unit(-(g),'%')
+        position relative
+        border-bottom 5px solid color1
+        border-top @border-bottom
+        +from(3)
+          margin 0 unit((g / 2),'%')
+          padding 2rem
         p
-          font-size 1.2rem
+          font-size 1.1rem
+          +from(3)
+            font-size 1.2rem
 
         h2 a
           font-weight bold
           font-size 1.8rem
-        // img
-        //   display: inline-block
-        //   column(1/3)
-    
+          margin 2rem 0 0
+        img
+          display: inline-block
+          width 40%
+          float left
+          margin 1.4rem .75rem 0 0
+
+      a.more
+        display inline-block
+        margin-top .4rem

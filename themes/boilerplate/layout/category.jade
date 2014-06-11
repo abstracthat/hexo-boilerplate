@@ -28,7 +28,8 @@ block content
           each post in featured_posts
             article.article.featured(class=tags_to_class(post.tags))
               h2: a(href=config.root + post.path)= post.title
-              img(src=post.image)
+              if post.image
+                img(src=post.image)
               !=post.excerpt
               a(href=config.root + post.path) Read More...
         each post in get_posts({query: {categories: page.category, feature: {$exist: false}}, count: 1000}).toArray()

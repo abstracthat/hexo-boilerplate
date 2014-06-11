@@ -3,7 +3,8 @@ layout: page
 description: This is the meta description for the page that will be picked up by search engines and displayed in results. You get roughly 160 characters.
 date: 2014-04-06 13:53:31
 category: Documentation
-tags: 
+feature: true
+tags:
   - Stylus
 ---
  Stylus is a revolutionary new language, providing an efficient, dynamic, and expressive way to generate CSS. Supporting both an indented syntax and regular CSS style.
