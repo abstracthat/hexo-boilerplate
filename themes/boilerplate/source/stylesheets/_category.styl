@@ -100,12 +100,14 @@ body.category
         height auto
         background-color tint(yellow, 85%)
         color black + 10%
-        margin 0 unit(-(g),'%')
+        margin-left unit(-(g),'%')
+        margin-right unit(-(g),'%')
         position relative
         border-bottom 5px solid color1
         border-top @border-bottom
         +from(3)
-          margin 0 unit((g / 2),'%')
+          margin-left unit((g / 2),'%')
+          margin-right unit((g / 2),'%')
           padding 2rem
         p
           font-size 1.1rem
