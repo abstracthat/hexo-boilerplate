@@ -4,6 +4,7 @@ description: This is the meta description for the page that will be picked up by
 date: 2014-04-06 13:53:31
 category: Documentation
 feature: true
+image: /assets/stylus.png
 tags:
   - Stylus
 ---
