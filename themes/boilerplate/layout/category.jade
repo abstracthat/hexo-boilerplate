@@ -17,10 +17,10 @@ block content
         h6 View #{page.category} #{articles} By Topic
         ul.tags
           //- each article tag from all articles in this category for MixItUp filtering
-          li: a.filter(data-filter='all') Show All
+          li: a.filter.active(href="#", data-filter='all') Show All
           each tag in category_tags(page.category)
             li
-              a(href="javascript:void(0)", class='filter', data-filter='.' + tag_to_class(tag.name))
+              a.filter(href="#", data-filter='.' + tag_to_class(tag.name))
                 = tag.name
       //- query is not working...
       //- if get_posts({query: {page.feature: featured})
