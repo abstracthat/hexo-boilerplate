@@ -64,12 +64,12 @@ nav.main-menu
   ul
     line-height 1.5rem
     width 100%
-    text-align center
     inline-list()
     margin-left 0
     margin-bottom 0
     margin-top 0
     +from(mobile-cutoff)
+      text-align center
       border-top none
       line-height 1rem
       margin-bottom .75rem
@@ -102,13 +102,14 @@ nav.main-menu
     color white
     opacity .8
     min-width 100%
-    text-align center
     border-bottom none
+    margin-left 1rem
     &.active, .active &
       color header-background-color
       opacity 1
       transition()
     +from(mobile-cutoff)
+      margin-left 0
       opacity .65
       border-bottom 1px solid rgba(0,0,0,0)
       padding-bottom .2rem
