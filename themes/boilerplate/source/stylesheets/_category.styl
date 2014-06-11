@@ -41,8 +41,18 @@ body.category
         margin-top 0
         +from(3)
           margin-top .5rem
-          a
+        a
+          &.active
+            color black
+            +from(3)
+              background-color shade(olive,60%)
+              color white
+              &:hover
+                background-color shade(olive,60%)
+          +from(3)
             $button(olive, textColor: tint(olive,90%))
+            border none
+
 
   .article-list
     margin 0 unit(g,'%')
