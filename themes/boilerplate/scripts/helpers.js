@@ -93,3 +93,5 @@ hexo.extend.helper.register('is_index', function() {
 
     return path === '' || r.test(path);
 });
+
+hexo.extend.helper.register('html_truncate', html_truncate);
