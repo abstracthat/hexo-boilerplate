@@ -39,7 +39,7 @@ block content
             //- ul.tags
             //-   each tag in post.tags.toArray()
             //-     li: a(href=config.root + tag.path): = tag.name
-            !=html_truncate(post.excerpt, 160)
+            !=html_truncate(post.excerpt, 250)
             a.more(href=config.root + post.path) Read More...
 
 block append scripts
