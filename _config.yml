@@ -82,7 +82,7 @@ exclude_generator:
 
 # Markdown
 ## https://github.com/chjj/marked
-markdown:
+marked:
   gfm: true
   pedantic: false
   sanitize: false
@@ -90,6 +90,7 @@ markdown:
   breaks: true
   smartLists: true
   smartypants: true
+  xhtml: true                   # don't confuse html-truncate
 
 highlight:
   enable: false
