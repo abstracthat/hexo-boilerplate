@@ -109,6 +109,16 @@ port: 4000
 logger: false
 logger_format:
 
+optimize:
+  # Defaults
+  image_min: true
+  css_concat: true
+  css_min: true
+  js_concat: true
+  js_min: true
+  html_min: true
+  gzip: true
+
 # Deployment
 ## Docs: http://zespia.tw/hexo/docs/deployment.html
 deploy:
