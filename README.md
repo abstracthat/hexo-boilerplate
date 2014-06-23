@@ -1,8 +1,7 @@
 # Hexo Site Boilerplate
 
-**Note**: this boilerplate is currently under active development and may contain incomplete templates.
+**Note**: this [Hexo](https://github.com/tommy351/hexo) boilerplate is currently under active development and may contain incomplete templates.
 
-- [Hexo](https://github.com/tommy351/hexo) boilerplate
 - Fast syntax using Jade & Stylus with support for Coffeescript & plain JS
 - Content as flat files: markdown or HTML
 - Configure sites with minimal YAML
