@@ -2,7 +2,11 @@
 
 **Note**: this boilerplate is currently under active development and may contain incomplete templates.
 
-[Hexo](https://github.com/tommy351/hexo) boilerplate. Fast syntax using Jade and Stylus with support for Coffeescript (or JS). Content from flat files, markdown or html and configuration as YAML. One command to generate, optimize files, and deploy.
+- [Hexo](https://github.com/tommy351/hexo) boilerplate
+- Fast syntax using Jade & Stylus with support for Coffeescript & plain JS
+- Content as flat files: markdown or HTML
+- Configure sites with minimal YAML
+- One command to generate, optimize, and deploy
 
 > Modular, organized code structure. Style without too much.
 
