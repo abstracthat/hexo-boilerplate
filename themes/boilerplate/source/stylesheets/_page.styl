@@ -48,16 +48,16 @@ button.action
   padding 1rem
   font-weight 700 
 
-video()
+video(max-width = .75, margin-bottom = 1.5rem)
   position relative
-  padding-top 1.5rem
-  padding-bottom 56.34%
+  padding-bottom 56.3%
   height 0
-  margin 1rem auto 1.5rem auto
+  margin-bottom margin-bottom
   overflow hidden
-  +from(4)
-    center(desktop-cutoff * .75)
-    padding-bottom @padding-bottom * .75
+  if max-width isnt false
+    +from(4)
+      center(desktop-cutoff * .75)
+      padding-bottom @padding-bottom * .75
   iframe, object, embed, video
     absolute top left
     size 100% 100%
