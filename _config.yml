@@ -3,33 +3,52 @@
 
 # Site
 url: http://yoursite.com
-site_type: mini # single, mini, big
+site_type: big # single, mini, big
 title: Boilerplate Site Title
-description:
-year_started: 2013
+description: # SEO meta description for the site. Roughly 160 characters max.
+year_started: 2014
 email: # optional, used on terms, and privacy pages
-author: # not currently used in template
-root: / # If subdirectory, url: http://yoursite.com/child and root: /child/
 disqus_shortname:
+root: / # If subdirectory, url: http://yoursite.com/child and root: /child/
 google_analytics:
 
-# Menu
+# Main menu includes what you list here as name: /slug/ as well as any categories found in posts
 menu:
-  Page Name: /page-name/
-  An Important Page: /an-important-page/
+  # Page Name: /page-name/
+
+# Footer menu... you can leave privacy and terms
 footerMenu:
   Privacy Policy: /privacy/
   Terms of Use: /terms/
   # Google+: 
 
+# Google Font
+google_font: Open+Sans:400,700,400italic,700italic
+
+# Need to add more stylesheets or JS... add it here.
+css:
+  - '/stylesheets/style.css'
+headScripts:
+  - '//cdnjs.cloudflare.com/ajax/libs/responsive-nav.js/1.0.32/responsive-nav.min.js'
+scripts:
+  - '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+  - '//cdn.jsdelivr.net/fastclick/1.0.1/fastclick.min.js'
+  - '//cdn.jsdelivr.net/jquery.mixitup/2.1.5/jquery.mixitup.min.js'
+  - '/scripts/navigation.js'
+
+
+#
+# You should probably leave everything below here alone
+#
+
+
 # Big
 permalink: :category/:title/
-tag_dir: tags
 category_dir: '' # for uncategorized only
-rss:
 archive: 0 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
 category: 1 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
 tag: 0 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
+tag_dir: tags
 per_page: 10 # Set per_page to 0 to disable pagination
 pagination_dir: page
 default_category: uncategorized
@@ -43,19 +62,6 @@ tag_map: # tag slug
 date_format: MMMM D YYYY
 time_format: H:mm:ss
 
-# Design
-google_font: Open+Sans:400,700,400italic,700italic
-
-css:
-  - '/stylesheets/style.css'
-headScripts:
-  - '//cdnjs.cloudflare.com/ajax/libs/responsive-nav.js/1.0.32/responsive-nav.min.js'
-scripts:
-  - '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'
-  - '//cdn.jsdelivr.net/fastclick/1.0.1/fastclick.min.js'
-  - '//cdn.jsdelivr.net/jquery.mixitup/2.1.5/jquery.mixitup.min.js'
-  - '/scripts/navigation.js'
-
 # Writing
 excerpt_link: Read More
 new_post_name: :title.md # File name of new posts
@@ -64,6 +70,8 @@ auto_spacing: false # Add spaces between asian characters and western characters
 titlecase: false # Transform title into titlecase
 external_link: false # Open external links in new tab
 
+# Misc or Not Used Hexo stuff
+author: # not currently used in template
 max_open_file: 100
 multi_thread: true
 filename_case: 1
@@ -90,7 +98,7 @@ marked:
   breaks: true
   smartLists: true
   smartypants: true
-  xhtml: true                   # don't confuse html-truncate
+  xhtml: true # don't confuse html-truncate
 
 highlight:
   enable: false
