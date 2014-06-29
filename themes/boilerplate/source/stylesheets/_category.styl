@@ -55,7 +55,7 @@ body.category
 
 
   .article-list
-    margin 0 unit(g,'%')
+    margin 0 (g)%
 
     article
       display none
@@ -65,7 +65,7 @@ body.category
         margin-left 10%
         margin-right 10%
       +from(4)
-        margin-top unit(g,'%')
+        margin-top (g)%
         width 47%
         margin 1.5%
         box-shadow(inset 0 0 6px rgba(#000,.05))
@@ -77,8 +77,6 @@ body.category
           background-color tint(yellow,97%)
           border-bottom 5px solid color1
           transition()
-      +desktop()
-        height 14rem
 
       h2
         font-size 1.25rem
@@ -100,14 +98,14 @@ body.category
         height auto
         background-color tint(yellow, 85%)
         color black + 10%
-        margin-left unit(-(g),'%')
-        margin-right unit(-(g),'%')
+        margin-left -(g)%
+        margin-right @margin-left
         position relative
         border-bottom 5px solid color1
         border-top @border-bottom
         +from(3)
-          margin-left unit((g / 2),'%')
-          margin-right unit((g / 2),'%')
+          margin-left (g/2)%
+          margin-right (g/2)%
           padding 2rem
         p
           font-size 1.1rem
