@@ -11,6 +11,8 @@ email: # optional, used on terms, and privacy pages
 disqus_shortname:
 root: / # If subdirectory, url: http://yoursite.com/child and root: /child/
 google_analytics:
+clicky_analytics:
+# split_test: true
 
 # Main menu includes what you list here as name: /slug/ as well as any categories found in posts
 menu:
@@ -33,7 +35,6 @@ headScripts:
 scripts:
   - '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'
   - '//cdn.jsdelivr.net/fastclick/1.0.1/fastclick.min.js'
-  - '//cdn.jsdelivr.net/jquery.mixitup/2.1.5/jquery.mixitup.min.js'
   - '/scripts/navigation.js'
 
 

@@ -1,8 +1,11 @@
-include _partial/mixins
+extends base
 
-doctype html
-html(lang='en')
-  head
-    include _partial/head
-  body
+//- Lots of empty blocks to clear out content from base
+block header
+  
+block container
+
+  block content
     !=page.content
+
+block footer

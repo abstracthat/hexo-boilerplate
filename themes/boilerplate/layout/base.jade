@@ -1,33 +1,117 @@
-include _partial/mixins
+include _mixins
 
 doctype html
 block vars
   - var bodyclass = null;
 html(lang='en')
   head
-    include _partial/head
+    block head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+      meta(name='viewport', content='width=device-width, initial-scale=1.0')
+      title
+        block title
+          if is_index()
+            | #{config.title}
+          if is_category()
+            | #{page.category} | #{config.title}
+          else
+            unless is_index() || is_category()
+              | #{page.title} | #{config.title}
+      block meta
+        if is_index()
+          meta(name='description', content=config.description)
+        else
+          meta(name='description', content=page.description)
+        if config.author
+          meta(name='author', content=config.author)
+        if is_home()
+          if config.twitter
+            if config.google_plus
+              != open_graph({twitter_id: config.twitter, google_plus: config.google_plus})
+      block link
+        link(rel='alternate', href=config.rss ? config.rss : config.root + 'atom.xml', title=config.title, type='application/atom.xml')
+        link(rel="shortcut icon", href="assets/favicon.ico")
+        each size in [144,114,72,57]
+          link(rel="apple-touch-icon", sizes="#{size}x#{size}", href="/ico/apple-touch-icon-#{size}.png")  
+      //- HTML5 Shim
+      //if lt IE 9
+        script(async src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+      if config.google_font
+        link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=#{config.google_font}')
+      block headStyles
+        !=css(config.css)
+        //- if config.split_test
+        //-   style(type='text/css', media='all').
+        //-     .v { display: none; }
+        //-     .genetify_disabled { display: none !important; } 
+        //-     .genetify_enabled { display: block !important; } 
+      block headScripts
+        if config.headScripts
+          !=js(config.headScripts)
+          //- if config.split_test
+          //-   !=js('//app.genetify.com/genetify.js')
+
+  //- Pass a class to the body to keep extended styles to that layout only
   body(class=bodyclass)
+
     block header
+      //- Remove header if site_type is single
       if config.site_type != 'single'
         header.main
           div
-            +main-menu()
-    block main-container
-      block content
-        div(role='main')
+            h1: a(href=config.root)= config.title
+            nav.main-menu: ul
+              //- Add menu links for any pages specified in config.menu
+              if config.menu
+                each link, name in config.menu
+                  - var current = path == link.substring(1)  + 'index.html' ? 'active' : '';
+                  li: a(href=link, class=current)= name
+              //- Add menu links for each category
+              each cat in site.categories.toArray()
+                - var current = is_active_category(cat.name) ? 'active' : '';
+                li: a(href=cat.path, class=current): = cat.name
+    
+    block container
+      div(role='main')
+        block content
           !=page.content
+    
     block footer
       footer.footer
         nav
           p
-            | &copy; &nbsp;
+            | &copy; 
             if config.year_started
-              | #{config.year_started} &ndash; 
-            | #{ new Date().getFullYear() } &nbsp;
-            | <a href="#{config.url}">#{ config.title }</a>
+              if config.year_started != new Date().getFullYear()
+                | #{config.year_started} &ndash; 
+            | #{ new Date().getFullYear() } 
+            | <a href="#{config.url}">#{config.title}</a>
           ul
+            //- Add footer links from config
             each link, name in config.footerMenu
               li: a(href=link)=name
 
     block scripts
       !=js(config.scripts)
+      if config.google_analytics
+        script.
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', '#{config.google_analytics}']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+      if config.clicky_analytics
+        !=js('//static.getclicky.com/js')
+        script.
+          try{ clicky.init(#{config.clicky_analytics}); }catch(e){}
+        noscript
+          p: img(alt='Clicky', width='1', height='1', src='//in.getclicky.com/#{config.clicky_analytics}ns.gif')
+      //- if config.split_test
+      //-   script.
+      //-     genetify.vary();
+      //-     genetify.record.goal('pageview', 1);

@@ -1,10 +1,7 @@
 extends base
 
-//- block header
-
-//- prepend main-container
 block content
-  div(role='main')
+  if page.article_feature
     .featured
       if page.title
         h1.headline= page.title
@@ -16,7 +13,9 @@ block content
       if page.button
         a(href="#{page.button_link}" rel="nofollow")
           button(class="action")= page.button
-    article.content
-      !=page.content
-      if page.social
-        +socialbuttons(page.social)
+  article.content
+    unless page.article_feature
+      h1.headline= page.title
+    !=page.content
+    if page.social
+      +socialbuttons(page.social)

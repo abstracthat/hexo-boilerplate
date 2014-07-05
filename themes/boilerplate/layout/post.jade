@@ -1,23 +1,49 @@
-extends base
+//- WARNING! This template is not yet implemented or styled.
+//- The idea would be to use this for a blog post where you would want author, date, comments, etc.
+//- Presently, the post layout just uses page.jade
 
-block vars
-  - var bodyclass = page.layout;
+extends page
 
-block content
-  h1= page.title
-  div.meta
-    time(datetime= date_xml(page.date))= date(page.date)
-    if page.tags
-      h6 Tags: 
-      //- This is not working correctly... ideas?
-      ul.tags
-        each tag in page.tags.toArray()
-          li= tag.name
-    if page.author
-      h6 Written by #{page.author}
-  != page.content
+!=page.content
 
-  //- Need to create this mixin... basically social share buttons if we say we want that in the config
-  //- if config.social_links
-  //-   +social-links(facebook, twitter, google, pinterest, reddit)
-  include _partial/article_pagination
+//- block content
+//-   article.content
+//-     h1= page.title
+
+//-     div.meta
+//-       time(datetime= date_xml(page.date))= date(page.date)
+//-       if page.tags
+//-         ul.tags
+//-           each tag in page.tags.toArray()
+//-             li= tag.name
+//-       if page.author
+//-         h6 Written by #{page.author}
+//-       else
+//-         if site.author
+//-           h6 Written by #{site.author}
+
+//-     != page.content
+
+//-     if page.social
+//-       +socialbuttons(page.social)
+
+//-     nav.pagination
+//-       if page.prev
+//-         a.previous(href=config.root + page.prev.path, title="Previous Article: #{page.prev.title}")
+//-           | &larr; Previous Article
+//-       if page.next
+//-         a.next(href=config.root + page.next.path, title="Next Article: #{page.next.title}")
+//-           | Next Article &rarr;
+
+//-     if page.comments
+//-       #disqus_thread
+    
+//- append scripts
+//-   script.
+//-     var disqus_shortname = '#{config.disqus_shortname}';
+//-     (function() {
+//-         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+//-         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+//-         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+//-     })();
+

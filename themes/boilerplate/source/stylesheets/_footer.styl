@@ -5,12 +5,15 @@ footer.footer
   background-color black + 15%
   +from(3)
     padding .5rem 2rem
+
   nav
     center(desktop-cutoff)
     group()
     margin-top 1rem
+
   a
     link(white - 30%)
+
   p
     color white - 30%
     text-align center
@@ -21,10 +24,16 @@ footer.footer
       text-align left
       display inline-block
       float left
+
   ul
     text-align center
     list-style none
     margin 0
+    +from(3)
+      float right
+      display inline-block
+      text-align left
+
     li
       margin 0 .5rem
       display inline-block
@@ -32,10 +41,7 @@ footer.footer
         margin 0 1rem
         border none
         padding 0
+
       a
         color white - 30%
         transition()
-    +from(3)
-      float right
-      display inline-block
-      text-align left

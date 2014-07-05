@@ -10,10 +10,15 @@ header.main
   min-height 3rem
   +from(mobile-cutoff)
     padding 0
-  // +desktop()
-  //   padding 1rem 0 1.2rem
+
+  .js-nav-active &
+    position relative
+    width 100%
+    z-index 3
+
   div
     center(desktop-cutoff, padding false)
+
   h1
     margin 0 0 0 1rem
     display inline-block
@@ -21,6 +26,7 @@ header.main
       display block
       margin 0
       text-align center
+
     a
       color white
       opacity .85
@@ -33,16 +39,14 @@ header.main
       +desktop()
         font-size 2rem
         text-align center
+
       &:hover
         opacity 1
         color tint(yellow, 70%)
         transition()
-  .js-nav-active &
-    position relative
-    width 100%
-    z-index 3
 
 nav.main-menu
+
   .js &
     clip rect(0 0 0 0)
     max-height 0
@@ -57,10 +61,13 @@ nav.main-menu
     margin-top 0 !important
     float none
     width auto
+
     &.closed
       max-height none
+
   &.opened
     max-height 9999px
+
   ul
     line-height 1.5rem
     width 100%
@@ -73,6 +80,7 @@ nav.main-menu
       border-top none
       line-height 1rem
       margin-bottom .75rem
+
     li
       display block
       width 100%
@@ -81,20 +89,22 @@ nav.main-menu
       margin-top 0
       gradient(shade(header-background-color,85%), 5%)
       border-bottom 1px solid black
+
       &:hover, &.active, .active &
         color tint(header-background-color, 50%)
         background shade(header-background-color, 50%)
         transition()
+
       +from(mobile-cutoff)
         display inline-block
         width auto
         background none
         border-bottom none
+
         &:hover
           border-bottom none
           background none
   a
-    // padding .75rem
     -webkit-tap-highlight-color rgba(0,0,0,0)
     text-decoration none
     font-weight 400
@@ -104,16 +114,19 @@ nav.main-menu
     min-width 100%
     border-bottom none
     margin-left 1rem
+
     &.active, .active &
       color header-background-color
       opacity 1
       transition()
+
     +from(mobile-cutoff)
       margin-left 0
       opacity .65
       border-bottom 1px solid rgba(0,0,0,0)
       padding-bottom .2rem
       vertical-align middle
+
       &.active, .active &, &:hover
         color tint(yellow, 70%)
         border-bottom 1px solid white - 35%
@@ -132,11 +145,13 @@ nav.main-menu
   float right
   border-bottom none
   font-size 2rem
+  +from(mobile-cutoff)
+    display none
+
   &:hover
     border-bottom none
     opacity .7
-  +from(mobile-cutoff)
-    display none
+
   &:before
     color tint(header-background-color, 70%)
     font-family "icons"
@@ -145,6 +160,7 @@ nav.main-menu
     text-indent 0
     speak none
     absolute(top right .5rem)
+
   &.active:before
     font-size 2rem
     content "\e809"
@@ -156,12 +172,14 @@ nav.main-menu
   opacity 0
   z-index 2
   transition(opacity 350ms ease-in-out)
-  .android &
-    -webkit-transition none
-    transition none
-  .js-nav-active &
-    visibility visible
-    opacity 1
   +from(mobile-cutoff)
     display none !important
     opacity 0 !important
+
+  .android &
+    -webkit-transition none
+    transition none
+
+  .js-nav-active &
+    visibility visible
+    opacity 1

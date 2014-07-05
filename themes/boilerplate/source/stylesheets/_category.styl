@@ -9,7 +9,6 @@ body.category
     background-color shade(blue, 90%)
     color white - 20%
     padding 2rem 1rem
-    group()
 
   h1.title
     margin 0
@@ -18,10 +17,11 @@ body.category
       text-align center
 
   .summary
-    p
-      font-size 1.2rem
     +from(3)
       margin 0 10%
+
+    p
+      font-size 1.2rem
 
   .tag-list
     center(desktop-cutoff)
@@ -29,99 +29,108 @@ body.category
     margin 1rem 0
     +from(3)
       text-align center
+
     h6
       color white - 30%
+
     ul.tags
       inline-list(.8rem)
       display inline-block
       +from(3)
         reset-list()
         inline-list(.5rem)
+
       li
         margin-top 0
         +from(3)
           margin-top .5rem
+
         a
+          +from(3)
+            $button(olive, textColor: tint(olive,90%))
+            border none
+
           &.active
             color black
             +from(3)
               background-color shade(olive,60%)
               color white
+
               &:hover
                 background-color shade(olive,60%)
-          +from(3)
-            $button(olive, textColor: tint(olive,90%))
-            border none
 
 
-  .article-list
-    margin 0 (g)%
+.article-list
+  margin 0 (g)%
 
-    article
-      display none
-      margin-top 1rem
-      +at(3)
-        width 80%
-        margin-left 10%
-        margin-right 10%
-      +from(4)
-        margin-top (g)%
-        width 47%
-        margin 1.5%
-        box-shadow(inset 0 0 6px rgba(#000,.05))
-        padding 1rem
-        background-color white
-        height 16rem
-        overflow hidden
-        &:hover
-          background-color tint(yellow,97%)
-          border-bottom 5px solid color1
+  article
+    display none
+    +at(3)
+      width 80%
+      margin-left 10%
+      margin-right 10%
+    +from(4)
+      margin-top (g)%
+      width 47%
+      margin 1.5%
+      box-shadow(inset 0 0 6px rgba(#000,.05))
+      padding 1rem
+      background-color white
+      height 14rem
+      overflow hidden
+
+      &:hover
+        background-color tint(yellow,97%)
+        border-bottom 5px solid color1
+        transition()
+
+    h2
+      font-size 1.25rem
+      line-height 1.4
+      font-weight normal
+      margin 0
+
+      a
+        color black
+        border-bottom 1px solid silver
+        padding-bottom .1rem
+
+        &:hover, &:active
+          color blue
           transition()
 
-      h2
-        font-size 1.25rem
-        line-height 1.4
-        font-weight normal
-        margin 0
 
-        a
-          color black
-          border-bottom 1px solid silver
-          padding-bottom .1rem
-          &:hover, &:active
-            color blue
-            transition()
+    &.featured
+      width auto
+      height auto
+      background-color tint(yellow, 85%)
+      color black + 10%
+      margin-left -(g)%
+      margin-right @margin-left
+      position relative
+      border-bottom 5px solid color1
+      border-top @border-bottom
+      +from(3)
+        margin-left (g/2)%
+        margin-right (g/2)%
+        padding 2rem
 
-
-      &.featured
-        width auto
-        height auto
-        background-color tint(yellow, 85%)
-        color black + 10%
-        margin-left -(g)%
-        margin-right @margin-left
-        position relative
-        border-bottom 5px solid color1
-        border-top @border-bottom
+      p
+        font-size 1.1rem
         +from(3)
-          margin-left (g/2)%
-          margin-right (g/2)%
-          padding 2rem
-        p
-          font-size 1.1rem
-          +from(3)
-            font-size 1.2rem
+          font-size 1.2rem
 
-        h2 a
-          font-weight bold
-          font-size 1.8rem
-          margin 2rem 0 0
-        img
-          display: inline-block
-          width 40%
-          float left
-          margin 1.4rem .75rem 0 0
+      h2 a
+        font-weight bold
+        font-size 1.8rem
+        margin 2rem 0 0
 
-      a.more
-        display inline-block
-        margin-top .4rem
+      img
+        display: inline-block
+        width 40%
+        float left
+        margin 1.4rem .75rem 0 0
+
+    a.more
+      display inline-block
+      margin-top .4rem
