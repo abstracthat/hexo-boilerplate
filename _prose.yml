@@ -1,5 +1,5 @@
 prose:
-  rooturl: '_posts'
+  rooturl: 'source'
   siteurl: 'http://hexoboilerplate.com/'
   relativeLinks: 'http://prose.github.io/starter/links.jsonp'
   media: 'media'
