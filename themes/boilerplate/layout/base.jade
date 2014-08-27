@@ -33,19 +33,19 @@ html(lang='en')
         link(rel='alternate', href=config.rss ? config.rss : config.root + 'atom.xml', title=config.title, type='application/atom.xml')
         link(rel="shortcut icon", href="assets/favicon.ico")
         each size in [144,114,72,57]
-          link(rel="apple-touch-icon", sizes="#{size}x#{size}", href="/ico/apple-touch-icon-#{size}.png")  
+          link(rel="apple-touch-icon", sizes="#{size}x#{size}", href="/ico/apple-touch-icon-#{size}.png")
       //- HTML5 Shim
       //if lt IE 9
         script(async src="http://html5shim.googlecode.com/svn/trunk/html5.js")
       if config.google_font
         link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=#{config.google_font}')
       block headStyles
-        !=css(config.css)
+        !=css('/stylesheets/style.css')
         //- if config.split_test
         //-   style(type='text/css', media='all').
         //-     .v { display: none; }
-        //-     .genetify_disabled { display: none !important; } 
-        //-     .genetify_enabled { display: block !important; } 
+        //-     .genetify_disabled { display: none !important; }
+        //-     .genetify_enabled { display: block !important; }
       block headScripts
         if config.headScripts
           !=js(config.headScripts)
@@ -58,34 +58,38 @@ html(lang='en')
     block header
       //- Remove header if site_type is single
       if config.site_type != 'single'
-        header.main
+        header.header
           div
             h1: a(href=config.root)= config.title
-            nav.main-menu: ul
-              //- Add menu links for any pages specified in config.menu
-              if config.menu
-                each link, name in config.menu
-                  - var current = path == link.substring(1)  + 'index.html' ? 'active' : '';
-                  li: a(href=link, class=current)= name
-              //- Add menu links for each category
-              each cat in site.categories.toArray()
-                - var current = is_active_category(cat.name) ? 'active' : '';
-                li: a(href=cat.path, class=current): = cat.name
-    
+            nav.navigation
+              input#toggle(type='checkbox')
+              div
+                label.toggle(for='toggle', onclick)
+                ul.menu
+                  //- Add menu links for any pages specified in config.menu
+                  if config.menu
+                    each link, name in config.menu
+                      - var current = path == link.substring(1)  + 'index.html' ? 'active' : '';
+                      li: a(href=link, class=current)= name
+                  //- Add menu links for each category
+                  each cat in site.categories.toArray()
+                    - var current = is_active_category(cat.name) ? 'active' : '';
+                    li: a(href=cat.path, class=current): = cat.name
+
     block container
       div(role='main')
         block content
           !=page.content
-    
+
     block footer
       footer.footer
         nav
           p
-            | &copy; 
+            | &copy;
             if config.year_started
               if config.year_started != new Date().getFullYear()
-                | #{config.year_started} &ndash; 
-            | #{ new Date().getFullYear() } 
+                | #{config.year_started} &ndash;
+            | #{ new Date().getFullYear() }
             | <a href="#{config.url}">#{config.title}</a>
           ul
             //- Add footer links from config
@@ -93,7 +97,7 @@ html(lang='en')
               li: a(href=link)=name
 
     block scripts
-      !=js(config.scripts)
+      !=js('/scripts/lib/jquery-2.1.1.min.js')
       if config.google_analytics
         script.
           var _gaq = _gaq || [];

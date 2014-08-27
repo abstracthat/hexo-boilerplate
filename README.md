@@ -73,7 +73,7 @@ hexo optimize
 # or use the alias
 hexo o
 # to just generate without optimizing
-hexo generate 
+hexo generate
 # or..
 hexo g
 ```

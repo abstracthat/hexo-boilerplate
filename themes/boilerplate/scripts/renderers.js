@@ -15,6 +15,7 @@ var stylus_renderer = function(data, options, callback){
     .use(rupture())
     .use(autoprefixer())
     .set('filename', data.path)
+    .set('sourcemap', options)
     .set('compress', stylus_config.compress)
     .set('include css', true)
     .render(callback);

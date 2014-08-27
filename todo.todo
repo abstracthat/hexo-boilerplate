@@ -1,0 +1,10 @@
+Todos:
+  ✔ New CSS menu / header partials @done(2014-08-27 10:36) @project(Todos)
+  ✔ Replace responsive nav @done(2014-08-27 10:36) @project(Todos)
+  ☐ Post page next/previous
+  ☐ home page copy + categories
+  ☐ integrate smoothstate https://github.com/weblinc/jquery.smoothState.js
+  ☐ gulp file hexo plugin
+  ☐ Clean up css
+  ☐ adapt axis into my own library
+    ☐ mixins

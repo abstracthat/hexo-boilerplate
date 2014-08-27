@@ -22,21 +22,10 @@ menu:
 footerMenu:
   Privacy Policy: /privacy/
   Terms of Use: /terms/
-  # Google+: 
+  # Google+:
 
 # Google Font
-google_font: Open+Sans:400,700,400italic,700italic
-
-# Need to add more stylesheets or JS... add it here.
-css:
-  - '/stylesheets/style.css'
-headScripts:
-  - '//cdnjs.cloudflare.com/ajax/libs/responsive-nav.js/1.0.32/responsive-nav.min.js'
-scripts:
-  - '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'
-  - '//cdn.jsdelivr.net/fastclick/1.0.1/fastclick.min.js'
-  - '/scripts/navigation.js'
-
+google_font: Open+Sans:400,800,400italic,800italic
 
 #
 # You should probably leave everything below here alone
@@ -60,7 +49,7 @@ tag_map: # tag slug
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: MMMM D YYYY
+date_format: MMMM D, YYYY
 time_format: H:mm:ss
 
 # Writing

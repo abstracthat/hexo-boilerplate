@@ -1,6 +1,6 @@
 {
   "name": "Boilerplate",
-  "version": "2.6.0",
+  "version": "2.8.2",
   "private": true,
   "dependencies": {
     "autoprefixer-stylus": "^0.1.0",
@@ -18,6 +18,9 @@
     "marked": "*",
     "nib": "^1.0.2",
     "rupture": "^0.1.0",
-    "stylus": "^0.45.1"
+    "stylus": "^0.48.1",
+    "hexo-admin-plugin": "^0.1.2",
+    "hexo-generator-atom-markdown-writer-meta": "~0.1.1",
+    "jquery": "~2.1.1"
   }
 }

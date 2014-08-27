@@ -1,32 +1,39 @@
 // edit()
 
 body.category
-  
+
   [role="main"]
     padding-bottom 2.5rem
 
-  .featured
-    background-color shade(blue, 90%)
-    color white - 20%
-    padding 2rem 1rem
-
   h1.title
     margin 0
-    color white - 4%
+    color rgba(white, 93%)
     +from(mobile-cutoff)
       text-align center
 
-  .summary
-    +from(3)
-      margin 0 10%
+  header.featured
+    background shade(color4,50%)
+    color rgba(white, 80%)
+    padding 2rem (g)%
 
-    p
-      font-size 1.2rem
+    & > div
+      +from(3)
+        center(desktop-cutoff)
+
+    .summary
+      center(48rem)
+
+      p
+        font-size 1.3rem
+
+        +from(3)
+          font-size 1.5rem
 
   .tag-list
     center(desktop-cutoff)
     padding 0
-    margin 1rem 0
+    margin 2rem 0
+
     +from(3)
       text-align center
 
@@ -36,61 +43,71 @@ body.category
     ul.tags
       inline-list(.8rem)
       display inline-block
+
       +from(3)
         reset-list()
         inline-list(.5rem)
 
       li
         margin-top 0
+
         +from(3)
           margin-top .5rem
 
         a
+
           +from(3)
-            $button(olive, textColor: tint(olive,90%))
+            $button(color1, textColor: tint(color1,90%))
             border none
 
           &.active
             color black
+
             +from(3)
-              background-color shade(olive,60%)
+              background-color shade(color1,60%)
               color white
 
               &:hover
-                background-color shade(olive,60%)
-
+                background-color shade(color1,60%)
 
 .article-list
   margin 0 (g)%
 
-  article
+  .article
     display none
+
     +at(3)
       width 80%
       margin-left 10%
       margin-right 10%
+
     +from(4)
       margin-top (g)%
       width 47%
       margin 1.5%
       box-shadow(inset 0 0 6px rgba(#000,.05))
       padding 1rem
-      background-color white
-      height 14rem
+      background tint(color4, 95%)
+      height 16rem
       overflow hidden
 
-      &:hover
-        background-color tint(yellow,97%)
-        border-bottom 5px solid color1
-        transition()
+    .headline a
+      color black
+      border none
+      font-size 130%
+      text-align center
+      margin 0 auto
 
-    h2
+      &:hover
+        color color1
+
+    .title
       font-size 1.25rem
       line-height 1.4
       font-weight normal
       margin 0
 
-      a
+      & > a
         color black
         border-bottom 1px solid silver
         padding-bottom .1rem
@@ -99,17 +116,18 @@ body.category
           color blue
           transition()
 
-
     &.featured
+      display none
       width auto
       height auto
-      background-color tint(yellow, 85%)
+      background tint(color2, 85%)
       color black + 10%
       margin-left -(g)%
       margin-right @margin-left
       position relative
       border-bottom 5px solid color1
       border-top @border-bottom
+
       +from(3)
         margin-left (g/2)%
         margin-right (g/2)%
@@ -117,6 +135,7 @@ body.category
 
       p
         font-size 1.1rem
+
         +from(3)
           font-size 1.2rem
 
@@ -134,3 +153,37 @@ body.category
     a.more
       display inline-block
       margin-top .4rem
+
+  .full .article
+    margin 0 auto 3.5rem
+    padding-bottom 2rem
+
+    +from(4)
+      width 100%
+      height auto
+      background #f4f3ef
+      box-shadow none
+      padding 0 0 3.5rem
+
+    .title
+      @extends h1
+      font-weight bold
+
+      +from(3)
+        text-align center
+        font-size 3rem
+        margin 3rem 1rem
+        padding 0
+
+      a
+        border none
+
+        &:hover
+          color color1
+
+    .meta
+      +from(3)
+        text-align center
+
+    .content
+      padding 0

@@ -6,8 +6,8 @@ tags:
 feature:
 article_feature:
 subheading:  
-video: 
-button: 
+video:
+button:
 button_link:
 social:
   - facebook
@@ -16,3 +16,7 @@ social:
   - pinterest
   - tumblr
 ---
+Introduction paragraph.
+<!--more -->
+
+More content...

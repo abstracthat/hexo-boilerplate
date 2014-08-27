@@ -1,0 +1,134 @@
+.header
+  position relative
+  size 100%
+  background color3
+  group()
+
+  & > div
+    group()
+
+    +from(4)
+      center(desktop-cutoff)
+
+    & > h1
+      margin 0
+      float left
+      line-height 2.8
+      font-size 1.5rem
+
+      +to(desktop-cutoff)
+        margin 0 0 0 1rem
+
+      & > a
+        color rgba(tint(color2, 88%),94%)
+        border none
+
+.navigation
+  display block
+  float right
+
+.menu
+  height 100%
+  margin 0
+  padding 0
+
+  +to(2)
+    display none
+    position absolute
+    right 0
+    width 100%
+    height auto
+    opacity 0
+    border-top 1px solid shade(color3, 25%)
+
+  & > li
+    height 100%
+    list-style none
+    float left
+    padding 0
+    line-height 1
+    border-left 2px solid shade(color3,15%)
+
+    +to(2)
+      display block
+      width 100%
+      margin 0
+      height auto
+      border-bottom 1px solid shade(color3, 35%)
+      border-left none
+
+    &:last-child
+      border-right 2px solid shade(color3,15%)
+
+      +to(2)
+        border-right none
+
+    & > a
+      height 100%
+      display block
+      font-weight bold
+      font-size 120%
+      padding 1.5rem 1.5rem
+      text-decoration none
+      line-height 1
+      transition all 0.25s linear
+      color tint(color3, 70%)
+      border-bottom none
+      background shade(color3,10%)
+
+      +to(2)
+        display block
+        width 100%
+        margin 0
+        padding 1rem
+        height auto
+        gradient(shade(color3,20%), 5%)
+
+      &:hover, &:focus, &.active:hover, &.active:focus
+        background shade(color3,60%)
+        color rgba(white,88%)
+
+      &.active
+        background shade(color3,30%)
+
+.toggle
+  display none
+  padding-right 1rem
+
+  +to(2)
+    display block
+    position relative
+    cursor pointer
+    -webkit-touch-callout none
+    user-select none
+
+  +to(mobile-cutoff)
+    margin 1rem 0
+
+  &:after
+    font-family "icons"
+
+    +to(2)
+      margin 1rem 0
+      content 'm'
+      display block
+      font-size 2rem
+      color tint(color3,40%)
+      transition all 0.3s ease
+
+    :hover&
+      color shade(color3,60%)
+
+#toggle
+  display none
+
+  +to(2)
+
+    &:checked + div
+
+      .menu
+        display block
+        opacity 1
+
+      .toggle:after
+        content 'x'

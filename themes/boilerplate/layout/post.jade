@@ -2,25 +2,33 @@
 //- The idea would be to use this for a blog post where you would want author, date, comments, etc.
 //- Presently, the post layout just uses page.jade
 
-extends page
+extends base
 
-!=page.content
+block content
+  article.content
+    h1.headline= page.title
+    .meta
+      | Posted on&nbsp;
+      time(datetime= date_xml(page.date))= date(page.date)
+      //- if page.tags
+      //-   .tags
+      //-     b Topic Tags:
+      //-     ul
+      //-       each tag in page.tags.toArray()
+      //-         li= tag.name
+      //- if page.author
+      //-   h6 Written by #{page.author}
+      //- else
+      //-   if site.author
+      //-     h6 Written by #{site.author}
+    !=page.content
+    if page.social
+      +socialbuttons(page.social)
 
 //- block content
 //-   article.content
 //-     h1= page.title
 
-//-     div.meta
-//-       time(datetime= date_xml(page.date))= date(page.date)
-//-       if page.tags
-//-         ul.tags
-//-           each tag in page.tags.toArray()
-//-             li= tag.name
-//-       if page.author
-//-         h6 Written by #{page.author}
-//-       else
-//-         if site.author
-//-           h6 Written by #{site.author}
 
 //-     != page.content
 
@@ -37,7 +45,7 @@ extends page
 
 //-     if page.comments
 //-       #disqus_thread
-    
+
 //- append scripts
 //-   script.
 //-     var disqus_shortname = '#{config.disqus_shortname}';
@@ -46,4 +54,3 @@ extends page
 //-         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 //-         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 //-     })();
-

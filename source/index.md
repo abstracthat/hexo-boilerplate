@@ -1,44 +1,120 @@
 layout: page
-title: Website Headline Coming Soon
-# subheading:  
-# video: 
-# button: 
-# button_link: http://github.com/abstracthat/hexo-boilerplate/
-# social:
-#  - facebook
-#  - twitter
-#  - googleplus
-#  - pinterest
-#  - tumblr
+title: Introducing The Easiest Way to Launch a Website
+subheading: The Quickest Way to Go From An Idea To An Optimized & Deployed Site 
+video: s39mNwFuQDQ
+button: Check It Out on GitHub
+button_link: http://github.com/abstracthat/hexo-boilerplate/
+social:
+  # use all lowercase, options are: twitter, facebook, pinterest, tumblr, googleplus
+  - facebook
+  - twitter
 ---
 
-First you need to add some content here in index.md or make a new `index.jade` file if you want to do something fancy on the home page.
+<div class="note"><p>**Note**: this boilerplate is currently under active development and may contain incomplete templates.</p></div>
 
-## Add Some Pages
-You don't have to but if you want you can add some top level pages. These are meant to be pages that have no sub-pages under them. Something like an "About" page or a couple of keywords if this is going to be a mini-site.
+Using the Node static site generator, [Hexo](https://github.com/tommy351/hexo), this boilerplate gets your site off the ground and onto the web fast!.
 
-1. Add the name and slug to `_config.yml` under `menu`.
-2. Run `hexo new page "Title of The Page"` to create a folder with an index.md file ready to go.
+Terse syntax using [Jade](jade-lang.com/reference/) templates and [Stylus](http://learnboost.github.io/stylus/) with support for [Coffeescript](http://coffeescript.org/) (or plain JS). Content from flat files, markdown or html and configuration as YAML. One command to generate, optimize files, and deploy.
 
-## Add Some Posts
-Next, you should add some posts. You can run `hexo new "Title of My  Post"` and you'll get a markdown file in the `/source/_posts` directory with the front-matter ready for you to fill in. Don't forget to include a **description** as this is used for the meta tag that will show up in the google results.
+## Site Types
+- a **single** page site with terms of use and privacy pages
+- a **mini** five page site
+- or a **big** site with one or more category structures (could be Blog, News, Articles, Topic One, Topic Two, etc) and optional tags.
 
-### Post Categories
-The category you specify will create the category index page and a link to the category in the main menu. **Use only one category per post!**
+### Mixins
+Grid based on [jeet](http://jeet.gs/). We have Root's [Axis CSS Library](http://roots.cx/axis) for lots of fun defaults and shortcuts. Normalize, typography, gradients, transitions, animations, buttons, forms, lists, positioning, and more.
 
-Presently we render all of the posts for each category on the category page with no pagination. You don't have thousands of posts, right?
+```
+html
+  gradient: white - 11% white - 17%
+  background-attachment: fixed
 
-### Post Tags
-Use one or more tags to allow sorting of the category content. Typically long-tail keywords are good here.
+body
+  center: desktop-cutoff
 
-### Extra Category Content
-Category index pages can have some content at the top of them. Just make `/source/_categories/category-name.md` and it will be added automagically to the category index page. This is good for SEO as it is adding more unique content to the page.
+[role="main"]
+  background: content-bg-color
+  center(desktop-cutoff, pad: 1rem)
 
-### Remember to Use More
-Use the `<!--more-->` tag before you hit 250 characters so that we don't have to auto-truncate your post on the category index page.
+article
+  padding-bottom: 2rem
+  +from(3)
+    column(4/5, offset: 1/10)
+  +desktop()
+    column(2/3, offset: 1/6)
+```
 
-### Images
-Images go in `/source/assets`. Since you probably forgot the markdown formatting for images is `![Alt text](/assets/img.jpg "Optional title")`.
+[Rupture](https://github.com/jenius/rupture) for breakpoints.
 
-## Ready to Publish?
-Commit your changes and push to deploy. The end.
+```
++mobile()
++tablet()
++desktop()
++from(mobile-cutoff)
++to(700px)
+```
+
+### Dependencies
+You need [node.js](http://nodejs.org/download/), [hexo](https://github.com/tommy351/hexo), and the [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions).
+
+1. Install Node http://nodejs.org/download/ On a mac you can just run `brew install node`.
+1. Install Hexo with NPM `npm install -g hexo`
+1. Install LiveReload browser extension: http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions
+
+### Let's Get You Up and Running
+The following will grab the project, install local dependencies and start the server so you can develop and preview changes with LiveReload.
+
+```
+git clone git@github.com:abstracthat/hexo-boilerplate.git
+cd hexo-boilerplate
+npm install
+hexo s
+```
+
+### Generate Your Static Site
+To [generate](http://hexo.io/docs/generating.html) static files and [optimize](https://github.com/abstracthat/hexo-generator-optimize) (concat/css-min/uglifyJS/image-min/htmlmin/gzip)...
+
+```
+hexo optimize
+# or use the alias
+hexo o
+# to just generate without optimizing
+hexo generate 
+# or..
+hexo g
+```
+
+### Generate, Optimize, & Deploy With 6 Letters
+To generate static files, optimize, and [deploy](http://hexo.io/docs/deployment.html) (rsync/ssh, github pages, heroku, etc.) based on project config settings.
+
+```
+hexo optimize -d
+## or the shortcut...
+hexo od
+```
+
+## Contributing Templates
+Pull requests are welcome.
+
+### Useful Hexo Template Helpers
+- Hexo helpers: http://zespia.tw/hexo/docs/helpers.html
+- Hexo variables: http://hexo.io/docs/variables.html
+
+## Quotes
+
+Want to quote someone? Try a blockquote. Unfortunately you have to add the semantically correct `<cite>` as html. Don't forget to close the tag `</cite>`.
+
+> It is spectacular. From about five minutes in, when we knew for sure that we were going to have the weather to go, the smile on my face just got bigger and bigger, and I was just beaming through the whole launch. I mean, it is just an amazing ride.
+> -- <cite>[Chris Hadfield](http://www.brainyquote.com/quotes/keywords/launch.html#mbkKeBWCGfDhH1Zd.99)</cite>
+
+***
+
+Horizontal rules are easy in markdown and sometimes handy for breaking things up.
+
+## Images
+
+Markdown can also contain images. Here's a big pretty one.
+
+![Launch](/assets/launch.jpg "Launch it!")
+
+And that's about all there is to it. Read the [Documentation](/documentation) to learn more.
