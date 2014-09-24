@@ -2,7 +2,13 @@
   display none !important
 
 .note
-  area yellow + 80%
+  box-shadow(inset 0 0 6px rgba(#000,.05))
+  padding (g)%
+  background yellow + 80%
+  margin 0 g*-1%
+
+  +from(mobile-cutoff)
+    margin 0
 
   p
     margin 0

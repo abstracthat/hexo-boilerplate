@@ -1,12 +1,28 @@
-// edit()
+// # Typography
+
+// ## Base Body
+
+body
+  font-family font-stack
+  font-size 1rem
+
+  +from(3)
+    font-size 1.1rem
+
+p
+  line-height 1.8
+
+// ## Headings
 
 h1
-  font-size 2.2rem
+  font-size 2rem
   line-height 1.1
   margin 1rem auto .75rem
+
   +from(mobile-cutoff)
     font-size 3.1rem
     margin-bottom .85rem
+
   +from(desktop-cutoff)
     font-size 4rem
     margin-bottom 1rem
@@ -14,24 +30,28 @@ h1
 h2
   font-size 1.7rem
   line-height 1.3
-  margin-top 1.2rem
+  margin-top 2rem
   margin-bottom 0
+
   +from(mobile-cutoff)
     font-size 2.2rem
     margin-top 1.1rem
+
   +from(desktop-cutoff)
     font-size 2.5rem
     margin-top 1.1rem
 
 h3
-  font-size 1.6rem
-  line-height 1.1
+  font-size 1.5rem
+  line-height 1.3
   font-weight normal
-  margin-top 1.1rem
+  margin-top 1.4rem
   margin-bottom 0
+
   +from(mobile-cutoff)
     font-size 1.8rem
     margin-top 1rem
+
   +from(desktop-cutoff)
     font-size 2rem
 
@@ -40,9 +60,11 @@ h4
   margin-top .9rem
   margin-bottom 0
   font-weight normal
+
   +from(mobile-cutoff)
     font-size 1.8rem
     margin-top .9rem
+
   +from(desktop-cutoff)
     font-size 2rem
     margin-top .9rem
@@ -51,8 +73,10 @@ h5
   font-size 1rem
   margin 0
   font-weight normal
+
   +from(mobile-cutoff)
     font-size 1.1rem
+
   +from(desktop-cutoff)
     font-size 1.3rem
 
@@ -60,37 +84,7 @@ h6
   font-size 0.9rem
   margin 0
 
-pre + h2, pre + h3
-  margin-top 1.4rem
-
-h3 + pre
-  margin-top 1.4rem
-
-p
-  paragraph()
-  line-height 1.8
-
-bold-italic()
-hyphenation()
-text-selection()
-
-small
-  $small()
-
-a
-  link()
-
-blockquote
-  $blockquote(olive)
-  background-color content-bg-color - 4%
-
-  p
-    margin 1.25rem 1rem 1.25rem 0
-    padding-left .75rem
-    line-height 1.5
-
-  a
-    link(olive)
+// ## Lists
 
 ul
   margin 0.5rem 0.94rem
@@ -110,28 +104,171 @@ ol
     padding 0.125rem
     line-height 1.6
 
+// ## Links
+
+a
+  color blue
+  text-decoration none
+  transition()
+
+  &:hover
+    color darken(@color, 25%)
+
+  &:visited
+    opacity .8
+
+// ## Strong, Italic and Small
+
+b, strong
+  font-weight bold
+
+i, em
+  font-style italic
+
+small
+  font-size 55%
+  opacity .6
+  font-weight normal
+
+fieldset
+  border none
+
+// ## Blockquotes
+
+blockquote
+  margin 1.3rem -3.25%
+  padding (g)%
+  background-color content-bg-color - 8%
+  border-top 4px solid color1
+  group()
+  position relative
+
+  +from(mobile-cutoff)
+    border-top none
+    border-left 10px solid color1
+    border-radius 3px
+    margin 1.3rem 0
+
+  &:before
+    color lighten(black, 85%)
+    content open-quote
+    font-family garamond
+    font-style italic
+    font-weight bold
+    font-size 10rem
+    line-height 0
+    padding 4rem 0 0
+    position absolute
+    left 0
+    top 0
+    z-index 1
+
+    +from(mobile-cutoff)
+      top 1.5rem
+      left (g)%
+
+  a
+    color color1
+
+  > p
+    color lighten(black, 25%)
+    position relative
+    font-style italic
+    z-index 3
+
+    +from(mobile-cutoff)
+      font-size 1.25rem
+
+    > cite, > footer, > figcaption
+      color color1
+      margin-top 1rem
+      display inline-block
+
+      &:before
+        content '\2014'
+        margin-right .5rem
+
+// ## Inline Code and Code Blocks
+
 pre > code
   color black + 25%
   display block
-  padding .75rem
-  background-color content-bg-color - 5%
-  border 1px solid black + 75%
-  border-radius 3px
+  padding 1.5rem (g)%
+  margin 0 (g*-1)%
+  background-color content-bg-color - 8%
   white-space pre-wrap
   word-break break-all
   font-family Menlo, Monaco, monospace
   font-size .95rem
   line-height 160%
+
   +from(mobile-cutoff)
+    border 1px solid black + 75%
+    border-radius 3px
     font-size 1rem
-    padding 1rem
+    padding (g)%
+    margin 0
 
 code
-  $code()
+  padding 3px 4px
+  color inherit
+  background-color content-bg-color - 8%
+  border-radius 3px
+  font-family Menlo, Monaco, monospace
+  display inline-block
 
-// Break long urls
+pre + h2, pre + h3
+  margin-top 2.4rem
+
+h3 + pre
+  margin-top 1.4rem
+
+// ## Hypenation and Line/Word Breaking
+
 html
-  word-wrap break-word
+  word-wrap break-word // Break long urls
+  word-break break-word // webkit
+  hyphens auto // none, auto, <number>
+  -webkit-hyphenate-before 2
+  -webkit-hyphenate-after 3
+  hyphenate-lines 3
 
-fieldset
-  border none
+// ## Typography Mixins
+//
+// ### Inline List
+// For when you need your list to be horizontal. Pass it the spacing you want between list elements, whatever units you'd like. Defaults to 20px
+//
+// ```
+// ex. inline-list()
+// ex. inline-list: 15px
+// ```
+
+inline-list(spacing = 20px)
+  group()
+  margin 0
+  padding 0
+
+  li
+    float left
+    margin-right spacing
+    list-style-type none
+
+    &:last-child
+      margin-right 0
+
+// ## Reset List
+// If you're tired of all the list shenanigans and want to get rid of them for this special list you're working on, this is your guy. Resets the margins, padding, and style.
+//
+// ```
+// ex. reset-list()
+// ```
+
+reset-list()
+  margin 0
+  padding 0
+
+  li
+    float none
+    list-style-type none
+    padding 0
+    margin 0

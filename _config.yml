@@ -7,6 +7,7 @@ site_type: big # single, mini, big
 title: Boilerplate Site Title
 description: # SEO meta description for the site. Roughly 160 characters max.
 year_started: 2014
+category_index: true # set to false for full posts on the index
 email: # optional, used on terms, and privacy pages
 disqus_shortname:
 root: / # If subdirectory, url: http://yoursite.com/child and root: /child/
@@ -38,7 +39,7 @@ category_dir: '' # for uncategorized only
 archive: 0 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
 category: 1 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
 tag: 0 # 2: Enable pagination, 1: Disable pagination, 0: Fully disable
-tag_dir: tags
+tag_dir: tag
 per_page: 10 # Set per_page to 0 to disable pagination
 pagination_dir: page
 default_category: uncategorized

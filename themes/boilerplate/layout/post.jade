@@ -5,25 +5,35 @@
 extends base
 
 block content
-  article.content
-    h1.headline= page.title
-    .meta
-      | Posted on&nbsp;
-      time(datetime= date_xml(page.date))= date(page.date)
-      //- if page.tags
-      //-   .tags
-      //-     b Topic Tags:
-      //-     ul
-      //-       each tag in page.tags.toArray()
-      //-         li= tag.name
-      //- if page.author
-      //-   h6 Written by #{page.author}
-      //- else
-      //-   if site.author
-      //-     h6 Written by #{site.author}
-    !=page.content
-    if page.social
-      +socialbuttons(page.social)
+  .container
+    header
+      h1.title= page.title
+      .meta
+        | Posted on&nbsp;
+        time(datetime= date_xml(page.date))= date(page.date)
+        //- if page.tags
+        //-   .tags
+        //-     b Topic Tags:
+        //-     ul
+        //-       each tag in page.tags.toArray()
+        //-         li= tag.name
+        //- if page.author
+        //-   h6 Written by #{page.author}
+        //- else
+        //-   if site.author
+        //-     h6 Written by #{site.author}
+
+    article.content
+      !=page.content
+      if page.social
+        +socialbuttons(page.social)
+      nav.pagination
+        if page.prev
+          a.previous(href=config.root + page.prev.path, title="Previous Article: #{page.prev.title}")
+            | &larr; Previous Article
+        if page.next
+          a.next(href=config.root + page.next.path, title="Next Article: #{page.next.title}")
+            | Next Article &rarr;
 
 //- block content
 //-   article.content
@@ -35,13 +45,6 @@ block content
 //-     if page.social
 //-       +socialbuttons(page.social)
 
-//-     nav.pagination
-//-       if page.prev
-//-         a.previous(href=config.root + page.prev.path, title="Previous Article: #{page.prev.title}")
-//-           | &larr; Previous Article
-//-       if page.next
-//-         a.next(href=config.root + page.next.path, title="Next Article: #{page.next.title}")
-//-           | Next Article &rarr;
 
 //-     if page.comments
 //-       #disqus_thread

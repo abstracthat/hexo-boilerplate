@@ -1,6 +1,7 @@
 layout: page
+article_feature: true
 title: Introducing The Easiest Way to Launch a Website
-subheading: The Quickest Way to Go From An Idea To An Optimized & Deployed Site 
+subheading: The Quickest Way to Go From An Idea To An Optimized & Deployed Site
 video: s39mNwFuQDQ
 button: Check It Out on GitHub
 button_link: http://github.com/abstracthat/hexo-boilerplate/
@@ -10,9 +11,9 @@ social:
   - twitter
 ---
 
-<div class="note"><p>**Note**: this boilerplate is currently under active development and may contain incomplete templates.</p></div>
+Using the Node static site generator, [Hexo](https://github.com/tommy351/hexo), this boilerplate gets your site off the ground and onto the web fast!
 
-Using the Node static site generator, [Hexo](https://github.com/tommy351/hexo), this boilerplate gets your site off the ground and onto the web fast!.
+<div class="note"><p>**Note**: this boilerplate is currently under active development and may contain incomplete templates.</p></div>
 
 Terse syntax using [Jade](jade-lang.com/reference/) templates and [Stylus](http://learnboost.github.io/stylus/) with support for [Coffeescript](http://coffeescript.org/) (or plain JS). Content from flat files, markdown or html and configuration as YAML. One command to generate, optimize files, and deploy.
 
@@ -79,7 +80,7 @@ hexo optimize
 # or use the alias
 hexo o
 # to just generate without optimizing
-hexo generate 
+hexo generate
 # or..
 hexo g
 ```
@@ -105,7 +106,7 @@ Pull requests are welcome.
 Want to quote someone? Try a blockquote. Unfortunately you have to add the semantically correct `<cite>` as html. Don't forget to close the tag `</cite>`.
 
 > It is spectacular. From about five minutes in, when we knew for sure that we were going to have the weather to go, the smile on my face just got bigger and bigger, and I was just beaming through the whole launch. I mean, it is just an amazing ride.
-> -- <cite>[Chris Hadfield](http://www.brainyquote.com/quotes/keywords/launch.html#mbkKeBWCGfDhH1Zd.99)</cite>
+><cite>[Chris Hadfield](http://www.brainyquote.com/quotes/keywords/launch.html#mbkKeBWCGfDhH1Zd.99)</cite>
 
 ***
 

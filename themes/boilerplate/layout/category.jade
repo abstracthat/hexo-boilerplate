@@ -3,55 +3,56 @@ extends base
 block vars
   - var bodyclass = 'category ' + page.category
 
-prepend container
-  header.featured
-    div
+
+block content
+  header.feature
+    .container
       h1.title=page.category
       //- inserts category content from /source/_categories/category.md
       if category_content(page.category)
         .summary
           !=category_content(page.category)
 
-block content
-  .article-list
-    .tag-list
-      - var articles = page.category === 'Blog' ? 'Posts' : 'Articles';
-      h6 View #{page.category} #{articles} By Topic
-      ul.tags
-        //- each article tag from all articles in this category for MixItUp filtering
-        li: a.filter.active(href="#", data-filter='all') Show All
-        each tag in category_tags(page.category)
-          li
-            a.filter(href="#", data-filter='.' + tag_to_class(tag.name))
-              = tag.name
+  .container
+    .article-list
+      .tag-list
+        - var articles = page.category === 'Blog' ? 'Posts' : 'Articles';
+        h6 View #{page.category} #{articles} By Topic
+        ul.tags
+          //- each article tag from all articles in this category for MixItUp filtering
+          li: a.filter.active(href="#", data-filter='all') Show All
+          each tag in category_tags(page.category)
+            li
+              a.filter(href="#", data-filter='.' + tag_to_class(tag.name))
+                = tag.name
 
-    if config.category_index
-      #articles
-        - var featured_posts = get_posts({query: {categories: page.category, feature: {$exist: true}}}).toArray()
-        if featured_posts.length
-          each post in featured_posts
-            article.article.featured(class=tags_to_class(post.tags))
+      if config.category_index
+        #articles
+          - var featured_posts = get_posts({query: {categories: page.category, feature: {$exist: true}}}).toArray()
+          if featured_posts.length
+            each post in featured_posts
+              article.article.featured(class=tags_to_class(post.tags))
+                h2.title: a(href=config.root + post.path)= post.title
+                if post.image
+                  img(src=post.image)
+                !=post.excerpt
+                a(href=config.root + post.path) Read More...
+          each post in get_posts({query: {categories: page.category, feature: {$exist: false}}, count: 1000}).toArray()
+            article.article(class=tags_to_class(post.tags))
               h2.title: a(href=config.root + post.path)= post.title
-              if post.image
-                img(src=post.image)
-              !=post.excerpt
-              a(href=config.root + post.path) Read More...
-        each post in get_posts({query: {categories: page.category, feature: {$exist: false}}, count: 1000}).toArray()
-          article.article(class=tags_to_class(post.tags))
-            h2.title: a(href=config.root + post.path)= post.title
-            !=html_truncate(post.excerpt, 220)
-            a.more(href=config.root + post.path) Read More...
+              !=html_truncate(post.excerpt, 220)
+              a.more(href=config.root + post.path) Read More...
 
-    else
-      #articles.full
-        each post in get_posts({query: {categories: page.category}, count: 1000}).toArray()
-          article.article(class=tags_to_class(post.tags))
-            h2.title: a(href=config.root + post.path)= post.title
-            .meta
-              | Posted on&nbsp;
-              time(datetime= date_xml(page.date))= date(page.date)
-            article.content
-              !=post.content
+      else
+        #articles.full
+          each post in get_posts({query: {categories: page.category}, count: 1000}).toArray()
+            article.article(class=tags_to_class(post.tags))
+              h2.title: a(href=config.root + post.path)= post.title
+              .meta
+                | Posted on&nbsp;
+                time(datetime= date_xml(page.date))= date(page.date)
+              article.content
+                !=post.content
 
 block append scripts
   !=js(['/scripts/lib/mixItUp.js','/scripts/category.js'])

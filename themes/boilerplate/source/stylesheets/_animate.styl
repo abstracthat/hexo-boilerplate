@@ -1,0 +1,288 @@
+// ## Animations
+// Taken from (animate.css)[http://daneden.me/animate/] with some modifications to a few keyframes. I just added the ones that are likely to be used. Here's a list of the names to use as the first property when calling `animate`: flash, shake, pulse, bounceIn, bounceInDown, bounceInUp, bounceInRight, bounceInLeft, bounceOut, bounceOutUp, bounceOutDown, bounceOutLeft, bounceOutRight, fadeIn, fadeInUp, fadeInDown, fadeInRight, fadeInLeft, fadeOut, fadeOutUp, fadeOutDown, fadeOutRight, fadeOutLeft, zoomIn, and zoomOut.
+// 
+// ### How to Use
+// 
+// ```
+// animation: name duration timing-function delay iteration-count direction fill-mode play-state
+// animation-timing-function: linear|ease|ease-in|ease-out|cubic-bezier(n,n,n,n)|initial|inherit;
+// animation-iteration-count: number|infinite|initial|inherit;
+// ```
+// 
+// ### Typical Usage
+// 
+// ```
+// .element-to-animate
+//   animation: zoomIn .5s ease-in-out
+// ```
+// 
+// 
+// **TODO**: Create animate mixin for working with keyframes
+// 
+// ```
+// animate(name,percentage,data)
+//   @keyframes name
+//     percentage
+//       {data}
+// ```
+// 
+// ### Flash
+// 
+
+@keyframes flash
+  0%
+    opacity 1
+  25%
+    opacity 0
+  50%
+    opacity 1
+  75%
+    opacity 0
+  100%
+    opacity 1
+
+// ### Shake
+
+@keyframes shake
+  0%
+    transform translateX(0)
+  10%
+    transform translateX(-10px)
+  20%
+    transform translateX(9px)
+  30%
+    transform translateX(-8px)
+  40%
+    transform translateX(7px)
+  50%
+    transform translateX(-6px)
+  60%
+    transform translateX(5px)
+  70%
+    transform translateX(-4px)
+  80%
+    transform translateX(3px)
+  90%
+    transform translateX(-2px)
+  100%
+    transform translateX(0)
+
+// ### Pulse
+
+@keyframes pulse
+  0%
+    transform scale(1)
+  50%
+    transform scale(1.1)
+  100%
+    transform scale(1)
+
+// ### Bounce
+
+@keyframes bounceIn
+  0%
+    opacity 0
+    transform scale(0.3)
+  50%
+    opacity 1
+    transform scale(1.05)
+  70%
+    transform scale(0.95)
+  100%
+    transform scale(1)
+
+@keyframes bounceInDown
+  0%
+    opacity 0
+    transform translateY(-2000px)
+  60%
+    opacity 1
+    transform translateY(30px)
+  80%
+    transform translateY(-10px)
+  100%
+    transform translateY(0)
+
+@keyframes bounceInUp
+  0%
+    opacity 0
+    transform translateY(2000px)
+  60%
+    opacity 1
+    transform translateY(-30px)
+  80%
+    transform translateY(10px)
+  100%
+    transform translateY(0)
+
+@keyframes bounceInRight
+  0%
+    opacity 0
+    transform translateX(2000px)
+  60%
+    opacity 1
+    transform translateX(-30px)
+  80%
+    transform translateX(10px)
+  100%
+    transform translateX(0)
+
+@keyframes bounceInLeft
+  0%
+    opacity 0
+    transform translateX(-2000px)
+  60%
+    opacity 1
+    transform translateX(30px)
+  80%
+    transform translateX(-10px)
+  100%
+    transform translateX(0)
+
+@keyframes bounceOut
+  0%
+    transform scale(1)
+  25%
+    transform scale(0.95)
+  50%
+    opacity 1
+    transform scale(1.1)
+  100%
+    opacity 0
+    transform scale(0.3)
+
+@keyframes bounceOutUp
+  0%
+    transform translateY(0)
+  20%
+    opacity 1
+    transform translateY(20px)
+  100%
+    opacity 0
+    transform translateY(-2000px)
+
+@keyframes bounceOutDown
+  0%
+    transform translateY(0)
+  20%
+    opacity 1
+    transform translateY(-20px)
+  100%
+    opacity 0
+    transform translateY(2000px)
+
+@keyframes bounceOutLeft
+  0%
+    transform translateX(0)
+  20%
+    opacity 1
+    transform translateX(20px)
+  100%
+    opacity 0
+    transform translateX(-2000px)
+
+@keyframes bounceOutRight
+  0%
+    transform translateX(0)
+  20%
+    opacity 1
+    transform translateX(-20px)
+  100%
+    opacity 0
+    transform translateX(2000px)
+
+// ### Fade
+
+@keyframes fadeIn
+  0%
+    opacity 0
+  100%
+    opacity 1
+
+@keyframes fadeInUp
+  0%
+    transform translateY(20px)
+    opacity 0
+  100%
+    transform translateY(0)
+    opacity 1
+
+@keyframes fadeInDown
+  0%
+    transform translateY(-20px)
+    opacity 0
+  100%
+    transform translateY(0)
+    opacity 1
+
+@keyframes fadeInRight
+  0%
+    transform translateX(20px)
+    opacity 0
+  100%
+    transform translateX(0)
+    opacity 1
+
+@keyframes fadeInLeft
+  0%
+    transform translateX(-20px)
+    opacity 0
+  100%
+    transform translateX(0)
+    opacity 1
+
+@keyframes fadeOut
+  0%
+    opacity 1
+  100%
+    opacity 0
+
+@keyframes fadeOutUp
+  0%
+    transform translateY(0)
+    opacity 1
+  100%
+    transform translateY(-20px)
+    opacity 0
+
+@keyframes fadeOutDown
+  0%
+    transform translateY(0)
+    opacity 1
+  100%
+    transform translateY(20px)
+    opacity 0
+
+@keyframes fadeOutRight
+  0%
+    transform translateX(0)
+    opacity 1
+  100%
+    transform translateX(20px)
+    opacity 0
+
+@keyframes fadeOutLeft
+  0%
+    transform translateX(0)
+    opacity 1
+  100%
+    transform translateX(-20px)
+    opacity 0
+
+// ### Zoom
+
+@keyframes zoomIn
+  0%
+    opacity 0
+    transform scale3d(.3, .3, .3)
+
+  50%
+    opacity 1
+
+@keyframes zoomOut
+  0%
+    opacity 1
+    transform scale3d(.3, .3, .3)
+
+  50%
+    opacity 0

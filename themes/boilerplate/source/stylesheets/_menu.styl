@@ -13,11 +13,11 @@
     & > h1
       margin 0
       float left
-      line-height 2.8
-      font-size 1.5rem
+      line-height 2.9
+      font-size 1.45rem
 
       +to(desktop-cutoff)
-        margin 0 0 0 1rem
+        margin 0 0 0 (g)%
 
       & > a
         color rgba(tint(color2, 88%),94%)
@@ -101,6 +101,7 @@
     cursor pointer
     -webkit-touch-callout none
     user-select none
+    padding-right .7rem
 
   +to(mobile-cutoff)
     margin 1rem 0
@@ -124,11 +125,33 @@
 
   +to(2)
 
-    &:checked + div
+    &:checked
+      & + div
 
-      .menu
-        display block
-        opacity 1
+        .menu
+          display block
+          opacity 1
 
-      .toggle:after
-        content 'x'
+        .toggle:after
+          content 'x'
+
+// TODO: Create mask for menu to dim the rest of the window.
+
+//         #mask
+//           opacity .7 !important
+//           transition()
+
+// #mask
+//   background black
+//   absolute(top 4.2rem bottom right left)
+//   opacity 0
+//   z-index 1
+//   transition(opacity 350ms ease-in-out)
+//
+//   +from(3)
+//     display none !important
+//     opacity 0 !important
+
+  // & #toggle:checked
+  //   opacity .7 !important
+  //   transition()

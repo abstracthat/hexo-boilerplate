@@ -1,0 +1,50 @@
+//- TODO: Implement this template
+extends category
+
+block content
+  each post in page.posts().toArray()
+    article.article(class=tags_to_class(post.tags))
+      h2.title: a(href=config.root + post.path)= post.title
+      .meta
+        | Posted on&nbsp;
+        time(datetime= date_xml(page.date))= date(page.date)
+      article.content
+        !=post.content
+
+block append scripts
+  !=js(['/scripts/lib/mixItUp.js','/scripts/category.js'])
+
+//-
+  <% if (pagination == 2){ %>
+    <% page.posts.each(function(post){ %>
+      <%- partial('article', {post: post, index: true}) %>
+    <% }) %>
+    <% if (page.total > 1){ %>
+      <nav id="page-nav">
+        <%- paginator({
+          prev_text: '&laquo; Prev',
+          next_text: 'Next &raquo;'
+        }) %>
+      </nav>
+    <% } %>
+  <% } else { %>
+    <% var last; %>
+    <% page.posts.each(function(post, i){ %>
+      <% var year = post.date.year(); %>
+      <% if (last != year){ %>
+        <% if (last != null){ %>
+          </div></section>
+        <% } %>
+        <% last = year; %>
+        <section class="archives-wrap">
+          <div class="archive-year-wrap">
+            <a href="<%- url_for('archives/' + year) %>" class="archive-year"><%= year %></a>
+          </div>
+          <div class="archives">
+      <% } %>
+      <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+    <% }) %>
+    <% if (page.posts.length){ %>
+      </div></section>
+    <% } %>
+  <% } %>

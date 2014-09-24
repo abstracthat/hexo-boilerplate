@@ -1,0 +1,18 @@
+extends base
+
+block header
+
+block content
+  .feature
+    .container
+      h1!= page.title ? page.title : config.title
+      !=page.content
+  section.category-index
+    .container
+      each cat in site.categories.toArray()
+        p= cat
+        a(href=cat.url).category
+          h2= cat.name
+          img(src = '/assets/#{cat.name.toLowerCase()}.jpg')
+          - var postCount = get_posts({query: {categories: cat.name}}).toArray().length
+          p View all #{postCount} posts

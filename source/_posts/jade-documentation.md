@@ -1,9 +1,9 @@
 title: Jade Templating Engine Documentation
-layout: page
+layout: post
 description: This is the meta description for the page that will be picked up by search engines and displayed in results. You get roughly 160 characters.
 date: 2014-04-01 13:53:31
 category: Documentation
-tags: 
+tags:
   - Jade
 ---
 
@@ -17,25 +17,25 @@ To add a doctype use `doctype` followed by an optional value (which defaults to 
 There are shortcuts for commonly used doctypes:
 
 xml
-: 
+:
 
 transitional
-: 
+:
 
 strict
-: 
+:
 
 frameset
-: 
+:
 
 1.1
-: 
+:
 
 basic
-: 
+:
 
 mobile
-: 
+:
 
 You can also use your own literal custom doctype:
 
@@ -43,7 +43,7 @@ You can also use your own literal custom doctype:
     doctype html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
 
 
-    
+
 
 ### Tags
 
@@ -56,11 +56,11 @@ By default, text at the start of a line (or after only white space) represents a
       li Item C
 
 
-    
+
       Item A
       Item B
       Item C
-    
+
 
 
 Jade also knows which elements are self closing:
@@ -89,7 +89,7 @@ All the normal JavaScript expressions work fine too:
     body(class=authenticated?'authed':'anon')
 
 
-    
+
 
 
 #### Boolean Attributes
@@ -103,10 +103,10 @@ Boolean attributes are mirrored by Jade, and accept bools, aka `true` or `false`
     input(type='checkbox', checked=true.toString())
 
 
-    
-    
-    
-    
+
+
+
+
 
 
 If the doctype is `html` jade knows not to mirror the attribute and uses the terse style (understood by all browsers).
@@ -119,11 +119,11 @@ If the doctype is `html` jade knows not to mirror the attribute and uses the ter
     input(type='checkbox', checked=true &amp;&amp; 'checked')
 
 
-    
-    
-    
-    
-    
+
+
+
+
+
 
 
 #### Class Attributes
@@ -137,8 +137,8 @@ The `class` attribute can be a string (like any normal attribute) but it can als
     a.bing(class=classes class=['bing'])
 
 
-    
-    
+
+
 
 
 #### Class Literal
@@ -148,7 +148,7 @@ Classes may be defined using a `.classname` syntax:
 Since div's are such a common choice of tag, it is the default if you omit the tag name:
 
 
-    
+
 
 
 #### ID Literal
@@ -198,12 +198,12 @@ Often you might want large blocks of text within a tag. A good example is with i
         console.log('use jade')
 
 
-    
+
       if (usingJade)
         console.log('you are awesome')
       else
         console.log('use jade')
-    
+
 
 ### Code
 
@@ -286,10 +286,10 @@ Jade's first-class conditional syntax allows for optional parenthesis, and you m
         p.description User has no description
 
 
-    
+
       Description
       foo bar baz
-    
+
 
 
 Jade also provides a negated version `unless` (the following are therefore equivalent):
@@ -312,13 +312,13 @@ Jade's first-class iteration syntax makes it easier to iterate over arrays and o
         li= val
 
 
-    
+
       1
       2
       3
       4
       5
-    
+
 
 
 You can also get the index as you iterate:
@@ -329,11 +329,11 @@ You can also get the index as you iterate:
         li= index + ': ' + val
 
 
-    
+
       0: zero
       1: one
       2: two
-    
+
 
 
 Jade also lets you iterate over the keys in an object:
@@ -344,11 +344,11 @@ Jade also lets you iterate over the keys in an object:
         li= index + ': ' + val
 
 
-    
+
       1: one
       2: two
       3: three
-    
+
 
 
 The object or array to iterate over is just plain JavaScript so it can be a variable or the result of a function call as well.
@@ -432,16 +432,16 @@ Mixins allow you to create reusable blocks of jade.
     +list()
 
 
-    
+
       foo
       bar
       baz
-    
-    
+
+
       foo
       bar
       baz
-    
+
 
 
 They are compiled to functions and can take arguments:
@@ -454,11 +454,11 @@ They are compiled to functions and can take arguments:
     +pets(['cat', 'dog', 'pig'])
 
 
-    
+
       cat
       dog
       pig
-    
+
 
 
 Mixins can also take a block of jade to act as the content:
@@ -480,20 +480,20 @@ Mixins can also take a block of jade to act as the content:
       p Amazing article
 
 
-    
-      
+
+
         Hello world
         No content provided
-      
-    
 
-    
-      
+
+
+
+
         Hello world
         This is my
         Amazing article
-      
-    
+
+
 
 
 Mixins also get an implicit attributes argument taken from the attributes passed to the mixin:
@@ -532,18 +532,15 @@ Includes allow you to insert the contents of one jade file into another.
       p Copyright (c) foobar
 
 
-    
-    
-      
+
+
+
         My Site
-        
-        
-      
-      
+
+
+
+
         My Site
         Welcome to my super lame site.
-        
+
           Copyright (c) foobar
-        
-      
-      
